@@ -40,7 +40,6 @@ jobs:
       - name: Set up Elm Land
         run: npm i -g elm elm-land@latest
       - name: Build app
-        working-directory: landing
         run: elm-land build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
