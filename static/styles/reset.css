@@ -25,7 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: #f9f9f9;
+	background-color: #262626;
 }
 ol, ul {
 	list-style: none;
@@ -35,6 +35,7 @@ blockquote, q {
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
+	color: #ffffff;
 	content: '';
 	content: none;
 }

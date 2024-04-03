@@ -9,6 +9,7 @@ import View exposing (View)
 import Window exposing (ScreenClass(..))
 
 
+
 type alias Model =
     ()
 
@@ -31,5 +32,5 @@ view : Shared.Model -> View msg
 view _ =
     { title = "Christopher Samoilov"
     , attributes = []
-    , element = text "Look ma, I'm designer!"
+    , element = text "Christopher Samoilov"
     }
