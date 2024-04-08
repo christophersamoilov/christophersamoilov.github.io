@@ -17,12 +17,12 @@
     a.parentNode.insertBefore(k, a);
 })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-// ym(123, "init", {
-//   clickmap: true,
-//   trackLinks: true,
-//   accurateTrackBounce: true,
-//   webvisor: true,
-// });
+ym(96920759, "init", {
+  clickmap: true,
+  trackLinks: true,
+  accurateTrackBounce: true,
+  webvisor: true,
+});
 
 // TODO: implement
-/* <noscript><div><img src="https://mc.yandex.ru/watch/123}" style="position:absolute; left:-9999px;" alt="" /></div></noscript> */
+/* <noscript><div><img src="https://mc.yandex.ru/watch/96920759}" style="position:absolute; left:-9999px;" alt="" /></div></noscript> */
