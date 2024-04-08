@@ -1,10 +1,21 @@
-module Pages.Design.DesignExperience_ exposing (page)
+module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Dict exposing (Dict)
+import Effect exposing (Effect)
 import Element exposing (..)
-import Element.Region exposing (description)
-import Html exposing (Html)
+import Page exposing (Page)
+import Route exposing (Route)
+import Route.Path as Path
+import Shared
 import View exposing (View)
+
+
+type alias Model =
+    Maybe DesignExperience
+
+
+type alias Msg =
+    ()
 
 
 type alias DesignExperience =
@@ -21,13 +32,39 @@ data =
         ]
 
 
-page : { designExperience : String } -> View msg
-page params =
+page : Shared.Model -> Route { designExperience : String } -> Page Model Msg
+page _ route =
+    Page.new
+        { init = init route.params
+        , update = update
+        , view = view
+        , subscriptions = always Sub.none
+        }
+
+
+init : { designExperience : String } -> () -> ( Model, Effect Msg )
+init params _ =
     let
         lookupResults =
             Dict.get params.designExperience data
     in
     case lookupResults of
+        Just x ->
+            ( Just x, Effect.none )
+
+        Nothing ->
+            ( Nothing, Effect.replaceRoutePath Path.Home_ )
+
+
+
+update : Msg -> Model -> ( Model, Effect Msg )
+update _ model =
+    ( model, Effect.none )
+
+
+view : Model -> View msg
+view model =
+    case model of
         Just x ->
             { title = x.title
             , attributes = []
@@ -35,9 +72,9 @@ page params =
             }
 
         Nothing ->
-            { title = "None"
+            { title = ""
             , attributes = []
-            , element = text "net nihuya"
+            , element = none
             }
 
 
