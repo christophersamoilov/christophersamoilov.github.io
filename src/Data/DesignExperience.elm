@@ -9,6 +9,6 @@ type alias DesignExperience =
 
 data : List DesignExperience
 data =
-     [{slug =  "2gis",  title = "Дубль Диск", description = "PC CD-ROM" } 
-        ,  {slug =  "fitservice",  title = "Feat Service", description = "Да похуй" } ]
+     [{slug =  "2gis",  title = "2GIS", description = "Communication Design" } 
+        ,  {slug =  "fitservice",  title = "FIT SERVICE", description = "UX/UI Design" } ]
         

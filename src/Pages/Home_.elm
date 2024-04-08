@@ -74,7 +74,7 @@ view _ =
 viewDesignExperiencesSection : Element msg
 viewDesignExperiencesSection =
     column [ spacing 32 ]
-        [ text "Experiences"
+        [ text ""
         , column [ spacing 14 ] <| List.map viewDesignExperienceItem Data.DesignExperience.data
         ]
 
