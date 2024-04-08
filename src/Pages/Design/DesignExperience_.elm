@@ -1,8 +1,10 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
+import Data.DesignExperience exposing (DesignExperience)
 import Dict exposing (Dict)
 import Effect exposing (Effect)
 import Element exposing (..)
+import List.Extra
 import Page exposing (Page)
 import Route exposing (Route)
 import Route.Path as Path
@@ -16,20 +18,6 @@ type alias Model =
 
 type alias Msg =
     ()
-
-
-type alias DesignExperience =
-    { title : String
-    , description : String
-    }
-
-
-data : Dict String DesignExperience
-data =
-    Dict.fromList
-        [ ( "2gis", { title = "Дубль Диск", description = "PC CD-ROM" } )
-        , ( "fitservice", { title = "Feat Service", description = "Да похуй" } )
-        ]
 
 
 page : Shared.Model -> Route { designExperience : String } -> Page Model Msg
@@ -46,7 +34,7 @@ init : { designExperience : String } -> () -> ( Model, Effect Msg )
 init params _ =
     let
         lookupResults =
-            Dict.get params.designExperience data
+            List.Extra.find (\x -> x.slug == params.designExperience) Data.DesignExperience.data
     in
     case lookupResults of
         Just x ->
@@ -54,7 +42,6 @@ init params _ =
 
         Nothing ->
             ( Nothing, Effect.replaceRoutePath Path.Home_ )
-
 
 
 update : Msg -> Model -> ( Model, Effect Msg )

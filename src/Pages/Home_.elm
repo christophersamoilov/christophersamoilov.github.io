@@ -1,12 +1,14 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
+import Data.DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Font as Font
 import Page exposing (Page)
 import Route exposing (Route)
+import Route.Path as Path
 import Shared
 import TextStyle
 import Typography exposing (preparedText)
@@ -64,5 +66,19 @@ view _ =
             , blueLink { labelText = "telegram", url = "https://t.me/christophersamoilov" }
             , blueLink { labelText = "email", url = "mailto:christophersamoilov@gmail.com" }
             , paragraph TextStyle.subheader <| [ preparedText bioText ]
+            , viewDesignExperiencesSection
             ]
     }
+
+
+viewDesignExperiencesSection : Element msg
+viewDesignExperiencesSection =
+    column [ spacing 32 ]
+        [ text "Experiences"
+        , column [ spacing 14 ] <| List.map viewDesignExperienceItem Data.DesignExperience.data
+        ]
+
+
+viewDesignExperienceItem : DesignExperience -> Element msg
+viewDesignExperienceItem x =
+    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = x.slug }, label = text x.title }
