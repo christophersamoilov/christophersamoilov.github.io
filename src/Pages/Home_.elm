@@ -43,6 +43,13 @@ I'm all about helping people communicate better & faster, making life a bit bett
 """
 
 
+skillText : String
+skillText =
+    """
+Art Direction, Brand Identity, Motion Design, Type Design, UX & UI Design,Visual Identity, Web Design
+"""
+
+
 blueLink : { labelText : String, url : String } -> Element msg
 blueLink props =
     newTabLink []
@@ -56,7 +63,7 @@ view _ =
     { title = "Christopher Samoilov"
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ] ++ TextStyle.body
     , element =
-        column []
+        column [spacing 32]
             [ el TextStyle.headline <| text "Christopher Samoilov"
             , image
                 [ width (px 340)
@@ -66,6 +73,7 @@ view _ =
             , blueLink { labelText = "telegram", url = "https://t.me/christophersamoilov" }
             , blueLink { labelText = "email", url = "mailto:christophersamoilov@gmail.com" }
             , paragraph TextStyle.subheader <| [ preparedText bioText ]
+            , paragraph TextStyle.subheader <| [ preparedText skillText ]
             , viewDesignExperiencesSection
             ]
     }
