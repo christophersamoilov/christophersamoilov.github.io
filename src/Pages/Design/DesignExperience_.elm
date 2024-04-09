@@ -69,5 +69,6 @@ viewDesignExperience : DesignExperience -> Element msg
 viewDesignExperience x =
     column []
         [ text x.title
+        , text x.skills
         , text x.description
         ]

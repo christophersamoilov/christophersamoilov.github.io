@@ -14,6 +14,7 @@ import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
+import Element.Border as Border
 
 
 type alias Model =
@@ -88,12 +89,20 @@ viewDesignExperiencesSection =
 
 
 viewDesignExperienceItem : DesignExperience -> Element msg
-viewDesignExperienceItem x =
+viewDesignExperienceItem dx =
     let
         label =
             column []
-                [ text x.title
-                , text <| DesignExperience.showDesignExperienceType x.experienceType
+                [ text dx.title
+                , text <| DesignExperience.showDesignExperienceType dx.experienceType
+                , image
+                    [ Background.color dx.thumbnail.placeholderColor
+                    , Border.rounded 16
+                    , clip
+                    , width (px 172)
+                    , height (px 172)
+                    ]
+                    { src = dx.thumbnail.url, description = dx.title }
                 ]
     in
-    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = x.slug }, label = label }
+    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
