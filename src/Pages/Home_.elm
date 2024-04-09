@@ -1,7 +1,7 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
-import Data.DesignExperience exposing (DesignExperience)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
@@ -63,7 +63,7 @@ view _ =
     { title = "Christopher Samoilov"
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ] ++ TextStyle.body
     , element =
-        column [spacing 32]
+        column [ spacing 32 ]
             [ el TextStyle.headline <| text "Christopher Samoilov"
             , image
                 [ width (px 340)
@@ -83,10 +83,17 @@ viewDesignExperiencesSection : Element msg
 viewDesignExperiencesSection =
     column [ spacing 32 ]
         [ text ""
-        , column [ spacing 14 ] <| List.map viewDesignExperienceItem Data.DesignExperience.data
+        , column [ spacing 14 ] <| List.map viewDesignExperienceItem DesignExperience.data
         ]
 
 
 viewDesignExperienceItem : DesignExperience -> Element msg
 viewDesignExperienceItem x =
-    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = x.slug }, label = text x.title }
+    let
+        label =
+            column []
+                [ text x.title
+                , text <| DesignExperience.showDesignExperienceType x.experienceType
+                ]
+    in
+    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = x.slug }, label = label }
