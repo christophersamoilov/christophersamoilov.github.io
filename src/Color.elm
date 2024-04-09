@@ -19,7 +19,7 @@ white =
 
 grey1 : Color
 grey1 =
-    rgb255 0x26 0x26 0x26
+    rgb255 0x1a 0x1a 0x1a
 
 
 blue1 : Color
