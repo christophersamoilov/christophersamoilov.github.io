@@ -1,7 +1,9 @@
 module Data.DesignExperience exposing
     ( DesignExperience
     , DesignExperienceType
-    , designExperienceImageSrc
+    , ImageRow(..)
+    , Images2
+    , SquareImage
     , data
     , showDesignExperienceType
     , useTextColor
@@ -40,24 +42,6 @@ useTextColor tc =
             Color.black
 
 
-
--- -------------
-
-
-renderRow2 : Images2 -> ScreenClass -> String
-renderRow2 r screen =
-    case screen of
-        SmallScreen ->
-            "img1, description, img2"
-
-        BigScreen ->
-            "img1, img2, description"
-
-
-
--- -------------
-
-
 type DesignExperienceType
     = WorkExperience
     | PersonalProject
@@ -81,11 +65,6 @@ type alias SquareImage =
     }
 
 
-designExperienceImageSrc : { slug : String, path : String } -> String
-designExperienceImageSrc {slug, path} =
-    "/images/design-experience/" ++ slug ++ "/" ++ path
-
-
 type alias DesignExperience =
     { slug : String
     , title : String
@@ -95,9 +74,8 @@ type alias DesignExperience =
     , thumbnail : SquareImage
     , backgroundColor : Color
     , textColor : TextColor
-
-    -- firstImages: Images2
-    -- restImages: List ImageRow
+    , firstImages : Images2
+    , restImages : List ImageRow
     }
 
 
@@ -111,6 +89,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x42 0xAF 0xF0 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "fitservice"
       , title = "FIT SERVICE"
@@ -120,6 +103,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "lukoil"
       , title = "Lukoil"
@@ -129,6 +117,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0xD2 0x23 0x3C }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "prospect"
       , title = "Prospect"
@@ -138,6 +131,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x1B 0x61 0xE1 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "pamir"
       , title = "Pamir"
@@ -147,6 +145,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x75 0xA0 0xCB }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "rastsvetai"
       , title = "Rastsvetai Group"
@@ -156,6 +159,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x57 0xCB 0x93 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "2gis"
       , title = "2GIS"
@@ -165,6 +173,22 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x05 0xA8 0x2E }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "images/3.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img2 = { url = "images/4.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img3 = { url = "images/5.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img4 = { url = "images/6.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            , ImageRow2
+                { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            ]
       }
     , { slug = "sclux"
       , title = "SCLUX"
@@ -174,6 +198,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x32 0x32 0x32 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "inconspt"
       , title = "Selected elements of inconsistent periodic table"
@@ -183,6 +212,11 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0xF6 0xEC 0x13 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     , { slug = "vegyrain"
       , title = "Vegetable rain falls through leguminous evaporation"
@@ -192,5 +226,10 @@ data =
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
       , backgroundColor = rgb255 0x42 0xAF 0xF0
       , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "images/1.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
+            }
+      , restImages = []
       }
     ]

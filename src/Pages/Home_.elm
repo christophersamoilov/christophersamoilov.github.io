@@ -9,6 +9,7 @@ import Element.Border as Border
 import Element.Font as Font
 import Page exposing (Page)
 import Route exposing (Route)
+import Components.SquareImage exposing (viewDesignExperienceImage)
 import Route.Path as Path
 import Shared
 import TextStyle
@@ -95,14 +96,7 @@ viewDesignExperienceItem dx =
             column []
                 [ text dx.title
                 , text <| DesignExperience.showDesignExperienceType dx.experienceType
-                , image
-                    [ Background.color dx.thumbnail.placeholderColor
-                    , Border.rounded 16
-                    , clip
-                    , width (px 172)
-                    , height (px 172)
-                    ]
-                    { src = DesignExperience.designExperienceImageSrc {slug = dx.slug, path = dx.thumbnail.url}, description = dx.title }
+                , viewDesignExperienceImage [] {slug = dx.slug, img = dx.thumbnail, title = dx.title, size = px 172 }
                 ]
     in
     link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
