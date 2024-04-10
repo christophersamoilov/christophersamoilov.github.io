@@ -1,8 +1,10 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
-import Data.DesignExperience exposing (DesignExperience)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Dict exposing (Dict)
 import Effect exposing (Effect)
+import Element.Background as Background
+import Element.Font as Font
 import Element exposing (..)
 import List.Extra
 import Page exposing (Page)
@@ -34,7 +36,7 @@ init : { designExperience : String } -> () -> ( Model, Effect Msg )
 init params _ =
     let
         lookupResults =
-            List.Extra.find (\x -> x.slug == params.designExperience) Data.DesignExperience.data
+            List.Extra.find (\x -> x.slug == params.designExperience) DesignExperience.data
     in
     case lookupResults of
         Just x ->
@@ -54,7 +56,7 @@ view model =
     case model of
         Just x ->
             { title = x.title
-            , attributes = []
+            , attributes = [Background.color x.backgroundColor, Font.color <| DesignExperience.useTextColor x.textColor]
             , element = viewDesignExperience x
             }
 
