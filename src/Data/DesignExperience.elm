@@ -58,6 +58,13 @@ data =
       , experienceType = WorkExperience
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", placeholderColor = rgb255 0xD2 0x23 0x3C }
       }
+    , { slug = "prospect"
+      , title = "Prospect"
+      , skills = "Graphic Design, UX & UI Design, Visual Identity"
+      , description = "UX analysis & a new concept of a website for a construction company."
+      , experienceType = WorkExperience
+      , thumbnail = { url = "/images/design-experience/prospect/thumbnail.jpg", placeholderColor = rgb255 0x1B 0x61 0xE1 }
+      }
     , { slug = "pamir"
       , title = "Pamir"
       , skills = "Art Direction, Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
