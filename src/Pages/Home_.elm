@@ -5,6 +5,7 @@ import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
+import Element.Border as Border
 import Element.Font as Font
 import Page exposing (Page)
 import Route exposing (Route)
@@ -14,7 +15,6 @@ import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
-import Element.Border as Border
 
 
 type alias Model =
@@ -102,7 +102,7 @@ viewDesignExperienceItem dx =
                     , width (px 172)
                     , height (px 172)
                     ]
-                    { src = dx.thumbnail.url, description = dx.title }
+                    { src = DesignExperience.designExperienceImageSrc {slug = dx.slug, path = dx.thumbnail.url}, description = dx.title }
                 ]
     in
     link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
