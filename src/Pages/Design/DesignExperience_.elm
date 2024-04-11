@@ -12,8 +12,9 @@ import Page exposing (Page)
 import Route exposing (Route)
 import Route.Path as Path
 import Shared
+import Typography exposing (preparedText)
 import View exposing (View)
-import Window exposing (ScreenClass(..))
+import Window exposing (ScreenClass(..), WindowSize)
 
 
 type alias Model =
@@ -58,8 +59,11 @@ view shared model =
     case model of
         Just x ->
             { title = x.title
-            , attributes = [ Background.color x.backgroundColor, Font.color <| DesignExperience.useTextColor x.textColor, width fill, height fill ]
-            , element = viewDesignExperience shared.screenClass x
+            , attributes =
+                [ Background.color x.backgroundColor
+                , Font.color <| DesignExperience.useTextColor x.textColor
+                ]
+            , element = viewDesignExperience shared x
             }
 
         Nothing ->
@@ -69,55 +73,75 @@ view shared model =
             }
 
 
-renderFirstImagesAndDescription : ScreenClass -> DesignExperience -> Element msg
-renderFirstImagesAndDescription screenClass dx =
-    case screenClass of
+contentWidth : WindowSize -> Int -> Int
+contentWidth window allPaddings =
+    window.width - allPaddings
+
+
+currentAllPaddings : Int
+currentAllPaddings =
+    0
+
+
+renderFirstImagesAndDescription : Shared.Model -> DesignExperience -> Element msg
+renderFirstImagesAndDescription shared dx =
+    case shared.screenClass of
         SmallScreen ->
-            column [ width fill, height fill, spacing 50 ]
-                [ viewDesignExperienceImage [] { slug = dx.slug, img = dx.firstImages.img1, title = dx.title, size = fill }
-                , text dx.description
-                , viewDesignExperienceImage [] { slug = dx.slug, img = dx.firstImages.img2, title = dx.title, size = fill }
+            column [ spacing 50 ]
+                [ viewDesignExperienceImage []
+                    { slug = dx.slug
+                    , img = dx.firstImages.img1
+                    , title = dx.title
+                    , size = px <| contentWidth shared.window currentAllPaddings
+                    }
+                , paragraph [] [ preparedText dx.description ]
+                , viewDesignExperienceImage []
+                    { slug = dx.slug
+                    , img = dx.firstImages.img2
+                    , title = dx.title
+                    , size = px <| contentWidth shared.window currentAllPaddings
+                    }
                 ]
 
         BigScreen ->
-            column [ width fill, height fill, spacing 50 ]
-                [ row [ width fill, height fill, spacing 50 ]
+            column [ spacing 50 ]
+                [ row [ spacing 50 ]
                     [ viewDesignExperienceImage [] { slug = dx.slug, img = dx.firstImages.img1, title = dx.title, size = fill }
                     , viewDesignExperienceImage [] { slug = dx.slug, img = dx.firstImages.img2, title = dx.title, size = fill }
                     ]
-                , text dx.description
+                , paragraph [] [ preparedText dx.description ]
                 ]
 
 
-viewRow : ScreenClass -> { slug : String } -> ImageRow -> Element msg
-viewRow screenClass { slug } ir =
+viewRow : Shared.Model -> { slug : String } -> ImageRow -> Element msg
+viewRow shared { slug } ir =
     case ir of
         ImageRow2 r ->
-            case screenClass of
+            case shared.screenClass of
                 SmallScreen ->
-                    column [ width fill, height fill, spacing 50 ]
-                        [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = fill }
+                    column [ spacing 50 ]
+                        [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
                         ]
 
                 BigScreen ->
-                    row [ width fill, height fill, spacing 50 ]
+                    row [ spacing 50 ]
                         [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = fill }
                         , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = fill }
                         ]
 
         ImageRow4 r ->
-            case screenClass of
+            case shared.screenClass of
                 SmallScreen ->
-                    column [ width fill, height fill, spacing 50 ]
-                        [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = fill }
-                        , viewDesignExperienceImage [] { slug = slug, img = r.img3, title = "Слепым здесь не место", size = fill }
-                        , viewDesignExperienceImage [] { slug = slug, img = r.img4, title = "Слепым здесь не место", size = fill }
+                    column [ spacing 50 ]
+                        [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        , viewDesignExperienceImage [] { slug = slug, img = r.img3, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        , viewDesignExperienceImage [] { slug = slug, img = r.img4, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
                         ]
 
                 BigScreen ->
-                    row [ width fill, height fill, spacing 50 ]
+                    row [ spacing 50 ]
                         [ viewDesignExperienceImage [] { slug = slug, img = r.img1, title = "Слепым здесь не место", size = fill }
                         , viewDesignExperienceImage [] { slug = slug, img = r.img2, title = "Слепым здесь не место", size = fill }
                         , viewDesignExperienceImage [] { slug = slug, img = r.img3, title = "Слепым здесь не место", size = fill }
@@ -125,11 +149,11 @@ viewRow screenClass { slug } ir =
                         ]
 
 
-viewDesignExperience : ScreenClass -> DesignExperience -> Element msg
-viewDesignExperience screenClass dx =
-    column [ width fill, height fill ]
+viewDesignExperience : Shared.Model -> DesignExperience -> Element msg
+viewDesignExperience shared dx =
+    column []
         [ text dx.title
         , text dx.skills
-        , renderFirstImagesAndDescription screenClass dx
-        , column [ spacing 50 ] <| List.map (viewRow screenClass { slug = dx.slug }) dx.restImages
+        , renderFirstImagesAndDescription shared dx
+        , column [ spacing 50 ] <| List.map (viewRow shared { slug = dx.slug }) dx.restImages
         ]

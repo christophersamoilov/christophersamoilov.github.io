@@ -154,7 +154,7 @@ data =
     , { slug = "rastsvetai"
       , title = "Rastsvetai Group"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Visual Identity, Web Design"
       , description = "In 2019—2020 I created & developed a design system for the promotion of residential & commercial real estate of the group of companies on the web & offline. Created a brandbook of a group of companies & concepts of the appearance of individual residential real estate & residential complexes. Art directed & consulted in the creation of 3D visualizations of real estate objects & interior design of common areas. Actively participated in the development of planning solutions for residential real estate. Supervised the work of other designers & provided mentorship."
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x57 0xCB 0x93 }
       , backgroundColor = rgb255 0x57 0xCB 0x93
@@ -168,7 +168,7 @@ data =
     , { slug = "2gis"
       , title = "2GIS"
       , experienceType = WorkExperience
-      , skills = "Graphic Design, Motion Design, Type Design, Visual Identity"
+      , skills = "Graphic Design, Illustration, Motion Design, Type Design, Visual Identity"
       , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "thumbnail.jpg", placeholderColor = rgb255 0x05 0xA8 0x2E }
       , backgroundColor = rgb255 0x05 0xA8 0x2E
