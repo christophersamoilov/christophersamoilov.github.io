@@ -1,6 +1,7 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
+import Components.SquareImage as SquareImage
 import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
@@ -9,7 +10,6 @@ import Element.Border as Border
 import Element.Font as Font
 import Page exposing (Page)
 import Route exposing (Route)
-import Components.SquareImage exposing (viewDesignExperienceImage)
 import Route.Path as Path
 import Shared
 import TextStyle
@@ -96,7 +96,7 @@ viewDesignExperienceItem dx =
             column []
                 [ text dx.title
                 , text <| DesignExperience.showDesignExperienceType dx.experienceType
-                , viewDesignExperienceImage [] {slug = dx.slug, img = dx.thumbnail, title = dx.title, size = px 172 }
+                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, title = dx.title, size = px 172 }
                 ]
     in
     link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
