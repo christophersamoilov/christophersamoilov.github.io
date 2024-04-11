@@ -3,6 +3,7 @@ module Data.DesignExperience exposing
     , DesignExperienceType
     , ImageRow(..)
     , Images2
+    , Link
     , SquareImage
     , data
     , showDesignExperienceType
@@ -65,6 +66,12 @@ type alias SquareImage =
     }
 
 
+type alias Link =
+    { url : String
+    , label : String
+    }
+
+
 type alias DesignExperience =
     { slug : String
     , title : String
@@ -76,6 +83,7 @@ type alias DesignExperience =
     , textColor : TextColor
     , firstImages : Images2
     , restImages : List ImageRow
+    , links : List Link
     }
 
 
@@ -94,6 +102,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "fitservice"
       , title = "FIT SERVICE"
@@ -108,6 +117,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "lukoil"
       , title = "Lukoil"
@@ -122,6 +132,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "prospect"
       , title = "Prospect"
@@ -136,6 +147,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "pamir"
       , title = "Pamir"
@@ -150,6 +162,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "rastsvetai"
       , title = "Rastsvetai Group"
@@ -164,6 +177,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "2gis"
       , title = "2GIS"
@@ -189,6 +203,14 @@ data =
                 , img2 = { url = "images/8.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
                 }
             ]
+      , links =
+            [ { url = "https://2gis.ru"
+              , label = "Дубль Диск"
+              },
+              { url = "https://2gis.ru"
+              , label = "Трипл Диск"
+              }
+            ]
       }
     , { slug = "sclux"
       , title = "SCLUX"
@@ -203,6 +225,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "inconspt"
       , title = "Selected elements of inconsistent periodic table"
@@ -217,6 +240,7 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     , { slug = "vegyrain"
       , title = "Vegetable rain falls through leguminous evaporation"
@@ -231,5 +255,6 @@ data =
             , img2 = { url = "images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages = []
+      , links = []
       }
     ]

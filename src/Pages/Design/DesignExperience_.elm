@@ -1,7 +1,8 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
+import Color
 import Components.SquareImage exposing (viewDesignExperienceImage)
-import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Images2)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Images2, Link)
 import Dict exposing (Dict)
 import Effect exposing (Effect)
 import Element exposing (..)
@@ -149,6 +150,14 @@ viewRow shared { slug } ir =
                         ]
 
 
+viewLink : Link -> Element msg
+viewLink x =
+    newTabLink [ height (px 80), Background.color Color.blue1 ]
+        { url = x.url
+        , label = text x.label
+        }
+
+
 viewDesignExperience : Shared.Model -> DesignExperience -> Element msg
 viewDesignExperience shared dx =
     column []
@@ -156,4 +165,5 @@ viewDesignExperience shared dx =
         , text dx.skills
         , renderFirstImagesAndDescription shared dx
         , column [ spacing 50 ] <| List.map (viewRow shared { slug = dx.slug }) dx.restImages
+        , column [ spacing 50 ] <| List.map viewLink dx.links
         ]
