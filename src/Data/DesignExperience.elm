@@ -102,7 +102,17 @@ data =
             , img2 = { url = "/images/design-experience/sansib/images/2.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             }
       , restImages = []
-      , links = []
+      , links =
+            [ { url = "https://vimeo.com/933678695/c7fc43ee0e"
+              , label = "SANSIB Group Movie"
+              }
+            , { url = "https://vimeo.com/933679719/47cca2a1e1"
+              , label = "How To Make Good Video for Instagram"
+              }
+            , { url = "https://vimeo.com/933679294/9c5da92dee"
+              , label = "What Means Quality Video for Instagram"
+              }   
+            ]
       }
     , { slug = "fitservice"
       , title = "FIT SERVICE"
@@ -113,22 +123,45 @@ data =
       , backgroundColor = rgb255 0xF4 0x7D 0x32
       , textColor = WhiteText
       , firstImages =
-            { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+            { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
             , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", placeholderColor = rgb255 0x16 0x1b 0x1f }
             }
       , restImages =
             [ ImageRow4
-                { img1 = { url = "/images/design-experience/fitservice/images/3.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                { img1 = { url = "/images/design-experience/fitservice/images/3.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
                 , img2 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img3 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img4 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/5.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img4 = { url = "/images/design-experience/fitservice/images/6.jpg", placeholderColor = rgb255 0x29 0x1d 0x1d }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img2 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                { img1 = { url = "/images/design-experience/fitservice/images/7.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/8.jpg", placeholderColor = rgb255 0x93 0xae 0xcf }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/9.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/10.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
+                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/fitservice/images/13.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/14.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 }
             ]
-      , links = []
+      , links =
+            [ { url = "https://disk.yandex.ru/i/Nfznnq0AeEx3DA"
+              , label = "FIT App Presentation"
+              }
+            , { url = "https://disk.yandex.ru/i/5loH-JsCd-t4vA"
+              , label = "×2 Using CJM as an Example of Fitauto Presentation"
+              }
+            , { url = "https://vimeo.com/933674884/5ed6036896"
+              , label = "FIT SERVICE UI Kit Promo Video 2023"
+              }
+            , { url = "https://vimeo.com/933673725/8199b3ac81"
+              , label = "FIT App Video for App Store"
+              }   
+            ]
       }
     , { slug = "lukoil"
       , title = "Lukoil"
@@ -143,7 +176,11 @@ data =
             , img2 = { url = "/images/design-experience/lukoil/images/2.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             }
       , restImages = []
-      , links = []
+      , links = [ 
+        { url = "https://disk.yandex.ru/i/ynxLZdR_TlFgjg"
+              , label = "Lukoil Booking Presentation"
+              }
+      ]
       }
     , { slug = "prospect"
       , title = "Prospect"
@@ -197,19 +234,19 @@ data =
             ]
       , links =
             [ { url = "https://vimeo.com/437333861"
-              , label = "Rastsvetai Group 2019"
+              , label = "Rastsvetai Group Movie 2019"
               }
             , { url = "https://vimeo.com/437333413"
-              , label = "BLACK FRIDAY RASTSVETAI"
+              , label = "BLACK FRIDAY RASTSVETAI Promo Video"
               }
             , { url = "https://vimeo.com/437337589"
-              , label = "500/1500 STEPS"
+              , label = "500/1500 STEPS Movie"
               }
             , { url = "https://vimeo.com/446721307"
-              , label = "Rastsvetai on Marxa"
+              , label = "Rastsvetai on Marxa Video"
               } 
             , { url = "https://vimeo.com/449205141"
-              , label = "Rastsvetai on Gogolya"
+              , label = "Rastsvetai on Gogolya Video"
               }    
             ]
       }
