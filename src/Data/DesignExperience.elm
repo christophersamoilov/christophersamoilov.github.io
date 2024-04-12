@@ -231,6 +231,16 @@ data =
                 , img3 = { url = "/images/design-experience/rastsvetai/images/5.jpg", placeholderColor = rgb255 0x4d 0xc3 0x86 }
                 , img4 = { url = "/images/design-experience/rastsvetai/images/6.jpg", placeholderColor = rgb255 0x60 0x97 0xb6 }
                 }
+             , ImageRow2
+                { img1 = { url = "/images/design-experience/rastsvetai/images/7.jpg", placeholderColor = rgb255 0x2b 0x4e 0x62 }
+                , img2 = { url = "/images/design-experience/rastsvetai/images/8.jpg", placeholderColor = rgb255 0xff 0xff 0xff }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/rastsvetai/images/9.jpg", placeholderColor = rgb255 0x00 0x6a 0x56 }
+                , img2 = { url = "/images/design-experience/rastsvetai/images/10.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/rastsvetai/images/11.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img4 = { url = "/images/design-experience/rastsvetai/images/12.jpg", placeholderColor = rgb255 0x00 0x6a 0x56 }
+                }
             ]
       , links =
             [ { url = "https://vimeo.com/437333861"
