@@ -123,12 +123,12 @@ data =
       , backgroundColor = rgb255 0xF4 0x7D 0x32
       , textColor = WhiteText
       , firstImages =
-            { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
+            { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", placeholderColor = rgb255 0x16 0x1b 0x1f }
             , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", placeholderColor = rgb255 0x16 0x1b 0x1f }
             }
       , restImages =
             [ ImageRow4
-                { img1 = { url = "/images/design-experience/fitservice/images/3.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
+                { img1 = { url = "/images/design-experience/fitservice/images/3.jpg", placeholderColor = rgb255 0x16 0x1b 0x1f }
                 , img2 = { url = "/images/design-experience/fitservice/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img3 = { url = "/images/design-experience/fitservice/images/5.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img4 = { url = "/images/design-experience/fitservice/images/6.jpg", placeholderColor = rgb255 0x29 0x1d 0x1d }
@@ -140,7 +140,7 @@ data =
             , ImageRow4
                 { img1 = { url = "/images/design-experience/fitservice/images/9.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img2 = { url = "/images/design-experience/fitservice/images/10.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", placeholderColor = rgb255 0x16 0xb1 0x1f }
+                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", placeholderColor = rgb255 0x16 0x1b 0x1f }
                 , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 }
             , ImageRow2

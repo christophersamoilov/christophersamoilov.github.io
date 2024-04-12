@@ -16,6 +16,7 @@ import Shared
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..), WindowSize)
+import Layouts
 
 
 type alias Model =
@@ -34,6 +35,11 @@ page shared route =
         , view = view shared
         , subscriptions = always Sub.none
         }
+        |> Page.withLayout toLayout
+        
+toLayout : Model -> Layouts.Layout Msg
+toLayout _ =
+    Layouts.WebappLayout {}
 
 
 init : { designExperience : String } -> () -> ( Model, Effect Msg )

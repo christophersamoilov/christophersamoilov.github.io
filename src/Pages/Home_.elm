@@ -7,6 +7,7 @@ import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
+import Layouts
 import Element.Font as Font
 import Page exposing (Page)
 import Route exposing (Route)
@@ -34,6 +35,12 @@ page shared _ =
         , subscriptions = always Sub.none
         , view = always <| view shared
         }
+        |> Page.withLayout toLayout
+        
+toLayout : Model -> Layouts.Layout Msg
+toLayout _ =
+    Layouts.WebappLayout {}
+
 
 
 bioText : String
