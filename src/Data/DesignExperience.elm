@@ -184,18 +184,34 @@ data =
       , backgroundColor = rgb255 0x57 0xCB 0x93
       , textColor = BlackText
       , firstImages =
-            { img1 = { url = "/images/design-experience/rastsvetai/images/1.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-            , img2 = { url = "/images/design-experience/rastsvetai/images/2.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+            { img1 = { url = "/images/design-experience/rastsvetai/images/1.jpg", placeholderColor = rgb255 0xa7 0xa7 0xa7 }
+            , img2 = { url = "/images/design-experience/rastsvetai/images/2.jpg", placeholderColor = rgb255 0x1a 0x1a 0x1a }
             }
       , restImages =
             [ ImageRow4
                 { img1 = { url = "/images/design-experience/rastsvetai/images/3.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img2 = { url = "/images/design-experience/rastsvetai/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img3 = { url = "/images/design-experience/rastsvetai/images/5.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img4 = { url = "/images/design-experience/rastsvetai/images/6.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/rastsvetai/images/5.jpg", placeholderColor = rgb255 0x4d 0xc3 0x86 }
+                , img4 = { url = "/images/design-experience/rastsvetai/images/6.jpg", placeholderColor = rgb255 0x60 0x97 0xb6 }
                 }
             ]
-      , links = []
+      , links =
+            [ { url = "https://vimeo.com/437333861"
+              , label = "Rastsvetai Group 2019"
+              }
+            , { url = "https://vimeo.com/437333413"
+              , label = "BLACK FRIDAY RASTSVETAI"
+              }
+            , { url = "https://vimeo.com/437337589"
+              , label = "500/1500 STEPS"
+              }
+            , { url = "https://vimeo.com/446721307"
+              , label = "Rastsvetai on Marxa"
+              } 
+            , { url = "https://vimeo.com/449205141"
+              , label = "Rastsvetai on Gogolya"
+              }    
+            ]
       }
     , { slug = "2gis"
       , title = "2GIS"
@@ -247,11 +263,11 @@ data =
       , experienceType = PersonalProject
       , skills = "Art Direction, Graphic Design, Illustration"
       , description = "Experimental vision of names of selected chemical elements of Mendeleev's periodic table in Russian. There is no connection between the displaying of an element and its physical or chemical properties."
-      , thumbnail = { url = "/images/design-experience/inconspt/thumbnail.jpg", placeholderColor = rgb255 0xd 0xEC 0x13 }
+      , thumbnail = { url = "/images/design-experience/inconspt/thumbnail.jpg", placeholderColor = rgb255 0xf6 0xEC 0x10 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
       , firstImages =
-            { img1 = { url = "/images/design-experience/inconspt/images/1.jpg", placeholderColor = rgb255 0xd 0xEC 0x13 }
+            { img1 = { url = "/images/design-experience/inconspt/images/1.jpg", placeholderColor = rgb255 0xf6 0xEC 0x10 }
             , img2 = { url = "/images/design-experience/inconspt/images/2.jpg", placeholderColor = rgb255 0x00 0x00 0x00 }
             }
       , restImages =
@@ -273,15 +289,15 @@ data =
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
-            { img1 = { url = "/images/design-experience/vegyrain/images/1.jpg", placeholderColor = rgb255 0x1a 0x1a 0x1a }
-            , img2 = { url = "/images/design-experience/vegyrain/images/2.jpg", placeholderColor = rgb255 0x48 0x48 0x48 }
+            { img1 = { url = "/images/design-experience/vegyrain/images/1.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+            , img2 = { url = "/images/design-experience/vegyrain/images/2.jpg", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
             }
       , restImages =
             [ ImageRow4
-                { img1 = { url = "/images/design-experience/vegyrain/images/3.jpg", placeholderColor = rgb255 0xb0 0xb0 0xb0 }
-                , img2 = { url = "/images/design-experience/vegyrain/images/4.jpg", placeholderColor = rgb255 0xb0 0xb0 0xb0 }
+                { img1 = { url = "/images/design-experience/vegyrain/images/3.jpg", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
+                , img2 = { url = "/images/design-experience/vegyrain/images/4.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img3 = { url = "/images/design-experience/vegyrain/images/5.jpg", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img4 = { url = "/images/design-experience/vegyrain/images/6.jpg", placeholderColor = rgb255 0x48 0x48 0x48 }
+                , img4 = { url = "/images/design-experience/vegyrain/images/6.jpg", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
                 }
             ]
       , links = []
