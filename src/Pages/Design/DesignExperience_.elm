@@ -152,7 +152,7 @@ viewLink : Link -> Element msg
 viewLink x =
     newTabLink [ height (px 80), Background.color Color.blue1 ]
         { url = x.url
-        , label = text x.label
+        , label = paragraph [] [ preparedText x.label ]
         }
 
 
@@ -160,7 +160,7 @@ viewDesignExperience : Shared.Model -> DesignExperience -> Element msg
 viewDesignExperience shared dx =
     column []
         [ text dx.title
-        , text dx.skills
+        , paragraph [] [ preparedText dx.skills ]
         , renderFirstImagesAndDescription shared dx
         , column [ spacing 50 ] <| List.map (viewRow shared ) dx.restImages
         , column [ spacing 50 ] <| List.map viewLink dx.links
