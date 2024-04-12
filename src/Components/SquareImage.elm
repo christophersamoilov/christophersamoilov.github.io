@@ -6,8 +6,8 @@ import Element.Background as Background
 
 
 
-view : List (Attribute msg) -> { img : SquareImage, title : String, size : Length } -> Element msg
-view attrs { img, title, size } =
+view : List (Attribute msg) -> { img : SquareImage, size : Length } -> Element msg
+view attrs { img, size } =
     image
         ([ Background.color img.placeholderColor
          , width size
@@ -15,4 +15,4 @@ view attrs { img, title, size } =
          ]
             ++ attrs
         )
-        { src =  img.url , description = title }
+        { src =  img.url , description = img.description }

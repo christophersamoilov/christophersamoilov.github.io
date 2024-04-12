@@ -103,7 +103,7 @@ viewDesignExperienceItem dx =
             column []
                 [ text dx.title
                 , text <| DesignExperience.showDesignExperienceType dx.experienceType
-                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, title = dx.title, size = px 172 }
+                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail,  size = px 172 }
                 ]
     in
     link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }

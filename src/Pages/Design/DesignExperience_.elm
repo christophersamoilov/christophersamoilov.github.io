@@ -91,13 +91,12 @@ renderFirstImagesAndDescription shared dx =
             column [ spacing 50 ]
                 [ SquareImage.view []
                     { img = dx.firstImages.img1
-                    , title = dx.title
                     , size = px <| Window.contentWidth shared
                     }
                 , paragraph [] [ preparedText dx.description ]
                 , SquareImage.view []
                     { img = dx.firstImages.img2
-                    , title = dx.title
+
                     , size = px <| Window.contentWidth shared
                     }
                 ]
@@ -105,8 +104,8 @@ renderFirstImagesAndDescription shared dx =
         BigScreen ->
             column [ spacing 50 ]
                 [ row [ spacing 50 ]
-                    [ SquareImage.view [] { img = dx.firstImages.img1, title = dx.title, size = fill }
-                    , SquareImage.view [] { img = dx.firstImages.img2, title = dx.title, size = fill }
+                    [ SquareImage.view [] { img = dx.firstImages.img1,  size = fill }
+                    , SquareImage.view [] { img = dx.firstImages.img2,  size = fill }
                     ]
                 , paragraph [] [ preparedText dx.description ]
                 ]
@@ -119,32 +118,32 @@ viewRow shared ir =
             case shared.screenClass of
                 SmallScreen ->
                     column [ spacing 50 ]
-                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
                         ]
 
                 BigScreen ->
                     row [ spacing 50 ]
-                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = fill }
+                        [ SquareImage.view [] { img = r.img1, size = fill }
+                        , SquareImage.view [] { img = r.img2, size = fill }
                         ]
 
         ImageRow4 r ->
             case shared.screenClass of
                 SmallScreen ->
                     column [ spacing 50 ]
-                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img3, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img4, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img3, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img4, size = px <| Window.contentWidth shared }
                         ]
 
                 BigScreen ->
                     row [ spacing 50 ]
-                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] { img = r.img3, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] { img = r.img4, title = "Слепым здесь не место", size = fill }
+                        [ SquareImage.view [] { img = r.img1, size = fill }
+                        , SquareImage.view [] { img = r.img2, size = fill }
+                        , SquareImage.view [] { img = r.img3, size = fill }
+                        , SquareImage.view [] { img = r.img4, size = fill }
                         ]
 
 
