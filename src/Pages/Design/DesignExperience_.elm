@@ -2,12 +2,14 @@ module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Color
 import Components.SquareImage as SquareImage
+import Constants
 import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Images2, Link)
 import Dict exposing (Dict)
 import Effect exposing (Effect)
 import Element exposing (..)
 import Element.Background as Background
 import Element.Font as Font
+import Layouts
 import List.Extra
 import Page exposing (Page)
 import Route exposing (Route)
@@ -15,8 +17,7 @@ import Route.Path as Path
 import Shared
 import Typography exposing (preparedText)
 import View exposing (View)
-import Window exposing (ScreenClass(..), WindowSize)
-import Layouts
+import Window exposing (ScreenClass(..))
 
 
 type alias Model =
@@ -36,7 +37,8 @@ page shared route =
         , subscriptions = always Sub.none
         }
         |> Page.withLayout toLayout
-        
+
+
 toLayout : Model -> Layouts.Layout Msg
 toLayout _ =
     Layouts.WebappLayout {}
@@ -80,14 +82,6 @@ view shared model =
             }
 
 
-contentWidth : WindowSize -> Int -> Int
-contentWidth window allPaddings =
-    window.width - allPaddings
-
-
-currentAllPaddings : Int
-currentAllPaddings =
-    0
 
 
 renderFirstImagesAndDescription : Shared.Model -> DesignExperience -> Element msg
@@ -98,59 +92,59 @@ renderFirstImagesAndDescription shared dx =
                 [ SquareImage.view []
                     { img = dx.firstImages.img1
                     , title = dx.title
-                    , size = px <| contentWidth shared.window currentAllPaddings
+                    , size = px <| Window.contentWidth shared
                     }
                 , paragraph [] [ preparedText dx.description ]
                 , SquareImage.view []
                     { img = dx.firstImages.img2
                     , title = dx.title
-                    , size = px <| contentWidth shared.window currentAllPaddings
+                    , size = px <| Window.contentWidth shared
                     }
                 ]
 
         BigScreen ->
             column [ spacing 50 ]
                 [ row [ spacing 50 ]
-                    [ SquareImage.view [] {  img = dx.firstImages.img1, title = dx.title, size = fill }
-                    , SquareImage.view [] {  img = dx.firstImages.img2, title = dx.title, size = fill }
+                    [ SquareImage.view [] { img = dx.firstImages.img1, title = dx.title, size = fill }
+                    , SquareImage.view [] { img = dx.firstImages.img2, title = dx.title, size = fill }
                     ]
                 , paragraph [] [ preparedText dx.description ]
                 ]
 
 
-viewRow : Shared.Model ->  ImageRow -> Element msg
-viewRow shared  ir =
+viewRow : Shared.Model -> ImageRow -> Element msg
+viewRow shared ir =
     case ir of
         ImageRow2 r ->
             case shared.screenClass of
                 SmallScreen ->
                     column [ spacing 50 ]
-                        [ SquareImage.view [] {  img = r.img1, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
-                        , SquareImage.view [] {  img = r.img2, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
                         ]
 
                 BigScreen ->
                     row [ spacing 50 ]
-                        [ SquareImage.view [] {  img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] {  img = r.img2, title = "Слепым здесь не место", size = fill }
+                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = fill }
+                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = fill }
                         ]
 
         ImageRow4 r ->
             case shared.screenClass of
                 SmallScreen ->
                     column [ spacing 50 ]
-                        [ SquareImage.view [] {  img = r.img1, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
-                        , SquareImage.view [] {  img = r.img2, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
-                        , SquareImage.view [] {  img = r.img3, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
-                        , SquareImage.view [] {  img = r.img4, title = "Слепым здесь не место", size = px <| contentWidth shared.window currentAllPaddings }
+                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img3, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img4, title = "Слепым здесь не место", size = px <| Window.contentWidth shared }
                         ]
 
                 BigScreen ->
                     row [ spacing 50 ]
-                        [ SquareImage.view [] {  img = r.img1, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] {  img = r.img2, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] {  img = r.img3, title = "Слепым здесь не место", size = fill }
-                        , SquareImage.view [] {  img = r.img4, title = "Слепым здесь не место", size = fill }
+                        [ SquareImage.view [] { img = r.img1, title = "Слепым здесь не место", size = fill }
+                        , SquareImage.view [] { img = r.img2, title = "Слепым здесь не место", size = fill }
+                        , SquareImage.view [] { img = r.img3, title = "Слепым здесь не место", size = fill }
+                        , SquareImage.view [] { img = r.img4, title = "Слепым здесь не место", size = fill }
                         ]
 
 
@@ -168,6 +162,6 @@ viewDesignExperience shared dx =
         [ text dx.title
         , paragraph [] [ preparedText dx.skills ]
         , renderFirstImagesAndDescription shared dx
-        , column [ spacing 50 ] <| List.map (viewRow shared ) dx.restImages
+        , column [ spacing 50 ] <| List.map (viewRow shared) dx.restImages
         , column [ spacing 50 ] <| List.map viewLink dx.links
         ]

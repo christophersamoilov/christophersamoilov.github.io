@@ -1,11 +1,14 @@
 module Layouts.WebappLayout exposing (Model, Msg, Props, layout)
 
+import Constants
 import Effect exposing (Effect)
+import Element exposing (..)
 import Layout exposing (Layout)
 import Route exposing (Route)
 import Shared
+import TextStyle
 import View exposing (View)
-import Element exposing (..)
+import Window exposing (..)
 
 
 type alias Props =
@@ -13,11 +16,11 @@ type alias Props =
 
 
 layout : Props -> Shared.Model -> Route () -> Layout () Model Msg contentMsg
-layout _ _ _ =
+layout _ shared _ =
     Layout.new
         { init = init
         , update = update
-        , view = view
+        , view = view shared
         , subscriptions = subscriptions
         }
 
@@ -62,9 +65,34 @@ subscriptions _ =
 
 -- VIEW
 
-view : { toContentMsg : Msg -> contentMsg, content : View contentMsg, model : Model } -> View contentMsg
-view { content } =
+
+view : Shared.Model -> { toContentMsg : Msg -> contentMsg, content : View contentMsg, model : Model } -> View contentMsg
+view shared { content } =
     { title = content.title
     , attributes = content.attributes
-    , element = el [padding 32] content.element
+    , element =
+        let
+            outerElement =
+                column (width fill :: TextStyle.body)
+
+            innerElement =
+                column
+                    ((case shared.screenClass of
+                        SmallScreen ->
+                            [ width (fill |> minimum Constants.minimalSupportedMobileScreenWidth)
+                            , padding Constants.layoutPaddingSmallScreen
+                            ]
+
+                        BigScreen ->
+                            [ width (fill |> maximum Constants.contentWithPaddingsMaxWidthBigScreen)
+                            , padding Constants.layoutPaddingBigScreen
+                            ]
+                     )
+                        ++ [ centerX ]
+                    )
+        in
+        outerElement [ innerElement [ content.element ] ]
     }
+
+
+

@@ -8,18 +8,16 @@ minimalSupportedMobileScreenWidth =
 
 bigScreenStartsFrom : Int
 bigScreenStartsFrom =
-    1280
-
-
-{-| Includes minimal margins.
--}
-sectionContentMaxWidthSmallScreen : Int
-sectionContentMaxWidthSmallScreen =
     720
 
-
 {-| Includes minimal margins.
 -}
-sectionContentMaxWidthBigScreen : Int
-sectionContentMaxWidthBigScreen =
-    1440
+contentWithPaddingsMaxWidthBigScreen : Int
+contentWithPaddingsMaxWidthBigScreen =
+    1520
+
+layoutPaddingBigScreen : Int
+layoutPaddingBigScreen = 32
+
+layoutPaddingSmallScreen : Int
+layoutPaddingSmallScreen = 16

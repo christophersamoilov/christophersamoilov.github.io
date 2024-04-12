@@ -5,6 +5,7 @@ module Window exposing
     , initWindowSize
     , perScreen
     , windowSizeDecoder
+    , contentWidth
     )
 
 import Constants
@@ -53,3 +54,18 @@ windowSizeDecoder =
 initWindowSize : WindowSize
 initWindowSize =
     { width = 1024, height = 768 }
+
+
+contentWidth : {shared | window: WindowSize, screenClass: ScreenClass} -> Int
+contentWidth shared =
+    let
+        currentPaddingsSum =
+            case shared.screenClass of
+                SmallScreen ->
+                    Constants.layoutPaddingSmallScreen*2
+
+                BigScreen ->
+                    Constants.layoutPaddingBigScreen * 2
+    in
+    shared.window.width - currentPaddingsSum
+

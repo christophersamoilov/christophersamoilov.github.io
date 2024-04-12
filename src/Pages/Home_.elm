@@ -70,7 +70,7 @@ blueLink props =
 view : Shared.Model -> View msg
 view _ =
     { title = "Christopher Samoilov"
-    , attributes = [ Font.color Color.white, Background.color Color.grey1 ] ++ TextStyle.body
+    , attributes = [ Font.color Color.white, Background.color Color.grey1 ]
     , element =
         column [ spacing 32 ]
             [ el TextStyle.headline <| text "Christopher Samoilov"
