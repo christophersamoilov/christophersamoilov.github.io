@@ -210,7 +210,14 @@ data =
             { img1 = { url = "/images/design-experience/pamir/images/1.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             , img2 = { url = "/images/design-experience/pamir/images/2.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             }
-      , restImages = []
+      , restImages = [
+        ImageRow4
+                { img1 = { url = "/images/design-experience/pamir/images/3.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img2 = { url = "/images/design-experience/pamir/images/4.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/pamir/images/5.jpg", description = "", placeholderColor = rgb255 0xfe 0xb3 0x02 }
+                , img4 = { url = "/images/design-experience/pamir/images/6.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                }
+      ]
       , links = []
       }
     , { slug = "rastsvetai"
@@ -303,7 +310,14 @@ data =
             { img1 = { url = "/images/design-experience/sclux/images/1.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
             , img2 = { url = "/images/design-experience/sclux/images/2.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             }
-      , restImages = []
+      , restImages = [
+        ImageRow4
+                { img1 = { url = "/images/design-experience/sclux/images/3.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+                , img2 = { url = "/images/design-experience/sclux/images/4.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/sclux/images/5.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img4 = { url = "/images/design-experience/sclux/images/6.jpg", description = "", placeholderColor = rgb255 0xfb 0xe9 0x42 }
+                }
+      ]
       , links = []
       }
     , { slug = "inconspt"
@@ -323,7 +337,17 @@ data =
                 { img1 = { url = "/images/design-experience/inconspt/images/3.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
                 , img2 = { url = "/images/design-experience/inconspt/images/4.jpg", description = "", placeholderColor = rgb255 0x3A 0xA3 0x4D }
                 , img3 = { url = "/images/design-experience/inconspt/images/5.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
-                , img4 = { url = "/images/design-experience/inconspt/images/6.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img4 = { url = "/images/design-experience/inconspt/images/6.jpg", description = "", placeholderColor = rgb255 0x94 0x94 0x94 }
+                }
+                , ImageRow2
+                { img1 = { url = "/images/design-experience/inconspt/images/7.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00  }
+                , img2 = { url = "/images/design-experience/inconspt/images/8.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2  }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/inconspt/images/9.jpg", description = "", placeholderColor = rgb255 0xff 0xff 0xff  }
+                , img2 = { url = "/images/design-experience/inconspt/images/10.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img3 = { url = "/images/design-experience/inconspt/images/11.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                , img4 = { url = "/images/design-experience/inconspt/images/12.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2  }
                 }
             ]
       , links = []
