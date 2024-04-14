@@ -10,8 +10,10 @@ import Element.Background as Background
 import Element.Font as Font
 import Layouts
 import List.Extra
+import Components.Link as Link
 import Page exposing (Page)
 import Route exposing (Route)
+import TextStyle
 import Route.Path as Path
 import Shared
 import Typography exposing (preparedText)
@@ -71,7 +73,7 @@ view shared model =
                 [ Background.color x.backgroundColor
                 , Font.color <| DesignExperience.useTextColor x.textColor
                 ]
-            , element = viewDesignExperience shared x
+            , element = viewReady shared x
             }
 
         Nothing ->
@@ -149,32 +151,30 @@ viewRow shared ir =
                         ]
 
 
-viewLink : Link -> Element msg
-viewLink x =
-    newTabLink [ height (px 80), Background.color Color.blue1 ]
-        { url = x.url
-        , label = paragraph [] [ preparedText x.label ]
-        }
 
 
-viewDesignExperience : Shared.Model -> DesignExperience -> Element msg
-viewDesignExperience shared dx =
+myName : String
+myName = "Christopher Samoilov"
+
+viewReady : Shared.Model -> DesignExperience -> Element msg
+viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
             column [ spacing 32, width fill ]
-                [ text dx.title
-                , paragraph [] [ preparedText dx.skills ]
+                [paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
+                , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
+                , paragraph [alpha 0.7] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
                     , size = px <| Window.contentWidth shared
                     }
-                , paragraph [] [ preparedText dx.description ]
+                , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
                 , SquareImage.view []
                     { img = dx.firstImages.img2
                     , size = px <| Window.contentWidth shared
                     }
                 , column [ spacing 12, width fill ] <| List.map (viewRow shared) dx.restImages
-                , column [ spacing 12 ] <| List.map viewLink dx.links
+                , column [ spacing 12 ] <| List.map  (Link.view [] shared.screenClass) dx.links
                 ]
 
         BigScreen ->
@@ -183,13 +183,14 @@ viewDesignExperience shared dx =
                     32
             in
             column [ spacing 32, width fill ]
-                [ text dx.title
-                , paragraph [] [ preparedText dx.skills ]
+                [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
+                 , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
+                , paragraph [alpha 0.7] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
                     , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
                     ]
-                , paragraph [] [ preparedText dx.description ]
+                , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
                 , column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
-                , column [ spacing 32 ] <| List.map viewLink dx.links
+                , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass)  dx.links
                 ]

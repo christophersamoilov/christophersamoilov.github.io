@@ -11,12 +11,14 @@ import Element.Font as Font
 import Layouts
 import Page exposing (Page)
 import Route exposing (Route)
+import Components.Link as Link
 import Route.Path as Path
 import Shared
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
+import Data.DesignExperience exposing (Link)
 
 
 type alias Model =
@@ -59,29 +61,17 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 """
 
 
-blueLink : ScreenClass -> { text : String, url : String } -> Element msg
-blueLink screenClass props =
-    let
-        textStyle =
-            case screenClass of
-                SmallScreen ->
-                    TextStyle.subheaderSmallScreen
-
-                BigScreen ->
-                    TextStyle.subheaderBigScreen
-    in
-    newTabLink []
-        { url = props.url
-        , label = el (Font.color Color.blue1 :: textStyle) <| text props.text
-        }
 
 
-links : List { text : String, url : String }
+
+links : List Link
 links =
-    [ { text = "telegram", url = "https://t.me/christophersamoilov" }
-    , { text = "email", url = "mailto:christophersamoilov@gmail.com" }
+    [ { label = "telegram", url = "https://t.me/christophersamoilov" }
+    , { label = "email", url = "mailto:christophersamoilov@gmail.com" }
     ]
 
+myName : String
+myName = "Christopher Samoilov"
 
 view : Shared.Model -> View msg
 view shared =
@@ -91,16 +81,16 @@ view shared =
         case shared.screenClass of
             SmallScreen ->
                 column [ spacing 32 ]
-                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text "Christopher Samoilov" ]
+                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
                     , SquareImage.view []
                         { img =
                             { url = "/images/avatar.jpg"
-                            , description = "Christopher Samoilov"
+                            , description = myName
                             , placeholderColor = rgb255 0xFF 0xFF 0xFF
                             }
                         , size = px <| Window.contentWidth shared
                         }
-                    , column [ spacing 8 ] <| List.map (blueLink shared.screenClass) links
+                    , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) links
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
@@ -108,17 +98,17 @@ view shared =
 
             BigScreen ->
                 column [ spacing 20 ]
-                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text "Christopher Samoilov" ]
+                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
                     , row [ spacing 32 ]
                         [ SquareImage.view []
                             { img =
                                 { url = "/images/avatar.jpg"
-                                , description = "Christopher Samoilov"
+                                , description = myName
                                 , placeholderColor = rgb255 0xFF 0xFF 0xFF
                                 }
                             , size = px 340
                             }
-                        , column [ spacing 12, alignTop ] <| List.map (blueLink shared.screenClass) links
+                        , column [ spacing 12, alignTop ] <| List.map (Link.view [] shared.screenClass) links
                         ]
                     , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
                     , paragraph TextStyle.subheaderBigScreen <| [ preparedText skillText ]
