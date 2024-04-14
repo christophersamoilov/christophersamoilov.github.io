@@ -46,7 +46,7 @@ toLayout _ =
 bioText : String
 bioText =
     """
-I'm a graphic & web designer with experience working on projects for SANSIB, FIT SERVICE, Lukoil, Pamir, Rastsvetai Group & 2GIS. 
+I'm a graphic & web designer with experience working on projects for different companies. 
 My main goal — to make the world easier to understand by using clean & clear visuals. 
 I'm all about helping people communicate better & faster, making life a bit better along the way.
 """

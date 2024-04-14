@@ -126,7 +126,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborating on product analysis with the product manager & overseeing the work of other designers & providing mentorship."
+      , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xF4 0x7D 0x32
       , textColor = WhiteText
@@ -194,7 +194,7 @@ data =
       , title = "Prospect"
       , experienceType = WorkExperience
       , skills = "Graphic Design, UX & UI Design, Visual Identity"
-      , description = "UX analysis & a new concept of a website for a construction company."
+      , description = "Updating the visual identity & creating a new website concept for a construction company based on UX analysis."
       , thumbnail = { url = "/images/design-experience/prospect/thumbnail.jpg", description = "", placeholderColor = rgb255 0x1B 0x61 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -231,7 +231,7 @@ data =
       , title = "Rastsvetai Group"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Visual Identity, Web Design"
-      , description = "In 2019—2020 I created & developed a design system for the promotion of residential & commercial real estate of the group of companies on the web & offline. Created a brandbook of a group of companies & concepts of the appearance of individual residential real estate & residential complexes. Art directed & consulted in the creation of 3D visualizations of real estate objects & interior design of common areas. Actively participated in the development of planning solutions for residential real estate. Supervised the work of other designers & provided mentorship."
+      , description = "In 2019—2020 I created & developed a design system for the promotion of residential & commercial real estate of the group of companies on the web & offline. Created a brandbook of a group of companies & concepts of the appearance of individual residential real estate & residential complexes. I also updated the design of the logo & visual identity of the group of companies & created the logo & visual identity of a new brand — the Acacia construction company.  Art directed & consulted in the creation of 3D visualizations of real estate objects & interior design of common areas. Actively participated in the development of planning solutions for residential real estate. Supervised the work of other designers & provided mentorship."
       , thumbnail = { url = "/images/design-experience/rastsvetai/thumbnail.jpg", description = "", placeholderColor = rgb255 0x57 0xCB 0x93 }
       , backgroundColor = rgb255 0x57 0xCB 0x93
       , textColor = BlackText
