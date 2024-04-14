@@ -6,6 +6,7 @@ import Element.Font as Font
 import TextStyle
 import Color
 import Window exposing (ScreenClass(..))
+import Typography exposing (preparedText)
 
 
 
@@ -22,5 +23,5 @@ view attrs screenClass props =
     in
     newTabLink attrs
         { url = props.url
-        , label = el (Font.color Color.blue1 :: textStyle) <| text props.label
+        , label = paragraph (Font.color Color.blue1 :: textStyle) [ preparedText props.label]
         }
