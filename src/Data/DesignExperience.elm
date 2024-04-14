@@ -128,7 +128,7 @@ data =
       , skills = "Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
       , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
-      , backgroundColor = rgb255 0xF4 0x7D 0x32
+      , backgroundColor = rgb255 0xFF 0x8F 0x48
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
@@ -281,7 +281,7 @@ data =
       , skills = "Graphic Design, Illustration, Motion Design, Type Design, Visual Identity"
       , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
-      , backgroundColor = rgb255 0x05 0xA8 0x2E
+      , backgroundColor = rgb255 0x39 0xc7 0x01
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/2gis/images/1.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }

@@ -163,7 +163,7 @@ viewReady shared dx =
             column [ spacing 32, width fill ]
                 [paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
                 , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
-                , paragraph [alpha 0.7] [ preparedText dx.skills ]
+                , paragraph [alpha 0.5] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
                     , size = px <| Window.contentWidth shared
@@ -185,7 +185,7 @@ viewReady shared dx =
             column [ spacing 32, width fill ]
                 [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
                  , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
-                , paragraph [alpha 0.7] [ preparedText dx.skills ]
+                , paragraph [alpha 0.5] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
                     , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
