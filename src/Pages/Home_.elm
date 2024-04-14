@@ -74,11 +74,9 @@ view _ =
     , element =
         column [ spacing 32 ]
             [ el TextStyle.headline <| text "Christopher Samoilov"
-            , image
-                [ width (px 340)
-                , height (px 340)
-                ]
-                { src = "/images/avatar.jpg", description = "Christopher Samoilov" }
+             , SquareImage.view [ Border.rounded 16, clip ] { img = {url =  "/images/avatar.jpg", description = "Christopher Samoilov",
+              placeholderColor = (rgb255 0xFF 0xFF 0xFF)},  size = px 340 }
+    
             , blueLink { labelText = "telegram", url = "https://t.me/christophersamoilov" }
             , blueLink { labelText = "email", url = "mailto:christophersamoilov@gmail.com" }
             , paragraph TextStyle.subheader <| [ preparedText bioText ]
