@@ -59,54 +59,105 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 """
 
 
-blueLink : { labelText : String, url : String } -> Element msg
-blueLink props =
+blueLink : ScreenClass -> { text : String, url : String } -> Element msg
+blueLink screenClass props =
+    let
+        textStyle =
+            case screenClass of
+                SmallScreen ->
+                    TextStyle.subheaderSmallScreen
+
+                BigScreen ->
+                    TextStyle.subheaderBigScreen
+    in
     newTabLink []
         { url = props.url
-        , label = el (Font.color Color.blue1 :: TextStyle.subheader) <| text props.labelText
+        , label = el (Font.color Color.blue1 :: textStyle) <| text props.text
         }
 
 
+links : List { text : String, url : String }
+links =
+    [ { text = "telegram", url = "https://t.me/christophersamoilov" }
+    , { text = "email", url = "mailto:christophersamoilov@gmail.com" }
+    ]
+
+
 view : Shared.Model -> View msg
-view _ =
+view shared =
     { title = "Christopher Samoilov"
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ]
     , element =
-        column [ spacing 32 ]
-            [ el TextStyle.headline <| text "Christopher Samoilov"
-            , SquareImage.view []
-                { img =
-                    { url = "/images/avatar.jpg"
-                    , description = "Christopher Samoilov"
-                    , placeholderColor = rgb255 0xFF 0xFF 0xFF
-                    }
-                , size = px 340
-                }
-            , blueLink { labelText = "telegram", url = "https://t.me/christophersamoilov" }
-            , blueLink { labelText = "email", url = "mailto:christophersamoilov@gmail.com" }
-            , paragraph TextStyle.subheader <| [ preparedText bioText ]
-            , paragraph TextStyle.subheader <| [ preparedText skillText ]
-            , viewDesignExperiencesSection
-            ]
+        case shared.screenClass of
+            SmallScreen ->
+                column [ spacing 32 ]
+                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text "Christopher Samoilov" ]
+                    , SquareImage.view []
+                        { img =
+                            { url = "/images/avatar.jpg"
+                            , description = "Christopher Samoilov"
+                            , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                            }
+                        , size = px <| Window.contentWidth shared
+                        }
+                    , column [ spacing 8 ] <| List.map (blueLink shared.screenClass) links
+                    , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
+                    , paragraph TextStyle.subheaderSmallScreen <| [ preparedText skillText ]
+                    , viewDesignExperiencesSection shared
+                    ]
+
+            BigScreen ->
+                column [ spacing 20 ]
+                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text "Christopher Samoilov" ]
+                    , row [ spacing 32 ]
+                        [ SquareImage.view []
+                            { img =
+                                { url = "/images/avatar.jpg"
+                                , description = "Christopher Samoilov"
+                                , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                                }
+                            , size = px 340
+                            }
+                        , column [ spacing 12, alignTop ] <| List.map (blueLink shared.screenClass) links
+                        ]
+                    , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
+                    , paragraph TextStyle.subheaderBigScreen <| [ preparedText skillText ]
+                    , viewDesignExperiencesSection shared
+                    ]
     }
+    
+
+viewDesignExperiencesSection : Shared.Model -> Element msg
+viewDesignExperiencesSection shared =
+    case shared.screenClass of
+                SmallScreen ->
+                    column [ spacing 32 ] <| List.map (viewDesignExperienceItem shared) DesignExperience.data
+
+                BigScreen ->
+                    column [ spacing 32 , width fill] <| List.map (viewDesignExperienceItem shared) DesignExperience.data
+
+        
 
 
-viewDesignExperiencesSection : Element msg
-viewDesignExperiencesSection =
-    column [ spacing 32 ]
-        [ text ""
-        , column [ spacing 14 ] <| List.map viewDesignExperienceItem DesignExperience.data
-        ]
-
-
-viewDesignExperienceItem : DesignExperience -> Element msg
-viewDesignExperienceItem dx =
+viewDesignExperienceItem : Shared.Model -> DesignExperience -> Element msg
+viewDesignExperienceItem shared dx =
     let
         label =
-            column []
-                [ text dx.title
-                , text <| DesignExperience.showDesignExperienceType dx.experienceType
-                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, size = px 172 }
-                ]
+            case shared.screenClass of
+                SmallScreen ->
+                    column []
+                        [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
+                        , el [ alpha 0.7, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
+                        , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, size = px <| Window.contentWidth shared }
+                        ]
+
+                BigScreen ->
+                    row [ width fill ]
+                        [ column [ width fill, height fill, alignTop ]
+                            [ paragraph TextStyle.subheaderBigScreen [ preparedText dx.title ]
+                            , el [ alpha 0.7, alignBottom ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
+                            ]
+                        , SquareImage.view [ Border.rounded 16, clip, alignRight ] { img = dx.thumbnail, size = px 172 } 
+                        ]
     in
-    link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
+    link [width fill] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }

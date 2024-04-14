@@ -92,6 +92,7 @@ calculateImageSize2 shared spacing =
     in
     { width = fill, height = px (floor imageWidthFloat) }
 
+
 calculateImageSize4 : Shared.Model -> Int -> { width : Length, height : Length }
 calculateImageSize4 shared spacing =
     let
@@ -102,36 +103,6 @@ calculateImageSize4 shared spacing =
             (toFloat <| cw - spacing) / 4
     in
     { width = fill, height = px (floor imageWidthFloat) }
-
-
-renderFirstImagesAndDescription : Shared.Model -> DesignExperience -> Element msg
-renderFirstImagesAndDescription shared dx =
-    case shared.screenClass of
-        SmallScreen ->
-            column [ spacing 32 ,width fill]
-                [ SquareImage.view []
-                    { img = dx.firstImages.img1
-                    , size = px <| Window.contentWidth shared
-                    }
-                , paragraph [] [ preparedText dx.description ]
-                , SquareImage.view []
-                    { img = dx.firstImages.img2
-                    , size = px <| Window.contentWidth shared
-                    }
-                ]
-
-        BigScreen ->
-            let
-                rowSpacing =
-                    32
-            in
-            column [ spacing 32, width fill ]
-                [ row [ spacing rowSpacing, width fill ]
-                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
-                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
-                    ]
-                , paragraph [] [ preparedText dx.description ]
-                ]
 
 
 viewRow : Shared.Model -> ImageRow -> Element msg
@@ -188,10 +159,37 @@ viewLink x =
 
 viewDesignExperience : Shared.Model -> DesignExperience -> Element msg
 viewDesignExperience shared dx =
-    column [width fill]
-        [ text dx.title
-        , paragraph [] [ preparedText dx.skills ]
-        , renderFirstImagesAndDescription shared dx
-        , column [ spacing 50, width fill ] <| List.map (viewRow shared) dx.restImages
-        , column [ spacing 50 ] <| List.map viewLink dx.links
-        ]
+    case shared.screenClass of
+        SmallScreen ->
+            column [ spacing 32, width fill ]
+                [ text dx.title
+                , paragraph [] [ preparedText dx.skills ]
+                , SquareImage.view []
+                    { img = dx.firstImages.img1
+                    , size = px <| Window.contentWidth shared
+                    }
+                , paragraph [] [ preparedText dx.description ]
+                , SquareImage.view []
+                    { img = dx.firstImages.img2
+                    , size = px <| Window.contentWidth shared
+                    }
+                , column [ spacing 12, width fill ] <| List.map (viewRow shared) dx.restImages
+                , column [ spacing 12 ] <| List.map viewLink dx.links
+                ]
+
+        BigScreen ->
+            let
+                rowSpacing =
+                    32
+            in
+            column [ spacing 32, width fill ]
+                [ text dx.title
+                , paragraph [] [ preparedText dx.skills ]
+                , row [ spacing rowSpacing, width fill ]
+                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
+                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
+                    ]
+                , paragraph [] [ preparedText dx.description ]
+                , column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
+                , column [ spacing 32 ] <| List.map viewLink dx.links
+                ]
