@@ -1,4 +1,4 @@
-module Layouts.WebappLayout exposing (Model, Msg, Props, layout)
+port module Layouts.WebappLayout exposing (Model, Msg, Props, layout)
 
 import Constants
 import Effect exposing (Effect)
@@ -10,6 +10,8 @@ import TextStyle
 import View exposing (View)
 import Window exposing (..)
 
+
+port urlChanged : () -> Cmd msg
 
 type alias Props =
     {}
@@ -23,6 +25,7 @@ layout _ shared _ =
         , view = view shared
         , subscriptions = subscriptions
         }
+        |> Layout.withOnUrlChanged UrlChanged
 
 
 
@@ -45,16 +48,14 @@ init _ =
 
 
 type Msg
-    = ReplaceMe
+    = UrlChanged { from : Route (), to : Route () }
 
 
 update : Msg -> Model -> ( Model, Effect Msg )
 update msg model =
     case msg of
-        ReplaceMe ->
-            ( model
-            , Effect.none
-            )
+        UrlChanged _ ->
+           ( model, Effect.sendCmd <| urlChanged ())
 
 
 subscriptions : Model -> Sub Msg
@@ -93,6 +94,3 @@ view shared { content } =
         in
         outerElement [ innerElement [ content.element ] ]
     }
-
-
-

@@ -2,8 +2,7 @@ module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Color
 import Components.SquareImage as SquareImage
-import Constants
-import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Images2, Link)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Link)
 import Dict exposing (Dict)
 import Effect exposing (Effect)
 import Element exposing (..)
