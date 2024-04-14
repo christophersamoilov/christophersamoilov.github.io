@@ -7,8 +7,8 @@ import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
-import Layouts
 import Element.Font as Font
+import Layouts
 import Page exposing (Page)
 import Route exposing (Route)
 import Route.Path as Path
@@ -36,11 +36,11 @@ page shared _ =
         , view = always <| view shared
         }
         |> Page.withLayout toLayout
-        
+
+
 toLayout : Model -> Layouts.Layout Msg
 toLayout _ =
     Layouts.WebappLayout {}
-
 
 
 bioText : String
@@ -74,9 +74,14 @@ view _ =
     , element =
         column [ spacing 32 ]
             [ el TextStyle.headline <| text "Christopher Samoilov"
-             , SquareImage.view [ Border.rounded 16, clip ] { img = {url =  "/images/avatar.jpg", description = "Christopher Samoilov",
-              placeholderColor = (rgb255 0xFF 0xFF 0xFF)},  size = px 340 }
-    
+            , SquareImage.view []
+                { img =
+                    { url = "/images/avatar.jpg"
+                    , description = "Christopher Samoilov"
+                    , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                    }
+                , size = px 340
+                }
             , blueLink { labelText = "telegram", url = "https://t.me/christophersamoilov" }
             , blueLink { labelText = "email", url = "mailto:christophersamoilov@gmail.com" }
             , paragraph TextStyle.subheader <| [ preparedText bioText ]
@@ -101,7 +106,7 @@ viewDesignExperienceItem dx =
             column []
                 [ text dx.title
                 , text <| DesignExperience.showDesignExperienceType dx.experienceType
-                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail,  size = px 172 }
+                , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, size = px 172 }
                 ]
     in
     link [] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
