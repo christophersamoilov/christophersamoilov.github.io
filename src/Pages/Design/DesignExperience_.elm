@@ -174,14 +174,24 @@ viewReady shared dx =
                     , size = px <| Window.contentWidth shared
                     }
                 , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
-                , column [ spacing 12, width fill ] <|
-                    (SquareImage.view []
-                        { img = dx.firstImages.img2
-                        , size = px <| Window.contentWidth shared
-                        }
-                        :: List.map (viewRow shared) dx.restImages
-                    )
-                , column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
+                , case dx.restImages of
+                    _ :: _ ->
+                        column [ spacing 12, width fill ] <|
+                            (SquareImage.view []
+                                { img = dx.firstImages.img2
+                                , size = px <| Window.contentWidth shared
+                                }
+                                :: List.map (viewRow shared) dx.restImages
+                            )
+
+                    [] ->
+                        none
+                , case dx.links of
+                    _ :: _ ->
+                        column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
+
+                    [] ->
+                        none
 
                 -- footer
                 , column
@@ -205,9 +215,7 @@ viewReady shared dx =
                     32
             in
             column [ spacing 32, width fill ]
-                [
-
-                column [ spacing 14, width fill ]
+                [ column [ spacing 14, width fill ]
                     [ link
                         [ width fill
                         , Border.widthEach { bottom = 3, top = 0, left = 0, right = 0 }
@@ -219,15 +227,24 @@ viewReady shared dx =
                         }
                     , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
                     ]
-
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
                     , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
                     ]
                 , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
-                , column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
-                , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
+                , case dx.restImages of
+                    _ :: _ ->
+                        column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
+
+                    [] ->
+                        none
+                , case dx.links of
+                    _ :: _ ->
+                        column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
+
+                    [] ->
+                        none
 
                 -- footer
                 , column
