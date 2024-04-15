@@ -1,6 +1,7 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Color
+import Components.Link as Link
 import Components.SquareImage as SquareImage
 import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Link)
 import Dict exposing (Dict)
@@ -10,12 +11,11 @@ import Element.Background as Background
 import Element.Font as Font
 import Layouts
 import List.Extra
-import Components.Link as Link
 import Page exposing (Page)
 import Route exposing (Route)
-import TextStyle
 import Route.Path as Path
 import Shared
+import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
@@ -151,30 +151,32 @@ viewRow shared ir =
                         ]
 
 
-
-
 myName : String
-myName = "Christopher Samoilov"
+myName =
+    "Christopher Samoilov"
+
 
 viewReady : Shared.Model -> DesignExperience -> Element msg
 viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
             column [ spacing 28, width fill ]
-                [paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
+                [ paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
                 , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
-                , paragraph [alpha 0.6] [ preparedText dx.skills ]
+                , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
                     , size = px <| Window.contentWidth shared
                     }
                 , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
-                , SquareImage.view []
-                    { img = dx.firstImages.img2
-                    , size = px <| Window.contentWidth shared
-                    }
-                , column [ spacing 12, width fill ] <| List.map (viewRow shared) dx.restImages
-                , column [ spacing 12 ] <| List.map  (Link.view [] shared.screenClass) dx.links
+                , column [ spacing 12, width fill ] <|
+                    (SquareImage.view []
+                        { img = dx.firstImages.img2
+                        , size = px <| Window.contentWidth shared
+                        }
+                        :: List.map (viewRow shared) dx.restImages
+                    )
+                , column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
                 ]
 
         BigScreen ->
@@ -184,13 +186,13 @@ viewReady shared dx =
             in
             column [ spacing 32, width fill ]
                 [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
-                 , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
-                , paragraph [alpha 0.5] [ preparedText dx.skills ]
+                , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
+                , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
                     , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
                     ]
                 , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
                 , column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
-                , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass)  dx.links
+                , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
                 ]
