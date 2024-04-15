@@ -7,6 +7,7 @@ import Data.DesignExperience as DesignExperience exposing (DesignExperience, Ima
 import Effect exposing (Effect)
 import Element exposing (..)
 import Element.Background as Background
+import Element.Border as Border
 import Element.Font as Font
 import Layouts
 import List.Extra
@@ -155,11 +156,18 @@ viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
             column [ spacing 28, width fill ]
-                [ link []
-                    { url = Path.toString <| Path.Home_
-                    , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-                    }
-                , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
+                [ column [ spacing 12, width fill ]
+                    [ link
+                        [ width fill
+                        , Border.widthEach { bottom = 3, top = 0, left = 0, right = 0 }
+                        , paddingEach { bottom = 12, top = 0, left = 0, right = 0 }
+                        , Border.color <| DesignExperience.useTextColor dx.textColor
+                        ]
+                        { url = Path.toString <| Path.Home_
+                        , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+                        }
+                    , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
+                    ]
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
@@ -176,7 +184,13 @@ viewReady shared dx =
                 , column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
 
                 -- footer
-                , column [ spacing 8 ]
+                , column
+                    [ spacing 8
+                    , width fill
+                    , Border.widthEach { bottom = 0, top = 3, left = 0, right = 0 }
+                    , paddingEach { bottom = 0, top = 8, left = 0, right = 0 }
+                    , Border.color <| DesignExperience.useTextColor dx.textColor
+                    ]
                     (link []
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
@@ -191,11 +205,21 @@ viewReady shared dx =
                     32
             in
             column [ spacing 32, width fill ]
-                [ link []
-                    { url = Path.toString <| Path.Home_
-                    , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
-                    }
-                , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
+                [
+
+                column [ spacing 14, width fill ]
+                    [ link
+                        [ width fill
+                        , Border.widthEach { bottom = 3, top = 0, left = 0, right = 0 }
+                        , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
+                        , Border.color <| DesignExperience.useTextColor dx.textColor
+                        ]
+                        { url = Path.toString <| Path.Home_
+                        , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
+                        }
+                    , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
+                    ]
+
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
@@ -206,7 +230,13 @@ viewReady shared dx =
                 , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
 
                 -- footer
-                , column [ spacing 12 ]
+                , column
+                    [ spacing 12
+                    , width fill
+                    , Border.widthEach { bottom = 0, top = 3, left = 0, right = 0 }
+                    , paddingEach { bottom = 0, top = 12, left = 0, right = 0 }
+                    , Border.color <| DesignExperience.useTextColor dx.textColor
+                    ]
                     (link []
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
