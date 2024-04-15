@@ -70,7 +70,7 @@ view shared =
         case shared.screenClass of
             SmallScreen ->
                 column [ spacing 28 ]
-                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text Data.Contacts.myName ]
+                    [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
                     , SquareImage.view []
                         { img =
                             { url = "/images/avatar.jpg"

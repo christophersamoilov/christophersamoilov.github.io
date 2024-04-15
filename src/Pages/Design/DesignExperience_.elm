@@ -83,51 +83,6 @@ view shared model =
             }
 
 
-
-viewRow : Shared.Model -> ImageRow -> Element msg
-viewRow shared ir =
-    case ir of
-        ImageRow2 r ->
-            case shared.screenClass of
-                SmallScreen ->
-                    column [ spacing 12 ]
-                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
-                        ]
-
-                BigScreen ->
-                    let
-                        rowSpacing =
-                            32
-                    in
-                    row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 shared rowSpacing }
-                        ]
-
-        ImageRow4 r ->
-            case shared.screenClass of
-                SmallScreen ->
-                    column [ spacing 12 ]
-                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img3, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img4, size = px <| Window.contentWidth shared }
-                        ]
-
-                BigScreen ->
-                    let
-                        rowSpacing =
-                            32
-                    in
-                    row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 shared rowSpacing }
-                        ]
-
-
 viewReady : Shared.Model -> DesignExperience -> Element msg
 viewReady shared dx =
     case shared.screenClass of
@@ -238,3 +193,50 @@ viewReady shared dx =
                         :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
                     )
                 ]
+
+
+
+viewRow : Shared.Model -> ImageRow -> Element msg
+viewRow shared ir =
+    case ir of
+        ImageRow2 r ->
+            case shared.screenClass of
+                SmallScreen ->
+                    column [ spacing 12 ]
+                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
+                        ]
+
+                BigScreen ->
+                    let
+                        rowSpacing =
+                            32
+                    in
+                    row [ spacing rowSpacing, width fill ]
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 shared rowSpacing }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 shared rowSpacing }
+                        ]
+
+        ImageRow4 r ->
+            case shared.screenClass of
+                SmallScreen ->
+                    column [ spacing 12 ]
+                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img3, size = px <| Window.contentWidth shared }
+                        , SquareImage.view [] { img = r.img4, size = px <| Window.contentWidth shared }
+                        ]
+
+                BigScreen ->
+                    let
+                        rowSpacing =
+                            32
+                    in
+                    row [ spacing rowSpacing, width fill ]
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 shared rowSpacing }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 shared rowSpacing }
+                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 shared rowSpacing }
+                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 shared rowSpacing }
+                        ]
+
+
