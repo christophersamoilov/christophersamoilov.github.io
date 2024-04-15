@@ -1,25 +1,25 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
-import Components.SquareImage as SquareImage
+import Components.Link as Link
+import Components.SquareImage as SquareImage exposing (calculateImageSize2)
+import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
-import Data.Contacts
 import Element.Font as Font
 import Layouts
+import List.Extra
 import Page exposing (Page)
 import Route exposing (Route)
-import Components.Link as Link
 import Route.Path as Path
 import Shared
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
-
 
 
 type alias Model =
@@ -62,9 +62,6 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 """
 
 
-
-
-
 view : Shared.Model -> View msg
 view shared =
     { title = Data.Contacts.myName
@@ -89,57 +86,101 @@ view shared =
                     ]
 
             BigScreen ->
-                column [ spacing 32 ]
-                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
-                    , row [ spacing 32 ]
-                        [ SquareImage.view []
-                            { img =
-                                { url = "/images/avatar.jpg"
-                                , description = Data.Contacts.myName
-                                , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                column [ spacing 42, width fill ]
+                    [ column [ spacing 32, width fill ]
+                        [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
+                        , row [ spacing 32 ]
+                            [ SquareImage.view []
+                                { img =
+                                    { url = "/images/avatar.jpg"
+                                    , description = Data.Contacts.myName
+                                    , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                                    }
+                                , size = px 340
                                 }
-                            , size = px 340
-                            }
-                        , column [ spacing 12, alignTop ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                            , column [ spacing 12, alignTop ] <|
+                                List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                            ]
+                        , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
+                        , paragraph (alpha 0.6 :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
                         ]
-                    , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
-                    , paragraph (alpha 0.6 :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
                     ]
     }
-    
+
 
 viewDesignExperiencesSection : Shared.Model -> Element msg
 viewDesignExperiencesSection shared =
     case shared.screenClass of
-                SmallScreen ->
-                    column [ spacing 32 ] <| List.map (viewDesignExperienceItem shared) DesignExperience.data
+        SmallScreen ->
+            column [ spacing 32, width fill ] <| List.map (viewDesignExperienceSmallScreen shared) DesignExperience.data
 
-                BigScreen ->
-                    column [ spacing 32 , width fill] <| List.map (viewDesignExperienceItem shared) DesignExperience.data
+        BigScreen ->
+            let
+                groupedItems =
+                    List.Extra.greedyGroupsOf 2 DesignExperience.data
 
-        
+                rowSpacing =
+                    32
+
+                viewRow r =
+                    case r of
+                        [ x ] ->
+                            row [ spacing rowSpacing, width fill ]
+                                [ viewDesignExperienceBigScreen shared rowSpacing x
+                                , column [ width (fillPortion 1) ] []
+                                ]
+
+                        xs ->
+                            row [ spacing rowSpacing, width fill ] <|
+                                List.map (viewDesignExperienceBigScreen shared rowSpacing) xs
+            in
+            column [ spacing 42, width fill ] <| List.map viewRow groupedItems
 
 
-viewDesignExperienceItem : Shared.Model -> DesignExperience -> Element msg
-viewDesignExperienceItem shared dx =
+viewDesignExperienceSmallScreen : Shared.Model -> DesignExperience -> Element msg
+viewDesignExperienceSmallScreen shared dx =
     let
-        label =
-            case shared.screenClass of
-                SmallScreen ->
-                    column []
-                        [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
-                        , el [ alpha 0.6, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
-                        , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, size = px <| Window.contentWidth shared }
-                        ]
-
-                BigScreen ->
-                    row [ width fill ]
-                        [ column [ width fill, height fill, alignTop ]
-                            [ paragraph TextStyle.subheaderBigScreen [ preparedText dx.title ]
-                            , el [ alpha 0.6, alignBottom ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
-                            ]
-                        , SquareImage.view [ Border.rounded 16, clip, alignRight ] { img = dx.thumbnail, size = px 172 } 
-                        ]
+        url =
+            Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
     in
-    link [width fill] { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }, label = label }
+    link [ width fill ]
+        { url = url
+        , label =
+            column [ width fill ]
+                [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
+                , paragraph [ alpha 0.6, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ]
+                    [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
+                , SquareImage.view [ Border.rounded 16, clip ]
+                    { img = dx.thumbnail, size = px <| Window.contentWidth shared }
+                ]
+        }
+
+
+viewDesignExperienceBigScreen : Shared.Model -> Int -> DesignExperience -> Element msg
+viewDesignExperienceBigScreen shared rowSpacing dx =
+    let
+        url =
+            Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
+    in
+    column [ width (fillPortion 1), height fill ]
+        [ link
+            [ width fill
+            , height fill
+            , Border.rounded 16
+            , mouseOver
+                [ Background.color (rgb255 0 0 0)
+                , Border.shadow { offset = ( 0, 0 ), size = 16, blur = 0, color = rgb255 0 0 0 }
+                ]
+            ]
+            { url = url
+            , label =
+                column [ height fill, width fill, spacing 14 ]
+                    [ paragraph (alignTop :: TextStyle.subheaderBigScreen) [ preparedText dx.title ]
+                    , paragraph [ alignTop, alpha 0.6 ]
+                        [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
+                    , SquareImage.view_ [ Border.rounded 16, clip ]
+                        { img = dx.thumbnail, size = calculateImageSize2 shared rowSpacing }
+                    ]
+            }
+        ]

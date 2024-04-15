@@ -9,7 +9,7 @@ import Element exposing (..)
 
 black : Color
 black =
-    rgb255 0 0 0
+    rgb255 0x1a 0x1a 0x1a
 
 
 white : Color

@@ -281,7 +281,7 @@ data =
       , skills = "Graphic Design, Illustration, Motion Design, Type Design, Visual Identity"
       , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
-      , backgroundColor = rgb255 0x39 0xc7 0x01
+      , backgroundColor = rgb255 0x39 0xC7 0x01
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/2gis/images/1.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }
@@ -311,7 +311,7 @@ data =
       , skills = "Art Direction, Graphic Design, Motion Design, Visual Identity, Web Design"
       , description = "In 2016—2018 I assisted in establishment of SCLUX — a salon offering bathroom interior design, sanitary ware, and premium ceramic tiles. I also enhanced its brand identity online & offline via various tasks such as creation of a corporate website & longreads on Tilda, creation of materials for publications on social networks, video editing, creating animated graphics & creating a YouTube channel & designing printed products layouts."
       , thumbnail = { url = "/images/design-experience/sclux/thumbnail.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
-      , backgroundColor = rgb255 0x32 0x32 0x32
+      , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/sclux/images/1.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }

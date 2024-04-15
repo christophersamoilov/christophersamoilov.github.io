@@ -1,7 +1,7 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Components.Link as Link
-import Components.SquareImage as SquareImage
+import Components.SquareImage as SquareImage exposing (calculateImageSize2, calculateImageSize4)
 import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..))
 import Effect exposing (Effect)
@@ -83,29 +83,6 @@ view shared model =
             }
 
 
-calculateImageSize2 : Shared.Model -> Int -> { width : Length, height : Length }
-calculateImageSize2 shared spacing =
-    let
-        cw =
-            Window.contentWidth shared
-
-        imageWidthFloat =
-            (toFloat <| cw - spacing) / 2
-    in
-    { width = fill, height = px (floor imageWidthFloat) }
-
-
-calculateImageSize4 : Shared.Model -> Int -> { width : Length, height : Length }
-calculateImageSize4 shared spacing =
-    let
-        cw =
-            Window.contentWidth shared
-
-        imageWidthFloat =
-            (toFloat <| cw - spacing) / 4
-    in
-    { width = fill, height = px (floor imageWidthFloat) }
-
 
 viewRow : Shared.Model -> ImageRow -> Element msg
 viewRow shared ir =
@@ -123,7 +100,7 @@ viewRow shared ir =
                         rowSpacing =
                             32
                     in
-                    row [ spacing 32, width fill ]
+                    row [ spacing rowSpacing, width fill ]
                         [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 shared rowSpacing }
                         , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 shared rowSpacing }
                         ]
@@ -143,7 +120,7 @@ viewRow shared ir =
                         rowSpacing =
                             32
                     in
-                    row [ spacing 32, width fill ]
+                    row [ spacing rowSpacing, width fill ]
                         [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 shared rowSpacing }
                         , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 shared rowSpacing }
                         , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 shared rowSpacing }
