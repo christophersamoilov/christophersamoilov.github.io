@@ -155,7 +155,10 @@ viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
             column [ spacing 28, width fill ]
-                [ paragraph [] [ el TextStyle.headlineSmallScreen <| text Data.Contacts.myName ]
+                [ link []
+                    { url = Path.toString <| Path.Home_
+                    , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+                    }
                 , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , SquareImage.view []
@@ -188,7 +191,10 @@ viewReady shared dx =
                     32
             in
             column [ spacing 32, width fill ]
-                [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
+                [ link []
+                    { url = Path.toString <| Path.Home_
+                    , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
+                    }
                 , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
