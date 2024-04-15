@@ -84,7 +84,7 @@ view shared =
                         }
                     , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
-                    , paragraph TextStyle.subheaderSmallScreen <| [ preparedText skillText ]
+                    , paragraph (alpha 0.6 :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
                     ]
 
@@ -103,7 +103,7 @@ view shared =
                         , column [ spacing 12, alignTop ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
                         ]
                     , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
-                    , paragraph TextStyle.subheaderBigScreen <| [ preparedText skillText ]
+                    , paragraph (alpha 0.6 :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
                     ]
     }
