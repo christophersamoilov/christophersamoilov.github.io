@@ -7,6 +7,7 @@ import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
+import Data.Contacts
 import Element.Font as Font
 import Layouts
 import Page exposing (Page)
@@ -18,7 +19,7 @@ import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
-import Data.DesignExperience exposing (Link)
+
 
 
 type alias Model =
@@ -64,33 +65,24 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 
 
 
-links : List Link
-links =
-    [ { label = "telegram", url = "https://t.me/christophersamoilov" }
-    , { label = "email", url = "mailto:christophersamoilov@gmail.com" }
-    ]
-
-myName : String
-myName = "Christopher Samoilov"
-
 view : Shared.Model -> View msg
 view shared =
-    { title = "Christopher Samoilov"
+    { title = Data.Contacts.myName
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ]
     , element =
         case shared.screenClass of
             SmallScreen ->
                 column [ spacing 28 ]
-                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
+                    [ paragraph [] [ el TextStyle.headlineSmallScreen <| text Data.Contacts.myName ]
                     , SquareImage.view []
                         { img =
                             { url = "/images/avatar.jpg"
-                            , description = myName
+                            , description = Data.Contacts.myName
                             , placeholderColor = rgb255 0xFF 0xFF 0xFF
                             }
                         , size = px <| Window.contentWidth shared
                         }
-                    , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) links
+                    , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
@@ -98,17 +90,17 @@ view shared =
 
             BigScreen ->
                 column [ spacing 32 ]
-                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
+                    [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
                     , row [ spacing 32 ]
                         [ SquareImage.view []
                             { img =
                                 { url = "/images/avatar.jpg"
-                                , description = myName
+                                , description = Data.Contacts.myName
                                 , placeholderColor = rgb255 0xFF 0xFF 0xFF
                                 }
                             , size = px 340
                             }
-                        , column [ spacing 12, alignTop ] <| List.map (Link.view [] shared.screenClass) links
+                        , column [ spacing 12, alignTop ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
                         ]
                     , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
                     , paragraph TextStyle.subheaderBigScreen <| [ preparedText skillText ]

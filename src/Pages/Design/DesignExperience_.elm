@@ -1,10 +1,9 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
-import Color
 import Components.Link as Link
 import Components.SquareImage as SquareImage
-import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..), Link)
-import Dict exposing (Dict)
+import Data.Contacts
+import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..))
 import Effect exposing (Effect)
 import Element exposing (..)
 import Element.Background as Background
@@ -151,17 +150,12 @@ viewRow shared ir =
                         ]
 
 
-myName : String
-myName =
-    "Christopher Samoilov"
-
-
 viewReady : Shared.Model -> DesignExperience -> Element msg
 viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
             column [ spacing 28, width fill ]
-                [ paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
+                [ paragraph [] [ el TextStyle.headlineSmallScreen <| text Data.Contacts.myName ]
                 , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , SquareImage.view []
@@ -177,6 +171,15 @@ viewReady shared dx =
                         :: List.map (viewRow shared) dx.restImages
                     )
                 , column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
+
+                -- footer
+                , column [ spacing 8 ]
+                    (link []
+                        { url = Path.toString <| Path.Home_
+                        , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
+                        }
+                        :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                    )
                 ]
 
         BigScreen ->
@@ -185,7 +188,7 @@ viewReady shared dx =
                     32
             in
             column [ spacing 32, width fill ]
-                [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
+                [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
                 , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
                 , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
@@ -195,4 +198,13 @@ viewReady shared dx =
                 , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
                 , column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
                 , column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
+
+                -- footer
+                , column [ spacing 12 ]
+                    (link []
+                        { url = Path.toString <| Path.Home_
+                        , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
+                        }
+                        :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                    )
                 ]
