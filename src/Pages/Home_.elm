@@ -80,7 +80,7 @@ view shared =
     , element =
         case shared.screenClass of
             SmallScreen ->
-                column [ spacing 32 ]
+                column [ spacing 28 ]
                     [ paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
                     , SquareImage.view []
                         { img =
@@ -97,7 +97,7 @@ view shared =
                     ]
 
             BigScreen ->
-                column [ spacing 20 ]
+                column [ spacing 32 ]
                     [ paragraph [] [ el TextStyle.headlineBigScreen <| text myName ]
                     , row [ spacing 32 ]
                         [ SquareImage.view []
@@ -137,7 +137,7 @@ viewDesignExperienceItem shared dx =
                 SmallScreen ->
                     column []
                         [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
-                        , el [ alpha 0.5, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
+                        , el [ alpha 0.6, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
                         , SquareImage.view [ Border.rounded 16, clip ] { img = dx.thumbnail, size = px <| Window.contentWidth shared }
                         ]
 
@@ -145,7 +145,7 @@ viewDesignExperienceItem shared dx =
                     row [ width fill ]
                         [ column [ width fill, height fill, alignTop ]
                             [ paragraph TextStyle.subheaderBigScreen [ preparedText dx.title ]
-                            , el [ alpha 0.5, alignBottom ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
+                            , el [ alpha 0.6, alignBottom ] <| text <| DesignExperience.showDesignExperienceType dx.experienceType
                             ]
                         , SquareImage.view [ Border.rounded 16, clip, alignRight ] { img = dx.thumbnail, size = px 172 } 
                         ]

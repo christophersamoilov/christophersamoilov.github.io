@@ -113,7 +113,7 @@ viewRow shared ir =
         ImageRow2 r ->
             case shared.screenClass of
                 SmallScreen ->
-                    column [ spacing 32 ]
+                    column [ spacing 12 ]
                         [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
                         , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
                         ]
@@ -131,7 +131,7 @@ viewRow shared ir =
         ImageRow4 r ->
             case shared.screenClass of
                 SmallScreen ->
-                    column [ spacing 32 ]
+                    column [ spacing 12 ]
                         [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
                         , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
                         , SquareImage.view [] { img = r.img3, size = px <| Window.contentWidth shared }
@@ -160,10 +160,10 @@ viewReady : Shared.Model -> DesignExperience -> Element msg
 viewReady shared dx =
     case shared.screenClass of
         SmallScreen ->
-            column [ spacing 32, width fill ]
+            column [ spacing 28, width fill ]
                 [paragraph [] [ el TextStyle.headlineSmallScreen <| text myName ]
                 , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
-                , paragraph [alpha 0.5] [ preparedText dx.skills ]
+                , paragraph [alpha 0.6] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
                     , size = px <| Window.contentWidth shared
