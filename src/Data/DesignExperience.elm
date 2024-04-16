@@ -105,22 +105,22 @@ data =
       , restImages =
             [ ImageRow4
                 { img1 = { url = "/images/design-experience/sansib/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img2 = { url = "/images/design-experience/sansib/images/4.jpg", description = "", placeholderColor = rgb255 0x3A 0xA3 0x4D }
-                , img3 = { url = "/images/design-experience/sansib/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/sansib/images/6.jpg", description = "", placeholderColor = rgb255 0x94 0x94 0x94 }
+                , img2 = { url = "/images/design-experience/sansib/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/sansib/images/5.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
+                , img4 = { url = "/images/design-experience/sansib/images/6.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/sansib/images/7.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
-                , img2 = { url = "/images/design-experience/sansib/images/8.jpg", description = "", placeholderColor = rgb255 0xFa 0xac 0x16 }
+                { img1 = { url = "/images/design-experience/sansib/images/7.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/sansib/images/8.jpg", description = "", placeholderColor = rgb255 0xFA 0xAC 0x16 }
                 }
             , ImageRow4
-                { img1 = { url = "/images/design-experience/sansib/images/9.jpg", description = "", placeholderColor = rgb255 0xFc 0x16 0x5b }
+                { img1 = { url = "/images/design-experience/sansib/images/9.jpg", description = "", placeholderColor = rgb255 0xFC 0x16 0x5B }
                 , img2 = { url = "/images/design-experience/sansib/images/10.jpg", description = "", placeholderColor = rgb255 0xFF 0xFF 0xFF }
-                , img3 = { url = "/images/design-experience/sansib/images/11.jpg", description = "", placeholderColor = rgb255 0xc9 0xb4 0x9f }
-                , img4 = { url = "/images/design-experience/sansib/images/12.jpg", description = "", placeholderColor = rgb255 0xFc 0x16 0x5b }
+                , img3 = { url = "/images/design-experience/sansib/images/11.jpg", description = "", placeholderColor = rgb255 0xC9 0xB4 0x9F }
+                , img4 = { url = "/images/design-experience/sansib/images/12.jpg", description = "", placeholderColor = rgb255 0x4a 0xc5 0xd8 }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/sansib/images/13.jpg", description = "", placeholderColor = rgb255 0x14 0x1a 0x24 }
+                { img1 = { url = "/images/design-experience/sansib/images/13.jpg", description = "", placeholderColor = rgb255 0x14 0x1A 0x24 }
                 , img2 = { url = "/images/design-experience/sansib/images/14.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
                 }
             ]
@@ -146,7 +146,7 @@ data =
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
-            , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+            , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
             }
       , restImages =
             [ ImageRow4
@@ -162,12 +162,22 @@ data =
             , ImageRow4
                 { img1 = { url = "/images/design-experience/fitservice/images/9.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/fitservice/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
-                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", description = "", placeholderColor = rgb255 0xf2 0xc3 0x6b }
+                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", description = "", placeholderColor = rgb255 0xf2 0xc3 0x6b }
                 }
             , ImageRow2
                 { img1 = { url = "/images/design-experience/fitservice/images/13.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img2 = { url = "/images/design-experience/fitservice/images/14.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/14.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/15.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/16.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/17.jpg", description = "", placeholderColor = rgb255 0x8a 0x43 0x25 }
+                , img4 = { url = "/images/design-experience/fitservice/images/18.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/fitservice/images/19.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                , img2 = { url = "/images/design-experience/fitservice/images/20.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
       , links =
@@ -229,7 +239,7 @@ data =
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
       , description = "Helped create the marketing concept & brand for residential real estate in 2019—2020. Made a design system to promote residential & commercial properties online & offline. Worked with the development team to analyze the real estate web portal product & designed the web portal Tayga City for property search & sales."
-      , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x61 0xAc 0xe1 }
+      , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x61 0xAC 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
