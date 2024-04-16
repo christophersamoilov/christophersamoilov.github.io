@@ -15,6 +15,7 @@ import Page exposing (Page)
 import Route exposing (Route)
 import Route.Path as Path
 import Shared
+import Style
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
@@ -89,18 +90,20 @@ viewReady shared dx =
         SmallScreen ->
             column [ spacing 28, width fill ]
                 [ column [ spacing 12, width fill ]
-                    [ link
-                        [ width fill
-                        , Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
+                    [ column
+                        [ Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
                         , paddingEach { bottom = 12, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
+                        , width fill
                         ]
-                        { url = Path.toString <| Path.Home_
-                        , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-                        }
+                        [ link [ mouseOver [ alpha Style.hoverOpacity ] ]
+                            { url = Path.toString <| Path.Home_
+                            , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+                            }
+                        ]
                     , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
                     ]
-                , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
+                , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
                     , size = px <| Window.contentWidth shared
@@ -118,9 +121,9 @@ viewReady shared dx =
 
                     [] ->
                         SquareImage.view []
-                                { img = dx.firstImages.img2
-                                , size = px <| Window.contentWidth shared
-                                }
+                            { img = dx.firstImages.img2
+                            , size = px <| Window.contentWidth shared
+                            }
                 , case dx.links of
                     _ :: _ ->
                         column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
@@ -136,7 +139,7 @@ viewReady shared dx =
                     , paddingEach { bottom = 0, top = 8, left = 0, right = 0 }
                     , Border.color <| DesignExperience.useTextColor dx.textColor
                     ]
-                    (link []
+                    (link [ mouseOver [ alpha Style.hoverOpacity ] ]
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
                         }
@@ -151,18 +154,22 @@ viewReady shared dx =
             in
             column [ spacing 32, width fill ]
                 [ column [ spacing 14, width fill ]
-                    [ link
+                    [ column
                         [ width fill
                         , Border.widthEach { bottom = 4, top = 0, left = 0, right = 0 }
                         , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
                         ]
-                        { url = Path.toString <| Path.Home_
-                        , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
-                        }
+                        [ link
+                            [ mouseOver [ alpha Style.hoverOpacity ]
+                            ]
+                            { url = Path.toString <| Path.Home_
+                            , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
+                            }
+                        ]
                     , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
                     ]
-                , paragraph [ alpha 0.6 ] [ preparedText dx.skills ]
+                , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
                     [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
                     , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
@@ -189,14 +196,13 @@ viewReady shared dx =
                     , paddingEach { bottom = 0, top = 12, left = 0, right = 0 }
                     , Border.color <| DesignExperience.useTextColor dx.textColor
                     ]
-                    (link []
+                    (link [ mouseOver [ alpha Style.hoverOpacity ] ]
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
                         }
                         :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
                     )
                 ]
-
 
 
 viewRow : Shared.Model -> ImageRow -> Element msg
@@ -241,5 +247,3 @@ viewRow shared ir =
                         , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 shared rowSpacing }
                         , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 shared rowSpacing }
                         ]
-
-

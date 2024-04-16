@@ -4,6 +4,7 @@ import Color
 import Data.DesignExperience exposing (Link)
 import Element exposing (..)
 import Element.Font as Font
+import Style
 import TextStyle
 import Typography exposing (preparedText)
 import Window exposing (ScreenClass(..))
@@ -20,7 +21,7 @@ view attrs screenClass props =
                 BigScreen ->
                     TextStyle.subheaderBigScreen
     in
-    newTabLink attrs
+    newTabLink (mouseOver [ alpha Style.hoverOpacity ] :: attrs)
         { url = props.url
         , label = paragraph (Font.color Color.blue1 :: textStyle) [ preparedText props.label ]
         }

@@ -20,7 +20,7 @@ import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
 import Window exposing (ScreenClass(..))
-
+import Style
 
 type alias Model =
     ()
@@ -81,7 +81,7 @@ view shared =
                         }
                     , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
-                    , paragraph (alpha 0.6 :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
+                    , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
                     , viewDesignExperiencesSection shared
                     ]
 
@@ -102,7 +102,7 @@ view shared =
                                 List.map (Link.view [] shared.screenClass) Data.Contacts.links
                             ]
                         , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
-                        , paragraph (alpha 0.6 :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
+                        , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
                         ]
                     , viewDesignExperiencesSection shared
                     ]
@@ -149,7 +149,7 @@ viewDesignExperienceSmallScreen shared dx =
         , label =
             column [ width fill ]
                 [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
-                , paragraph [ alpha 0.6, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
+                , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                 , SquareImage.view [ Border.rounded 16, clip ]
                     { img = dx.thumbnail, size = px <| Window.contentWidth shared }
@@ -177,7 +177,7 @@ viewDesignExperienceBigScreen shared rowSpacing dx =
             , label =
                 column [ height fill, width fill, spacing 14 ]
                     [ paragraph (alignTop :: TextStyle.subheaderBigScreen) [ preparedText dx.title ]
-                    , paragraph [ alignTop, alpha 0.6 ]
+                    , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                     , SquareImage.view_ [ Border.rounded 16, clip ]
                         { img = dx.thumbnail, size = calculateImageSize2 shared rowSpacing }
