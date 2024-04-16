@@ -146,7 +146,7 @@ data =
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
-            , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+            , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
             }
       , restImages =
             [ ImageRow4
@@ -328,7 +328,7 @@ data =
       , title = "SCLUX"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Motion Design, Visual Identity, Web Design"
-      , description = "In 2016—2018 I assisted in establishment of SCLUX — a salon offering bathroom interior design, sanitary ware, and premium ceramic tiles. I also enhanced its brand identity online & offline via various tasks such as creation of a corporate website & longreads on Tilda, creation of materials for publications on social networks, video editing, creating animated graphics & creating a YouTube channel & designing printed products layouts."
+      , description = "In 2016—2018 I assisted in establishment of SCLUX (pronounced like ascaleuxe) — a salon offering bathroom interior design, sanitary ware, & premium ceramic tiles. I also enhanced its brand identity online & offline via various tasks such as creation of a corporate website & longreads on Tilda, creation of materials for publications on social networks, video editing, creating animated graphics with YouTube channel & designing printed products layouts."
       , thumbnail = { url = "/images/design-experience/sclux/thumbnail.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText

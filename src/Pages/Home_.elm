@@ -75,7 +75,7 @@ view shared =
                         { img =
                             { url = "/images/avatar.jpg"
                             , description = Data.Contacts.myName
-                            , placeholderColor = rgb255 0xFF 0xFF 0xFF
+                            , placeholderColor = rgb255 0x55 0x55 0x55
                             }
                         , size = px <| Window.contentWidth shared
                         }
