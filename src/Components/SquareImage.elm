@@ -39,6 +39,7 @@ calculateImageSize2 shared spacing =
 
         imageWidthFloat =
             (toFloat <| cw - spacing) / 2
+
     in
     { width = fill, height = px (floor imageWidthFloat) }
 
@@ -50,6 +51,6 @@ calculateImageSize4 shared spacing =
             Window.contentWidth shared
 
         imageWidthFloat =
-            (toFloat <| cw - spacing) / 4
+            (toFloat <| cw - spacing * 3) / 4
     in
     { width = fill, height = px (floor imageWidthFloat) }

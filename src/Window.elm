@@ -2,10 +2,10 @@ module Window exposing
     ( ScreenClass(..)
     , WindowSize
     , classifyScreen
+    , contentWidth
     , initWindowSize
     , perScreen
     , windowSizeDecoder
-    , contentWidth
     )
 
 import Constants
@@ -55,17 +55,13 @@ initWindowSize : WindowSize
 initWindowSize =
     { width = 1024, height = 768 }
 
-
-contentWidth : {shared | window: WindowSize, screenClass: ScreenClass} -> Int
+{-| Note: Attention! whenever you change layout width rules, you must rearrange this function! 
+-}
+contentWidth : { shared | window : WindowSize, screenClass : ScreenClass } -> Int
 contentWidth shared =
-    let
-        currentPaddingsSum =
-            case shared.screenClass of
-                SmallScreen ->
-                    Constants.layoutPaddingSmallScreen*2
+    case shared.screenClass of
+        SmallScreen ->
+            max Constants.minimalSupportedMobileScreenWidth shared.window.width - (Constants.layoutPaddingSmallScreen * 2)
 
-                BigScreen ->
-                    Constants.layoutPaddingBigScreen * 2
-    in
-    shared.window.width - currentPaddingsSum
-
+        BigScreen ->
+            min Constants.contentWithPaddingsMaxWidthBigScreen shared.window.width - (Constants.layoutPaddingBigScreen * 2)
