@@ -91,7 +91,7 @@ viewReady shared dx =
                 [ column [ spacing 12, width fill ]
                     [ link
                         [ width fill
-                        , Border.widthEach { bottom = 3, top = 0, left = 0, right = 0 }
+                        , Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
                         , paddingEach { bottom = 12, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
                         ]
@@ -129,7 +129,7 @@ viewReady shared dx =
                 , column
                     [ spacing 8
                     , width fill
-                    , Border.widthEach { bottom = 0, top = 3, left = 0, right = 0 }
+                    , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
                     , paddingEach { bottom = 0, top = 8, left = 0, right = 0 }
                     , Border.color <| DesignExperience.useTextColor dx.textColor
                     ]
@@ -150,7 +150,7 @@ viewReady shared dx =
                 [ column [ spacing 14, width fill ]
                     [ link
                         [ width fill
-                        , Border.widthEach { bottom = 3, top = 0, left = 0, right = 0 }
+                        , Border.widthEach { bottom = 4, top = 0, left = 0, right = 0 }
                         , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
                         ]
@@ -182,7 +182,7 @@ viewReady shared dx =
                 , column
                     [ spacing 12
                     , width fill
-                    , Border.widthEach { bottom = 0, top = 3, left = 0, right = 0 }
+                    , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
                     , paddingEach { bottom = 0, top = 12, left = 0, right = 0 }
                     , Border.color <| DesignExperience.useTextColor dx.textColor
                     ]

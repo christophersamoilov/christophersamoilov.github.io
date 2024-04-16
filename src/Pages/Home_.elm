@@ -149,7 +149,7 @@ viewDesignExperienceSmallScreen shared dx =
         , label =
             column [ width fill ]
                 [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
-                , paragraph [ alpha 0.6, paddingEach { top = 20, right = 0, bottom = 12, left = 0 } ]
+                , paragraph [ alpha 0.6, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                 , SquareImage.view [ Border.rounded 16, clip ]
                     { img = dx.thumbnail, size = px <| Window.contentWidth shared }
