@@ -117,7 +117,10 @@ viewReady shared dx =
                             )
 
                     [] ->
-                        none
+                        SquareImage.view []
+                                { img = dx.firstImages.img2
+                                , size = px <| Window.contentWidth shared
+                                }
                 , case dx.links of
                     _ :: _ ->
                         column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
