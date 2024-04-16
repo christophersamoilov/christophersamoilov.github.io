@@ -156,7 +156,7 @@ viewReady shared dx =
                 [ column [ spacing 14, width fill ]
                     [ column
                         [ width fill
-                        , Border.widthEach { bottom = 4, top = 0, left = 0, right = 0 }
+                        , Border.widthEach { bottom = 7, top = 0, left = 0, right = 0 }
                         , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
                         ]
@@ -183,7 +183,7 @@ viewReady shared dx =
                         none
                 , case dx.links of
                     _ :: _ ->
-                        column [ spacing 32 ] <| List.map (Link.view [] shared.screenClass) dx.links
+                        column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
 
                     [] ->
                         none

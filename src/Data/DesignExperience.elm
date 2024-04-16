@@ -105,9 +105,23 @@ data =
       , restImages =
             [ ImageRow4
                 { img1 = { url = "/images/design-experience/sansib/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img2 = { url = "/images/design-experience/sansib/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/sansib/images/4.jpg", description = "", placeholderColor = rgb255 0x3A 0xA3 0x4D }
                 , img3 = { url = "/images/design-experience/sansib/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/sansib/images/6.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/sansib/images/6.jpg", description = "", placeholderColor = rgb255 0x94 0x94 0x94 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/sansib/images/7.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img2 = { url = "/images/design-experience/sansib/images/8.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/sansib/images/9.jpg", description = "", placeholderColor = rgb255 0xFF 0xFF 0xFF }
+                , img2 = { url = "/images/design-experience/sansib/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/sansib/images/11.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/sansib/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/sansib/images/13.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img2 = { url = "/images/design-experience/sansib/images/14.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
       , links =
@@ -183,7 +197,12 @@ data =
             { img1 = { url = "/images/design-experience/lukoil/images/1.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
             , img2 = { url = "/images/design-experience/lukoil/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
             }
-      , restImages = []
+      , restImages =
+            [ ImageRow2
+                { img1 = { url = "/images/design-experience/lukoil/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/lukoil/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            ]
       , links =
             [ { url = "https://disk.yandex.ru/i/ynxLZdR_TlFgjg"
               , label = "Lukoil Booking Presentation"
