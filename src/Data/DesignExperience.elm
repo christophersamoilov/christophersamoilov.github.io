@@ -110,18 +110,18 @@ data =
                 , img4 = { url = "/images/design-experience/sansib/images/6.jpg", description = "", placeholderColor = rgb255 0x94 0x94 0x94 }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/sansib/images/7.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
-                , img2 = { url = "/images/design-experience/sansib/images/8.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                { img1 = { url = "/images/design-experience/sansib/images/7.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
+                , img2 = { url = "/images/design-experience/sansib/images/8.jpg", description = "", placeholderColor = rgb255 0xFa 0xac 0x16 }
                 }
             , ImageRow4
-                { img1 = { url = "/images/design-experience/sansib/images/9.jpg", description = "", placeholderColor = rgb255 0xFF 0xFF 0xFF }
-                , img2 = { url = "/images/design-experience/sansib/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img3 = { url = "/images/design-experience/sansib/images/11.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/sansib/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                { img1 = { url = "/images/design-experience/sansib/images/9.jpg", description = "", placeholderColor = rgb255 0xFc 0x16 0x5b }
+                , img2 = { url = "/images/design-experience/sansib/images/10.jpg", description = "", placeholderColor = rgb255 0xFF 0xFF 0xFF }
+                , img3 = { url = "/images/design-experience/sansib/images/11.jpg", description = "", placeholderColor = rgb255 0xc9 0xb4 0x9f }
+                , img4 = { url = "/images/design-experience/sansib/images/12.jpg", description = "", placeholderColor = rgb255 0xFc 0x16 0x5b }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/sansib/images/13.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
-                , img2 = { url = "/images/design-experience/sansib/images/14.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                { img1 = { url = "/images/design-experience/sansib/images/13.jpg", description = "", placeholderColor = rgb255 0x14 0x1a 0x24 }
+                , img2 = { url = "/images/design-experience/sansib/images/14.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
                 }
             ]
       , links =
@@ -213,7 +213,7 @@ data =
       , title = "Prospect"
       , experienceType = WorkExperience
       , skills = "Graphic Design, UX & UI Design, Visual Identity"
-      , description = "Updating the visual identity & creating a new website concept for a construction company based on UX analysis."
+      , description = "Updating the visual identity & creating a new website concept for a construction company based on analysis performed by the UX designer."
       , thumbnail = { url = "/images/design-experience/prospect/thumbnail.jpg", description = "", placeholderColor = rgb255 0x1B 0x61 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -229,7 +229,7 @@ data =
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
       , description = "Helped create the marketing concept & brand for residential real estate in 2019—2020. Made a design system to promote residential & commercial properties online & offline. Worked with the development team to analyze the real estate web portal product & designed the web portal Tayga City for property search & sales."
-      , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x75 0xA0 0xCB }
+      , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x61 0xAc 0xe1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
