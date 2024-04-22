@@ -17,7 +17,12 @@
         {
           "name": "viewport",
           "content": "width=device-width, initial-scale=1.0"
-        }
+        },
+        { "name": "description", "content": "Look ma I'm designer" },
+        { "property": "og:title", "content": "Christopher Samoilov" },
+        { "property": "og:image", "content": "https://christophersamoilov.github.io/images/preview.jpg" },
+        { "property": "og:description", "content": "Look ma I'm designer" },
+        { "property": "og:url", "content": "https://christophersamoilov.github.io" }
       ],
       "link": [
         {
