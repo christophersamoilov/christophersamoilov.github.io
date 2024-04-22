@@ -18,10 +18,10 @@
           "name": "viewport",
           "content": "width=device-width, initial-scale=1.0"
         },
-        { "name": "description", "content": "Look ma I'm designer" },
+        { "name": "description", "content": "Graphic & Web Designer" },
         { "property": "og:title", "content": "Christopher Samoilov" },
         { "property": "og:image", "content": "https://christophersamoilov.github.io/images/preview.jpg" },
-        { "property": "og:description", "content": "Look ma I'm designer" },
+        { "property": "og:description", "content": "Graphic & Web Designer" },
         { "property": "og:url", "content": "https://christophersamoilov.github.io" },
         { "name": "twitter:card", "content": "summary" },
         { "name": "twitter:site", "content": "@chrissamoilov" },
