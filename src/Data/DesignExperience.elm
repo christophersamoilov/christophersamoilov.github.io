@@ -90,7 +90,33 @@ type alias DesignExperience =
 
 data : List DesignExperience
 data =
-    [ { slug = "sansib"
+    [ { slug = "da"
+      , title = "Davai na Altai"
+      , experienceType = WorkExperience
+      , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure font & the spiritual world of Altai shamans."
+      , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xa5 0xcf 0xEb }
+      , backgroundColor = rgb255 0xFF 0xFF 0xFF
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/da/images/1.jpg", description = "", placeholderColor = rgb255 0xa5 0xcf 0xEb }
+            , img2 = { url = "/images/design-experience/da/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/da/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/da/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/da/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/da/images/6.jpg", description = "", placeholderColor = rgb255 0x77 0x8F 0xb8 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/da/images/7.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }
+                , img2 = { url = "/images/design-experience/da/images/8.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            ]
+      , links = []
+      }
+    , { slug = "sansib"
       , title = "SANSIB"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
@@ -233,7 +259,7 @@ data =
             }
       , restImages =
             [ ImageRow2
-                { img1 = { url = "/images/design-experience/prospect/images/3.jpg", description = "", placeholderColor = rgb255 0xf2 0xf2 0xf2 }
+                { img1 = { url = "/images/design-experience/prospect/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/prospect/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
