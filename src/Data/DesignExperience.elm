@@ -94,12 +94,12 @@ data =
       , title = "Davai na Altai"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
-      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure font & the spiritual world of Altai shamans."
-      , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xa5 0xcf 0xEb }
+      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure font & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
+      , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
-            { img1 = { url = "/images/design-experience/da/images/1.jpg", description = "", placeholderColor = rgb255 0xa5 0xcf 0xEb }
+            { img1 = { url = "/images/design-experience/da/images/1.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
             , img2 = { url = "/images/design-experience/da/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
             }
       , restImages =
@@ -107,7 +107,7 @@ data =
                 { img1 = { url = "/images/design-experience/da/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/da/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img3 = { url = "/images/design-experience/da/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/da/images/6.jpg", description = "", placeholderColor = rgb255 0x77 0x8F 0xb8 }
+                , img4 = { url = "/images/design-experience/da/images/6.jpg", description = "", placeholderColor = rgb255 0x77 0x8F 0xB8 }
                 }
             , ImageRow2
                 { img1 = { url = "/images/design-experience/da/images/7.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }
@@ -120,7 +120,7 @@ data =
       , title = "SANSIB"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Created the SANSIB brand & developed the visual identity for the group of companies. Also designed interfaces of the online store for the sale of sanitary ware."
+      , description = "Created the SANSIB brand & developed the visual identity for the group of companies. Also designed interfaces of the online store for the sale of sanitary ware. To form the new style, the clean and universal Manrope typeface & the laconic circle shape were chosen to reflect the simplicity & conciseness of the best design practices, which was especially important for the client, who also provides interior design services for bathrooms."
       , thumbnail = { url = "/images/design-experience/sansib/thumbnail.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -225,7 +225,7 @@ data =
       , title = "Lukoil"
       , experienceType = WorkExperience
       , skills = "UX & UI Design, Web Design"
-      , description = "As part of the startup, designed interfaces for projects for car service appointments & route search with cashback in the Lukoil mobile app."
+      , description = "As part of the startup, designed interfaces for projects for car service appointments & route search with cashback in the Lukoil mobile app in two different styles while finding new visual moves for design innovations in the app."
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", description = "", placeholderColor = rgb255 0xD2 0x23 0x3C }
       , backgroundColor = rgb255 0xD2 0x23 0x3C
       , textColor = WhiteText
@@ -404,7 +404,7 @@ data =
       , title = "Selected elements of inconsistent periodic table"
       , experienceType = PersonalProject
       , skills = "Art Direction, Graphic Design, Illustration"
-      , description = "Experimental vision of names of selected chemical elements of Mendeleev's periodic table in Russian. There is no connection between the displaying of an element and its physical or chemical properties."
+      , description = "Experimental vision of names of selected chemical elements of Mendeleev's periodic table in Russian. There is no connection between the displaying of an element and its physical or chemical properties. Main sources of inspiration were the art of True Norwegian Black Metal bands & graphic design works of Böfüms studio."
       , thumbnail = { url = "/images/design-experience/inconspt/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
@@ -456,7 +456,7 @@ data =
       , title = "Vegetable rain falls through leguminous evaporation"
       , experienceType = PersonalProject
       , skills = "Art Direction, Illustration"
-      , description = "Drawliner, drawing paper. Triptych 420×891. 2017—2020"
+      , description = "Drawliner, drawing paper. Triptych 420×891. 2017—2020. The entire work was a stream of pure creativity & has no specific references."
       , thumbnail = { url = "/images/design-experience/vegyrain/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -470,6 +470,10 @@ data =
                 , img2 = { url = "/images/design-experience/vegyrain/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img3 = { url = "/images/design-experience/vegyrain/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img4 = { url = "/images/design-experience/vegyrain/images/6.jpg", description = "", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/vegyrain/images/7.jpg", description = "", placeholderColor = rgb255 0xA7 0xA7 0xA7 }
+                , img2 = { url = "/images/design-experience/vegyrain/images/8.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
       , links = []
