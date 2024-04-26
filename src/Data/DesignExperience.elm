@@ -94,7 +94,7 @@ data =
       , title = "Davai na Altai"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
-      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure font & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
+      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure typeface & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
       , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
