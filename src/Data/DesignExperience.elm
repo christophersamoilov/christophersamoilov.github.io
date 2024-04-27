@@ -165,7 +165,7 @@ data =
     , { slug = "fitservice"
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
-      , skills = "Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
+      , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
       , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x8F 0x48
@@ -204,6 +204,12 @@ data =
             , ImageRow2
                 { img1 = { url = "/images/design-experience/fitservice/images/19.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
                 , img2 = { url = "/images/design-experience/fitservice/images/20.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/21.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/22.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/23.jpg", description = "", placeholderColor = rgb255 0x8A 0x43 0x25 }
+                , img4 = { url = "/images/design-experience/fitservice/images/24.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
       , links =
