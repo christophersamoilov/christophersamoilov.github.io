@@ -14,7 +14,7 @@ bigScreenStartsFrom =
 -}
 contentWithPaddingsMaxWidthBigScreen : Int
 contentWithPaddingsMaxWidthBigScreen =
-    1520
+    1512
 
 layoutPaddingBigScreen : Int
 layoutPaddingBigScreen = 32

@@ -208,7 +208,7 @@ data =
             , ImageRow4
                 { img1 = { url = "/images/design-experience/fitservice/images/21.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/fitservice/images/22.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img3 = { url = "/images/design-experience/fitservice/images/23.jpg", description = "", placeholderColor = rgb255 0x8A 0x43 0x25 }
+                , img3 = { url = "/images/design-experience/fitservice/images/23.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img4 = { url = "/images/design-experience/fitservice/images/24.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
