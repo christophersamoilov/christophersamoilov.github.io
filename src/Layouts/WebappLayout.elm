@@ -1,6 +1,5 @@
 port module Layouts.WebappLayout exposing (Model, Msg, Props, layout)
 
-import Constants
 import Effect exposing (Effect)
 import Element exposing (..)
 import Layout exposing (Layout)
@@ -8,7 +7,8 @@ import Route exposing (Route)
 import Shared
 import TextStyle
 import View exposing (View)
-import Window exposing (..)
+import GridLayout2
+
 
 
 port urlChanged : () -> Cmd msg
@@ -65,32 +65,27 @@ subscriptions _ =
 
 
 -- VIEW
-
-
 view : Shared.Model -> { toContentMsg : Msg -> contentMsg, content : View contentMsg, model : Model } -> View contentMsg
 view shared { content } =
     { title = content.title
-    , attributes = content.attributes
+    , attributes = GridLayout2.bodyAttributes shared.layout ++ TextStyle.body ++ content.attributes
     , element =
         let
+            outerElementAttrs : List (Attribute msg)
+            outerElementAttrs =
+                []
+
+            innerElementAttrs : List (Attribute msg)
+            innerElementAttrs =
+                []
+
+            outerElement : List (Element msg) -> Element msg
             outerElement =
-                column (width fill :: TextStyle.body)
+                column (GridLayout2.layoutOuterAttributes ++ outerElementAttrs)
 
+            innerElement : List (Element msg) -> Element msg
             innerElement =
-                column
-                    ((case shared.screenClass of
-                        SmallScreen ->
-                            [ width (fill |> minimum Constants.minimalSupportedMobileScreenWidth)
-                            , padding Constants.layoutPaddingSmallScreen
-                            ]
-
-                        BigScreen ->
-                            [ width (fill |> maximum Constants.contentWithPaddingsMaxWidthBigScreen)
-                            , padding Constants.layoutPaddingBigScreen
-                            ]
-                     )
-                        ++ [ centerX ]
-                    )
+                column (GridLayout2.layoutInnerAttributes shared.layout ++ innerElementAttrs)
         in
         outerElement [ innerElement [ content.element ] ]
     }

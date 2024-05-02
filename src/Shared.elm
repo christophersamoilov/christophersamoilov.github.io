@@ -18,21 +18,20 @@ import Json.Decode
 import Route exposing (Route)
 import Shared.Model
 import Shared.Msg
-import Window exposing (WindowSize)
-
+import GridLayout2
 
 
 -- FLAGS
 
 
 type alias Flags =
-    { windowSize : WindowSize }
+    {  windowSize : GridLayout2.WindowSize }
 
 
 decoder : Json.Decode.Decoder Flags
 decoder =
     Json.Decode.map Flags
-        (Json.Decode.field "windowSize" Window.windowSizeDecoder)
+        (Json.Decode.field "windowSize" GridLayout2.windowSizeDecoder)
 
 
 
@@ -54,11 +53,28 @@ init flagsResult _ =
             , Effect.none
             )
 
+layoutConfig : GridLayout2.LayoutConfig
+layoutConfig =
+    { mobileScreen =
+        { minGridWidth = 360
+        , maxGridWidth = Nothing
+        , columnCount = 12
+        , gutter = 16
+        , margin = GridLayout2.SameAsGutter
+        }
+    , desktopScreen =
+        { minGridWidth = 720
+        , maxGridWidth = Just 1512
+        , columnCount = 12
+        , gutter = 32
+        , margin = GridLayout2.SameAsGutter
+        }
+    }
+
 
 initReady : Flags -> ( Model, Effect Msg )
 initReady flags =
-    ( { window = flags.windowSize
-      , screenClass = Window.classifyScreen flags.windowSize
+    ( { layout = GridLayout2.init layoutConfig flags.windowSize
       }
     , Effect.none
     )
@@ -66,8 +82,7 @@ initReady flags =
 
 meaninglessDefaultModel : Shared.Model.Model
 meaninglessDefaultModel =
-    { window = Window.initWindowSize
-    , screenClass = Window.classifyScreen Window.initWindowSize
+    { layout = GridLayout2.init layoutConfig { width = 1024, height = 768 }
     }
 
 
@@ -85,11 +100,9 @@ update _ msg model =
         Shared.Msg.GotNewWindowSize newWindowSize ->
             gotNewWindowSize model newWindowSize
 
-
-gotNewWindowSize : Model -> WindowSize -> ( Model, Effect Msg )
+gotNewWindowSize : Model -> GridLayout2.WindowSize -> ( Model, Effect Msg )
 gotNewWindowSize model newWindowSize =
-    ( { model | window = newWindowSize, screenClass = Window.classifyScreen newWindowSize }, Effect.none )
-
+    ( { model | layout = GridLayout2.update model.layout newWindowSize }, Effect.none )
 
 
 -- SUBSCRIPTIONS

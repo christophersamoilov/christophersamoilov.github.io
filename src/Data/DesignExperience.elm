@@ -12,7 +12,7 @@ module Data.DesignExperience exposing
 
 import Color
 import Element exposing (Color, rgb255)
-import Window exposing (ScreenClass(..))
+import GridLayout2 exposing  (..)
 
 
 type ImageRow

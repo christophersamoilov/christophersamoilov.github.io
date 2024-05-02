@@ -19,7 +19,7 @@ import Shared
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
-import Window exposing (ScreenClass(..))
+import GridLayout2 exposing (..)
 import Style
 
 type alias Model =
@@ -63,12 +63,12 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 
 
 view : Shared.Model -> View msg
-view shared =
+view {layout} =
     { title = Data.Contacts.myName
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ]
     , element =
-        case shared.screenClass of
-            SmallScreen ->
+        case layout.screenClass of
+            MobileScreen ->
                 column [ spacing 28 ]
                     [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
                     , SquareImage.view []
@@ -77,15 +77,15 @@ view shared =
                             , description = Data.Contacts.myName
                             , placeholderColor = rgb255 0x55 0x55 0x55
                             }
-                        , size = px <| Window.contentWidth shared
+                        , size = px layout.grid.contentWidth
                         }
-                    , column [ spacing 8 ] <| List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                    , column [ spacing 8 ] <| List.map (Link.view [] layout) Data.Contacts.links
                     , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
                     , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
-                    , viewDesignExperiencesSection shared
+                    , viewDesignExperiencesSection layout
                     ]
 
-            BigScreen ->
+            DesktopScreen ->
                 column [ spacing 42, width fill ]
                     [ column [ spacing 32, width fill ]
                         [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
@@ -99,23 +99,23 @@ view shared =
                                 , size = px 340
                                 }
                             , column [ spacing 12, alignTop ] <|
-                                List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                                List.map (Link.view [] layout) Data.Contacts.links
                             ]
                         , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
                         , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
                         ]
-                    , viewDesignExperiencesSection shared
+                    , viewDesignExperiencesSection layout
                     ]
     }
 
 
-viewDesignExperiencesSection : Shared.Model -> Element msg
-viewDesignExperiencesSection shared =
-    case shared.screenClass of
-        SmallScreen ->
-            column [ spacing 32, width fill ] <| List.map (viewDesignExperienceSmallScreen shared) DesignExperience.data
+viewDesignExperiencesSection : LayoutState -> Element msg
+viewDesignExperiencesSection layout =
+    case layout.screenClass of
+        MobileScreen ->
+            column [ spacing 32, width fill ] <| List.map (viewDesignExperienceSmallScreen layout) DesignExperience.data
 
-        BigScreen ->
+        DesktopScreen ->
             let
                 groupedItems =
                     List.Extra.greedyGroupsOf 2 DesignExperience.data
@@ -127,19 +127,19 @@ viewDesignExperiencesSection shared =
                     case r of
                         [ x ] ->
                             row [ spacing rowSpacing, width fill ]
-                                [ viewDesignExperienceBigScreen shared rowSpacing x
+                                [ viewDesignExperienceBigScreen layout rowSpacing x
                                 , column [ width (fillPortion 1) ] []
                                 ]
 
                         xs ->
                             row [ spacing rowSpacing, width fill ] <|
-                                List.map (viewDesignExperienceBigScreen shared rowSpacing) xs
+                                List.map (viewDesignExperienceBigScreen layout rowSpacing) xs
             in
             column [ spacing 42, width fill ] <| List.map viewRow groupedItems
 
 
-viewDesignExperienceSmallScreen : Shared.Model -> DesignExperience -> Element msg
-viewDesignExperienceSmallScreen shared dx =
+viewDesignExperienceSmallScreen : LayoutState -> DesignExperience -> Element msg
+viewDesignExperienceSmallScreen layout dx =
     let
         url =
             Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
@@ -152,13 +152,13 @@ viewDesignExperienceSmallScreen shared dx =
                 , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                 , SquareImage.view [ Border.rounded 16, clip ]
-                    { img = dx.thumbnail, size = px <| Window.contentWidth shared }
+                    { img = dx.thumbnail, size = px layout.grid.contentWidth }
                 ]
         }
 
 
-viewDesignExperienceBigScreen : Shared.Model -> Int -> DesignExperience -> Element msg
-viewDesignExperienceBigScreen shared rowSpacing dx =
+viewDesignExperienceBigScreen : LayoutState -> Int -> DesignExperience -> Element msg
+viewDesignExperienceBigScreen layout rowSpacing dx =
     let
         url =
             Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
@@ -180,7 +180,7 @@ viewDesignExperienceBigScreen shared rowSpacing dx =
                     , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                     , SquareImage.view_ [ Border.rounded 16, clip ]
-                        { img = dx.thumbnail, size = calculateImageSize2 shared rowSpacing }
+                        { img = dx.thumbnail, size = calculateImageSize2 layout rowSpacing }
                     ]
             }
         ]

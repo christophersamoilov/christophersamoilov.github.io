@@ -3,9 +3,7 @@ module Components.SquareImage exposing (view, view_, calculateImageSize2, calcul
 import Data.DesignExperience exposing (SquareImage)
 import Element exposing (..)
 import Element.Background as Background
-import Window
-import Shared
-
+import GridLayout2 exposing  (..)
 
 
 view : List (Attribute msg) -> { img : SquareImage, size : Length } -> Element msg
@@ -31,26 +29,23 @@ view_ attrs { img, size } =
         { src =  img.url , description = img.description }
 
 
-calculateImageSize2 : Shared.Model -> Int -> { width : Length, height : Length }
-calculateImageSize2 shared spacing =
+calculateImageSize2 : LayoutState -> Int -> { width : Length, height : Length }
+calculateImageSize2 layout spacing =
     let
-        cw =
-            Window.contentWidth shared
 
         imageWidthFloat =
-            (toFloat <| cw - spacing) / 2
+            (toFloat <| layout.grid.contentWidth - spacing) / 2
 
     in
     { width = fill, height = px (floor imageWidthFloat) }
 
 
-calculateImageSize4 : Shared.Model -> Int -> { width : Length, height : Length }
-calculateImageSize4 shared spacing =
+calculateImageSize4 : LayoutState -> Int -> { width : Length, height : Length }
+calculateImageSize4 layout spacing =
     let
-        cw =
-            Window.contentWidth shared
+
 
         imageWidthFloat =
-            (toFloat <| cw - spacing * 3) / 4
+            (toFloat <| layout.grid.contentWidth - spacing * 3) / 4
     in
     { width = fill, height = px (floor imageWidthFloat) }

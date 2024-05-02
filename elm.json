@@ -13,7 +13,8 @@
             "elm/json": "1.1.3",
             "elm/url": "1.0.0",
             "elm-community/list-extra": "8.7.0",
-            "mdgriffith/elm-ui": "1.1.8"
+            "mdgriffith/elm-ui": "1.1.8",
+            "vladimirlogachev/elm-modular-grid": "1.0.0"
         },
         "indirect": {
             "elm/time": "1.0.0",

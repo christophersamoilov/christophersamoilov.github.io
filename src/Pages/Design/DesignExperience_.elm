@@ -19,7 +19,7 @@ import Style
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
-import Window exposing (ScreenClass(..))
+import GridLayout2 exposing (..)
 
 
 type alias Model =
@@ -74,7 +74,7 @@ view shared model =
                 [ Background.color x.backgroundColor
                 , Font.color <| DesignExperience.useTextColor x.textColor
                 ]
-            , element = viewReady shared x
+            , element = viewReady shared.layout x
             }
 
         Nothing ->
@@ -84,10 +84,10 @@ view shared model =
             }
 
 
-viewReady : Shared.Model -> DesignExperience -> Element msg
-viewReady shared dx =
-    case shared.screenClass of
-        SmallScreen ->
+viewReady : LayoutState -> DesignExperience -> Element msg
+viewReady layout dx =
+    case layout.screenClass of
+        MobileScreen ->
             column [ spacing 28, width fill ]
                 [ column [ spacing 12, width fill ]
                     [ column
@@ -106,7 +106,7 @@ viewReady shared dx =
                 , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
                 , SquareImage.view []
                     { img = dx.firstImages.img1
-                    , size = px <| Window.contentWidth shared
+                    , size = px layout.grid.contentWidth
                     }
                 , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
                 , case dx.restImages of
@@ -114,19 +114,19 @@ viewReady shared dx =
                         column [ spacing 12, width fill ] <|
                             (SquareImage.view []
                                 { img = dx.firstImages.img2
-                                , size = px <| Window.contentWidth shared
+                                , size = px layout.grid.contentWidth
                                 }
-                                :: List.map (viewRow shared) dx.restImages
+                                :: List.map (viewRow layout) dx.restImages
                             )
 
                     [] ->
                         SquareImage.view []
                             { img = dx.firstImages.img2
-                            , size = px <| Window.contentWidth shared
+                            , size = px layout.grid.contentWidth
                             }
                 , case dx.links of
                     _ :: _ ->
-                        column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
+                        column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
 
                     [] ->
                         none
@@ -143,11 +143,11 @@ viewReady shared dx =
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
                         }
-                        :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                        :: List.map (Link.view [] layout) Data.Contacts.links
                     )
                 ]
 
-        BigScreen ->
+        DesktopScreen ->
             let
                 rowSpacing =
                     32
@@ -171,19 +171,19 @@ viewReady shared dx =
                     ]
                 , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
                 , row [ spacing rowSpacing, width fill ]
-                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 shared rowSpacing }
-                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 shared rowSpacing }
+                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 layout rowSpacing }
+                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 layout rowSpacing }
                     ]
                 , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
                 , case dx.restImages of
                     _ :: _ ->
-                        column [ spacing 32, width fill ] <| List.map (viewRow shared) dx.restImages
+                        column [ spacing 32, width fill ] <| List.map (viewRow layout) dx.restImages
 
                     [] ->
                         none
                 , case dx.links of
                     _ :: _ ->
-                        column [ spacing 12 ] <| List.map (Link.view [] shared.screenClass) dx.links
+                        column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
 
                     [] ->
                         none
@@ -200,50 +200,50 @@ viewReady shared dx =
                         { url = Path.toString <| Path.Home_
                         , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
                         }
-                        :: List.map (Link.view [] shared.screenClass) Data.Contacts.links
+                        :: List.map (Link.view [] layout) Data.Contacts.links
                     )
                 ]
 
 
-viewRow : Shared.Model -> ImageRow -> Element msg
-viewRow shared ir =
+viewRow : LayoutState -> ImageRow -> Element msg
+viewRow layout ir =
     case ir of
         ImageRow2 r ->
-            case shared.screenClass of
-                SmallScreen ->
+            case layout.screenClass of
+                MobileScreen ->
                     column [ spacing 12 ]
-                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
+                        [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
+                        , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
                         ]
 
-                BigScreen ->
+                DesktopScreen ->
                     let
                         rowSpacing =
                             32
                     in
                     row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 shared rowSpacing }
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 layout rowSpacing }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 layout rowSpacing }
                         ]
 
         ImageRow4 r ->
-            case shared.screenClass of
-                SmallScreen ->
+            case layout.screenClass of
+                MobileScreen ->
                     column [ spacing 12 ]
-                        [ SquareImage.view [] { img = r.img1, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img2, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img3, size = px <| Window.contentWidth shared }
-                        , SquareImage.view [] { img = r.img4, size = px <| Window.contentWidth shared }
+                        [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
+                        , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
+                        , SquareImage.view [] { img = r.img3, size = px layout.grid.contentWidth }
+                        , SquareImage.view [] { img = r.img4, size = px layout.grid.contentWidth }
                         ]
 
-                BigScreen ->
+                DesktopScreen ->
                     let
                         rowSpacing =
                             32
                     in
                     row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 shared rowSpacing }
-                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 shared rowSpacing }
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 layout rowSpacing }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 layout rowSpacing }
+                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 layout rowSpacing }
+                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 layout rowSpacing }
                         ]

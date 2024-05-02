@@ -7,18 +7,18 @@ import Element.Font as Font
 import Style
 import TextStyle
 import Typography exposing (preparedText)
-import Window exposing (ScreenClass(..))
+import GridLayout2 exposing  (..)
 
 
-view : List (Attribute msg) -> ScreenClass -> Link -> Element msg
-view attrs screenClass props =
+view : List (Attribute msg) -> LayoutState -> Link -> Element msg
+view attrs layout props =
     let
         textStyle =
-            case screenClass of
-                SmallScreen ->
+            case layout.screenClass of
+                MobileScreen ->
                     TextStyle.subheaderSmallScreen
 
-                BigScreen ->
+                DesktopScreen ->
                     TextStyle.subheaderBigScreen
     in
     newTabLink (mouseOver [ alpha Style.hoverOpacity ] :: attrs)
