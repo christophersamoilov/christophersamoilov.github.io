@@ -89,10 +89,10 @@ viewReady layout dx =
     case layout.screenClass of
         MobileScreen ->
             column [ spacing 28, width fill ]
-                [ column [ spacing 12, width fill ]
+                [ column [ spacing layout.grid.gutter, width fill ]
                     [ column
                         [ Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
-                        , paddingEach { bottom = 12, top = 0, left = 0, right = 0 }
+                        , paddingEach { bottom = layout.grid.gutter, top = 0, left = 0, right = 0 }
                         , Border.color <| DesignExperience.useTextColor dx.textColor
                         , width fill
                         ]
@@ -111,7 +111,7 @@ viewReady layout dx =
                 , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
                 , case dx.restImages of
                     _ :: _ ->
-                        column [ spacing 12, width fill ] <|
+                        column [ spacing layout.grid.gutter, width fill ] <|
                             (SquareImage.view []
                                 { img = dx.firstImages.img2
                                 , size = px layout.grid.contentWidth
@@ -126,7 +126,7 @@ viewReady layout dx =
                             }
                 , case dx.links of
                     _ :: _ ->
-                        column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
+                        column [ spacing layout.grid.gutter ] <| List.map (Link.view [] layout) dx.links
 
                     [] ->
                         none
@@ -148,11 +148,7 @@ viewReady layout dx =
                 ]
 
         DesktopScreen ->
-            let
-                rowSpacing =
-                    32
-            in
-            column [ spacing 32, width fill ]
+            column [ spacing layout.grid.gutter, width fill ]
                 [ column [ spacing 14, width fill ]
                     [ column
                         [ width fill
@@ -170,14 +166,14 @@ viewReady layout dx =
                     , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
                     ]
                 , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-                , row [ spacing rowSpacing, width fill ]
-                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 layout rowSpacing }
-                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 layout rowSpacing }
+                , row [ spacing layout.grid.gutter, width fill ]
+                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 layout layout.grid.gutter }
+                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 layout layout.grid.gutter }
                     ]
                 , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
                 , case dx.restImages of
                     _ :: _ ->
-                        column [ spacing 32, width fill ] <| List.map (viewRow layout) dx.restImages
+                        column [ spacing layout.grid.gutter, width fill ] <| List.map (viewRow layout) dx.restImages
 
                     [] ->
                         none
@@ -211,25 +207,21 @@ viewRow layout ir =
         ImageRow2 r ->
             case layout.screenClass of
                 MobileScreen ->
-                    column [ spacing 12 ]
+                    column [ spacing layout.grid.gutter ]
                         [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
                         , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
                         ]
 
                 DesktopScreen ->
-                    let
-                        rowSpacing =
-                            32
-                    in
-                    row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 layout rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 layout rowSpacing }
+                    row [ spacing layout.grid.gutter, width fill ]
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 layout layout.grid.gutter }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 layout layout.grid.gutter }
                         ]
 
         ImageRow4 r ->
             case layout.screenClass of
                 MobileScreen ->
-                    column [ spacing 12 ]
+                    column [ spacing layout.grid.gutter ]
                         [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
                         , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
                         , SquareImage.view [] { img = r.img3, size = px layout.grid.contentWidth }
@@ -237,13 +229,10 @@ viewRow layout ir =
                         ]
 
                 DesktopScreen ->
-                    let
-                        rowSpacing =
-                            32
-                    in
-                    row [ spacing rowSpacing, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 layout rowSpacing }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 layout rowSpacing }
-                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 layout rowSpacing }
-                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 layout rowSpacing }
+         
+                    row [ spacing layout.grid.gutter, width fill ]
+                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 layout layout.grid.gutter }
+                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 layout layout.grid.gutter }
+                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 layout layout.grid.gutter }
+                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 layout layout.grid.gutter }
                         ]
