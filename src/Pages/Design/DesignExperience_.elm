@@ -108,27 +108,19 @@ viewMobile layout dx =
             , paragraph TextStyle.headlineSmallScreen [ text dx.title ]
             ]
         , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-        , SquareImage.view []
-            { img = dx.firstImages.img1
-            , size = px layout.grid.contentWidth
-            }
+        , SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img1
         , paragraph TextStyle.subheaderSmallScreen [ text dx.description ]
         , case dx.restImages of
             -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
             _ :: _ ->
                 column [ spacing layout.grid.gutter, width fill ] <|
-                    (SquareImage.view []
-                        { img = dx.firstImages.img2
-                        , size = px layout.grid.contentWidth
-                        }
+                    (
+                        SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
                         :: List.map (viewImageRowMobile layout) dx.restImages
                     )
 
-            [] ->
-                SquareImage.view []
-                    { img = dx.firstImages.img2
-                    , size = px layout.grid.contentWidth
-                    }
+            [] -> SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
+            
 
         -- Note: We avoid empty space (caused by spacing) if the project contains no links
         , case dx.links of
