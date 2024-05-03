@@ -1,4 +1,4 @@
-module Components.SquareImage exposing (calculateImageSize2, calculateImageSize4, view, view_, view__)
+module Components.SquareImage exposing (calculateImageSize2, calculateImageSize4, view, view_, view__, view___)
 
 import Data.DesignExperience exposing (SquareImage)
 import Element exposing (..)
@@ -34,9 +34,20 @@ view_ attrs { img, size } =
         { src = img.url, description = img.description }
 
 
--- TODO: just image.
+-- TODO: remove
 view__ : LayoutState -> List (Attribute msg) -> { img : SquareImage, widthSteps : Int, heightSteps : Int } -> Element msg
 view__ layout attrs { img, widthSteps, heightSteps } =
+    image
+        (Background.color img.placeholderColor
+            :: attrs
+            ++ widthOfGridSteps layout widthSteps
+            ++ heightOfGridSteps layout heightSteps
+        )
+        { src = img.url, description = img.description }
+
+-- TODO: not Square image, just Image
+view___ : LayoutState -> { widthSteps : Int, heightSteps : Int } -> List (Attribute msg) -> SquareImage -> Element msg
+view___ layout { widthSteps, heightSteps } attrs img =
     image
         (Background.color img.placeholderColor
             :: attrs

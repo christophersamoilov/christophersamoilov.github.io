@@ -1,7 +1,7 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Components.Link as Link
-import Components.SquareImage as SquareImage exposing (calculateImageSize2, calculateImageSize4)
+import Components.SquareImage as SquareImage
 import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..))
 import Effect exposing (Effect)
@@ -9,6 +9,7 @@ import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
+import GridLayout2 exposing (..)
 import Layouts
 import List.Extra
 import Page exposing (Page)
@@ -19,7 +20,6 @@ import Style
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
-import GridLayout2 exposing (..)
 
 
 type alias Model =
@@ -74,7 +74,13 @@ view shared model =
                 [ Background.color x.backgroundColor
                 , Font.color <| DesignExperience.useTextColor x.textColor
                 ]
-            , element = viewReady shared.layout x
+            , element =
+                case shared.layout.screenClass of
+                    MobileScreen ->
+                        viewMobile shared.layout x
+
+                    DesktopScreen ->
+                        viewDesktop shared.layout x
             }
 
         Nothing ->
@@ -84,155 +90,160 @@ view shared model =
             }
 
 
-viewReady : LayoutState -> DesignExperience -> Element msg
-viewReady layout dx =
-    case layout.screenClass of
-        MobileScreen ->
-            column [ spacing 28, width fill ]
-                [ column [ spacing layout.grid.gutter, width fill ]
-                    [ column
-                        [ Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
-                        , paddingEach { bottom = layout.grid.gutter, top = 0, left = 0, right = 0 }
-                        , Border.color <| DesignExperience.useTextColor dx.textColor
-                        , width fill
-                        ]
-                        [ link [ mouseOver [ alpha Style.hoverOpacity ] ]
-                            { url = Path.toString <| Path.Home_
-                            , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-                            }
-                        ]
-                    , paragraph [] [ el TextStyle.headlineSmallScreen <| text dx.title ]
-                    ]
-                , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-                , SquareImage.view []
-                    { img = dx.firstImages.img1
+viewMobile : LayoutState -> DesignExperience -> Element msg
+viewMobile layout dx =
+    column [ spacing 28, width fill ]
+        [ column [ spacing layout.grid.gutter, width fill ]
+            [ column
+                [ Border.widthEach { bottom = 5, top = 0, left = 0, right = 0 }
+                , paddingEach { bottom = layout.grid.gutter, top = 0, left = 0, right = 0 }
+                , Border.color <| DesignExperience.useTextColor dx.textColor
+                , width fill
+                ]
+                [ link [ mouseOver [ alpha Style.hoverOpacity ] ]
+                    { url = Path.toString <| Path.Home_
+                    , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+                    }
+                ]
+            , paragraph TextStyle.headlineSmallScreen [ text dx.title ]
+            ]
+        , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
+        , SquareImage.view []
+            { img = dx.firstImages.img1
+            , size = px layout.grid.contentWidth
+            }
+        , paragraph TextStyle.subheaderSmallScreen [ text dx.description ]
+        , case dx.restImages of
+            -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
+            _ :: _ ->
+                column [ spacing layout.grid.gutter, width fill ] <|
+                    (SquareImage.view []
+                        { img = dx.firstImages.img2
+                        , size = px layout.grid.contentWidth
+                        }
+                        :: List.map (viewImageRowMobile layout) dx.restImages
+                    )
+
+            [] ->
+                SquareImage.view []
+                    { img = dx.firstImages.img2
                     , size = px layout.grid.contentWidth
                     }
-                , paragraph [] [ el TextStyle.subheaderSmallScreen <| text dx.description ]
-                , case dx.restImages of
-                    _ :: _ ->
-                        column [ spacing layout.grid.gutter, width fill ] <|
-                            (SquareImage.view []
-                                { img = dx.firstImages.img2
-                                , size = px layout.grid.contentWidth
-                                }
-                                :: List.map (viewRow layout) dx.restImages
-                            )
 
-                    [] ->
-                        SquareImage.view []
-                            { img = dx.firstImages.img2
-                            , size = px layout.grid.contentWidth
-                            }
-                , case dx.links of
-                    _ :: _ ->
-                        column [ spacing layout.grid.gutter ] <| List.map (Link.view [] layout) dx.links
+        -- Note: We avoid empty space (caused by spacing) if the project contains no links
+        , case dx.links of
+            _ :: _ ->
+                column [ spacing layout.grid.gutter ] <| List.map (Link.view [] layout) dx.links
 
-                    [] ->
-                        none
-
-                -- footer
-                , column
-                    [ spacing 8
-                    , width fill
-                    , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
-                    , paddingEach { bottom = 0, top = 8, left = 0, right = 0 }
-                    , Border.color <| DesignExperience.useTextColor dx.textColor
-                    ]
-                    (link [ mouseOver [ alpha Style.hoverOpacity ] ]
-                        { url = Path.toString <| Path.Home_
-                        , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
-                        }
-                        :: List.map (Link.view [] layout) Data.Contacts.links
-                    )
-                ]
-
-        DesktopScreen ->
-            column [ spacing layout.grid.gutter, width fill ]
-                [ column [ spacing 14, width fill ]
-                    [ column
-                        [ width fill
-                        , Border.widthEach { bottom = 7, top = 0, left = 0, right = 0 }
-                        , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
-                        , Border.color <| DesignExperience.useTextColor dx.textColor
-                        ]
-                        [ link
-                            [ mouseOver [ alpha Style.hoverOpacity ]
-                            ]
-                            { url = Path.toString <| Path.Home_
-                            , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
-                            }
-                        ]
-                    , paragraph [] [ el TextStyle.headlineBigScreen <| text dx.title ]
-                    ]
-                , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-                , row [ spacing layout.grid.gutter, width fill ]
-                    [ SquareImage.view_ [] { img = dx.firstImages.img1, size = calculateImageSize2 layout layout.grid.gutter }
-                    , SquareImage.view_ [] { img = dx.firstImages.img2, size = calculateImageSize2 layout layout.grid.gutter }
-                    ]
-                , paragraph [] [ el TextStyle.subheaderBigScreen <| text dx.description ]
-                , case dx.restImages of
-                    _ :: _ ->
-                        column [ spacing layout.grid.gutter, width fill ] <| List.map (viewRow layout) dx.restImages
-
-                    [] ->
-                        none
-                , case dx.links of
-                    _ :: _ ->
-                        column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
-
-                    [] ->
-                        none
-
-                -- footer
-                , column
-                    [ spacing 12
-                    , width fill
-                    , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
-                    , paddingEach { bottom = 0, top = 12, left = 0, right = 0 }
-                    , Border.color <| DesignExperience.useTextColor dx.textColor
-                    ]
-                    (link [ mouseOver [ alpha Style.hoverOpacity ] ]
-                        { url = Path.toString <| Path.Home_
-                        , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
-                        }
-                        :: List.map (Link.view [] layout) Data.Contacts.links
-                    )
-                ]
+            [] ->
+                none
+        , viewFooterMobile layout dx
+        ]
 
 
-viewRow : LayoutState -> ImageRow -> Element msg
-viewRow layout ir =
+viewImageRowMobile : LayoutState -> ImageRow -> Element msg
+viewImageRowMobile layout ir =
+    let
+        viewAsColumn =
+            List.map (SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [])
+                >> column [ spacing layout.grid.gutter ]
+    in
     case ir of
         ImageRow2 r ->
-            case layout.screenClass of
-                MobileScreen ->
-                    column [ spacing layout.grid.gutter ]
-                        [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
-                        , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
-                        ]
-
-                DesktopScreen ->
-                    row [ spacing layout.grid.gutter, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize2 layout layout.grid.gutter }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize2 layout layout.grid.gutter }
-                        ]
+            viewAsColumn [ r.img1, r.img2 ]
 
         ImageRow4 r ->
-            case layout.screenClass of
-                MobileScreen ->
-                    column [ spacing layout.grid.gutter ]
-                        [ SquareImage.view [] { img = r.img1, size = px layout.grid.contentWidth }
-                        , SquareImage.view [] { img = r.img2, size = px layout.grid.contentWidth }
-                        , SquareImage.view [] { img = r.img3, size = px layout.grid.contentWidth }
-                        , SquareImage.view [] { img = r.img4, size = px layout.grid.contentWidth }
-                        ]
+            viewAsColumn [ r.img1, r.img2, r.img3, r.img4 ]
 
-                DesktopScreen ->
-         
-                    row [ spacing layout.grid.gutter, width fill ]
-                        [ SquareImage.view_ [] { img = r.img1, size = calculateImageSize4 layout layout.grid.gutter }
-                        , SquareImage.view_ [] { img = r.img2, size = calculateImageSize4 layout layout.grid.gutter }
-                        , SquareImage.view_ [] { img = r.img3, size = calculateImageSize4 layout layout.grid.gutter }
-                        , SquareImage.view_ [] { img = r.img4, size = calculateImageSize4 layout layout.grid.gutter }
-                        ]
+
+viewFooterMobile : LayoutState -> DesignExperience -> Element msg
+viewFooterMobile layout dx =
+    column
+        [ spacing 8
+        , width fill
+        , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
+        , paddingEach { bottom = 0, top = 8, left = 0, right = 0 }
+        , Border.color <| DesignExperience.useTextColor dx.textColor
+        ]
+        (link [ mouseOver [ alpha Style.hoverOpacity ] ]
+            { url = Path.toString <| Path.Home_
+            , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
+            }
+            :: List.map (Link.view [] layout) Data.Contacts.links
+        )
+
+
+viewDesktop : LayoutState -> DesignExperience -> Element msg
+viewDesktop layout dx =
+    column [ spacing layout.grid.gutter, width fill ]
+        [ column [ spacing 14, width fill ]
+            [ column
+                [ width fill
+                , Border.widthEach { bottom = 7, top = 0, left = 0, right = 0 }
+                , paddingEach { bottom = 14, top = 0, left = 0, right = 0 }
+                , Border.color <| DesignExperience.useTextColor dx.textColor
+                ]
+                [ link
+                    [ mouseOver [ alpha Style.hoverOpacity ]
+                    ]
+                    { url = Path.toString <| Path.Home_
+                    , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
+                    }
+                ]
+            , paragraph TextStyle.headlineBigScreen [ text dx.title ]
+            ]
+        , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
+        , [dx.firstImages.img1, dx.firstImages.img2]
+                |> List.map (SquareImage.view___ layout { widthSteps = 6, heightSteps = 6 } [])
+                |> gridRow layout
+                
+        , paragraph TextStyle.subheaderBigScreen  [ text dx.description ]
+
+        -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
+        , case dx.restImages of
+            _ :: _ ->
+                column [ spacing layout.grid.gutter, width fill ] <| List.map (viewImageRowDesktop layout) dx.restImages
+
+            [] ->
+                none
+
+        -- Note: We avoid empty space (caused by spacing) if the project contains no links
+        , case dx.links of
+            _ :: _ ->
+                column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
+
+            [] ->
+                none
+        , viewFooterDesktop layout dx
+        ]
+
+
+viewImageRowDesktop : LayoutState -> ImageRow -> Element msg
+viewImageRowDesktop layout ir =
+    case ir of
+        ImageRow2 r ->
+            [ r.img1, r.img2 ]
+                |> List.map (SquareImage.view___ layout { widthSteps = 6, heightSteps = 6 } [])
+                |> gridRow layout
+
+        ImageRow4 r ->
+            [ r.img1, r.img2, r.img3, r.img4 ]
+                |> List.map (SquareImage.view___ layout { widthSteps = 3, heightSteps = 3 } [])
+                |> gridRow layout
+
+
+viewFooterDesktop : LayoutState -> DesignExperience -> Element msg
+viewFooterDesktop layout dx =
+    column
+        [ spacing 12
+        , width fill
+        , Border.widthEach { bottom = 0, top = 4, left = 0, right = 0 }
+        , paddingEach { bottom = 0, top = 12, left = 0, right = 0 }
+        , Border.color <| DesignExperience.useTextColor dx.textColor
+        ]
+        (link [ mouseOver [ alpha Style.hoverOpacity ] ]
+            { url = Path.toString <| Path.Home_
+            , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
+            }
+            :: List.map (Link.view [] layout) Data.Contacts.links
+        )

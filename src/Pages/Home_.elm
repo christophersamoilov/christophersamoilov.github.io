@@ -144,8 +144,7 @@ viewDesignExperienceListDesktop layout =
                     gridRow layout [ viewDesignExperienceDesktop layout x , gridColumn layout {widthSteps = 6} [] []]
 
                 xs ->
-                    gridRow layout <|
-                        List.map (viewDesignExperienceDesktop layout) xs
+                    gridRow layout <| List.map (viewDesignExperienceDesktop layout) xs
     in
     column [ spacing 52, width fill ] <| List.map viewRow groupedItems
 
