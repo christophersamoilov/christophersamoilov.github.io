@@ -1,31 +1,18 @@
 module Data.DesignExperience exposing
     ( DesignExperience
     , DesignExperienceType
-    , ImageRow(..)
-    , Images2
-    , Link
-    , SquareImage
     , data
     , showDesignExperienceType
     , useTextColor
     )
 
+import Components.Image exposing (..)
 import Color
+import Components.Link exposing (Link)
 import Element exposing (Color, rgb255)
 import GridLayout2 exposing  (..)
 
 
-type ImageRow
-    = ImageRow2 Images2
-    | ImageRow4 Images4
-
-
-type alias Images2 =
-    { img1 : SquareImage, img2 : SquareImage }
-
-
-type alias Images4 =
-    { img1 : SquareImage, img2 : SquareImage, img3 : SquareImage, img4 : SquareImage }
 
 
 type TextColor
@@ -58,19 +45,6 @@ showDesignExperienceType x =
             "Personal project"
 
 
-{-| Note: We don't add size information (proportions) because all images will be square.
--}
-type alias SquareImage =
-    { url : String
-    , description : String
-    , placeholderColor : Color
-    }
-
-
-type alias Link =
-    { url : String
-    , label : String
-    }
 
 
 type alias DesignExperience =
@@ -79,7 +53,7 @@ type alias DesignExperience =
     , experienceType : DesignExperienceType
     , skills : String
     , description : String
-    , thumbnail : SquareImage
+    , thumbnail : Image
     , backgroundColor : Color
     , textColor : TextColor
     , firstImages : Images2

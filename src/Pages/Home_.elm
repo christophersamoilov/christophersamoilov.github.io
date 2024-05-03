@@ -2,9 +2,9 @@ module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
 import Components.Link as Link
-import Components.SquareImage as SquareImage
+import Components.Image as Image exposing (Image)
 import Data.Contacts
-import Data.DesignExperience as DesignExperience exposing (DesignExperience, SquareImage)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
@@ -63,7 +63,7 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 """
 
 
-avatarImage : SquareImage
+avatarImage : Image
 avatarImage =
     { url = "/images/avatar.jpg"
     , description = Data.Contacts.myName
@@ -89,7 +89,7 @@ viewMobile : LayoutState -> Element msg
 viewMobile layout =
     column [ spacing 28 ]
         [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-        , SquareImage.view___ layout {  widthSteps = 12, heightSteps = 12 } [] avatarImage
+        , Image.view layout {  widthSteps = 12, heightSteps = 12 } [] avatarImage
         , column [ spacing 8 ] <| List.map (Link.view [] layout) Data.Contacts.links
         , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
         , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
@@ -111,7 +111,7 @@ viewDesignExperienceMobile layout dx =
                 [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
                 , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                , SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 }  [ Border.rounded 16, clip ] dx.thumbnail
+                , Image.view layout { widthSteps = 12, heightSteps = 12 }  [ Border.rounded 16, clip ] dx.thumbnail
                 ]
         }
 
@@ -122,7 +122,7 @@ viewDesktop layout =
         [ column [ spacing layout.grid.gutter, width fill ]
             [ paragraph TextStyle.headlineBigScreen [ text Data.Contacts.myName ]
             , row [ spacing layout.grid.gutter ]
-                [ SquareImage.view___ layout {  widthSteps = 3, heightSteps = 3 } [] avatarImage
+                [ Image.view layout {  widthSteps = 3, heightSteps = 3 } [] avatarImage
                 , column [ spacing 12, alignTop ] <| List.map (Link.view [] layout) Data.Contacts.links
                 ]
             , paragraph TextStyle.subheaderBigScreen [ preparedText bioText ]
@@ -167,7 +167,7 @@ viewDesignExperienceDesktop layout  dx =
                     [ paragraph (alignTop :: TextStyle.subheaderBigScreen) [ preparedText dx.title ]
                     , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                    , SquareImage.view___ layout { widthSteps = 6, heightSteps = 6 }  [ Border.rounded 16, clip ] dx.thumbnail
+                    , Image.view layout { widthSteps = 6, heightSteps = 6 }  [ Border.rounded 16, clip ] dx.thumbnail
                     ]
             }
         ]

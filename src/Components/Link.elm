@@ -1,13 +1,20 @@
-module Components.Link exposing (view)
+module Components.Link exposing ( Link, view)
 
 import Color
-import Data.DesignExperience exposing (Link)
 import Element exposing (..)
 import Element.Font as Font
 import Style
 import TextStyle
 import Typography exposing (preparedText)
 import GridLayout2 exposing  (..)
+
+
+
+type alias Link =
+    { url : String
+    , label : String
+    }
+
 
 
 view : List (Attribute msg) -> LayoutState -> Link -> Element msg

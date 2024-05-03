@@ -1,6 +1,6 @@
 module Data.Contacts exposing (links, myName)
 
-import Data.DesignExperience exposing (Link)
+import Components.Link exposing (Link)
 
 
 links : List Link

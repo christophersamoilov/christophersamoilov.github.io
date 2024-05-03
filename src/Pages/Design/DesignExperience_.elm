@@ -1,9 +1,9 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
 import Components.Link as Link
-import Components.SquareImage as SquareImage
+import Components.Image as Image exposing (ImageRow(..))
 import Data.Contacts
-import Data.DesignExperience as DesignExperience exposing (DesignExperience, ImageRow(..))
+import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect exposing (Effect)
 import Element exposing (..)
 import Element.Background as Background
@@ -108,18 +108,18 @@ viewMobile layout dx =
             , paragraph TextStyle.headlineSmallScreen [ text dx.title ]
             ]
         , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-        , SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img1
+        , Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img1
         , paragraph TextStyle.subheaderSmallScreen [ text dx.description ]
         , case dx.restImages of
             -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
             _ :: _ ->
                 column [ spacing layout.grid.gutter, width fill ] <|
                     (
-                        SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
+                        Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
                         :: List.map (viewImageRowMobile layout) dx.restImages
                     )
 
-            [] -> SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
+            [] -> Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
             
 
         -- Note: We avoid empty space (caused by spacing) if the project contains no links
@@ -137,7 +137,7 @@ viewImageRowMobile : LayoutState -> ImageRow -> Element msg
 viewImageRowMobile layout ir =
     let
         viewAsColumn =
-            List.map (SquareImage.view___ layout { widthSteps = 12, heightSteps = 12 } [])
+            List.map (Image.view layout { widthSteps = 12, heightSteps = 12 } [])
                 >> column [ spacing layout.grid.gutter ]
     in
     case ir of
@@ -186,7 +186,7 @@ viewDesktop layout dx =
             ]
         , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
         , [dx.firstImages.img1, dx.firstImages.img2]
-                |> List.map (SquareImage.view___ layout { widthSteps = 6, heightSteps = 6 } [])
+                |> List.map (Image.view layout { widthSteps = 6, heightSteps = 6 } [])
                 |> gridRow layout
                 
         , paragraph TextStyle.subheaderBigScreen  [ text dx.description ]
@@ -215,12 +215,12 @@ viewImageRowDesktop layout ir =
     case ir of
         ImageRow2 r ->
             [ r.img1, r.img2 ]
-                |> List.map (SquareImage.view___ layout { widthSteps = 6, heightSteps = 6 } [])
+                |> List.map (Image.view layout { widthSteps = 6, heightSteps = 6 } [])
                 |> gridRow layout
 
         ImageRow4 r ->
             [ r.img1, r.img2, r.img3, r.img4 ]
-                |> List.map (SquareImage.view___ layout { widthSteps = 3, heightSteps = 3 } [])
+                |> List.map (Image.view layout { widthSteps = 3, heightSteps = 3 } [])
                 |> gridRow layout
 
 
