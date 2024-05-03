@@ -2,16 +2,16 @@ port module Layouts.WebappLayout exposing (Model, Msg, Props, layout)
 
 import Effect exposing (Effect)
 import Element exposing (..)
+import GridLayout2
 import Layout exposing (Layout)
 import Route exposing (Route)
 import Shared
 import TextStyle
 import View exposing (View)
-import GridLayout2
-
 
 
 port urlChanged : () -> Cmd msg
+
 
 type alias Props =
     {}
@@ -55,7 +55,7 @@ update : Msg -> Model -> ( Model, Effect Msg )
 update msg model =
     case msg of
         UrlChanged _ ->
-           ( model, Effect.sendCmd <| urlChanged ())
+            ( model, Effect.sendCmd <| urlChanged () )
 
 
 subscriptions : Model -> Sub Msg
@@ -65,6 +65,8 @@ subscriptions _ =
 
 
 -- VIEW
+
+
 view : Shared.Model -> { toContentMsg : Msg -> contentMsg, content : View contentMsg, model : Model } -> View contentMsg
 view shared { content } =
     { title = content.title
@@ -89,3 +91,6 @@ view shared { content } =
         in
         outerElement [ innerElement [ content.element ] ]
     }
+
+
+

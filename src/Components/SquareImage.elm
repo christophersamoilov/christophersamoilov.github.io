@@ -1,11 +1,13 @@
-module Components.SquareImage exposing (view, view_, calculateImageSize2, calculateImageSize4)
+module Components.SquareImage exposing (calculateImageSize2, calculateImageSize4, view, view_, view__)
 
 import Data.DesignExperience exposing (SquareImage)
 import Element exposing (..)
 import Element.Background as Background
-import GridLayout2 exposing  (..)
+import GridLayout2 exposing (..)
 
 
+{-| TODO: remove
+-}
 view : List (Attribute msg) -> { img : SquareImage, size : Length } -> Element msg
 view attrs { img, size } =
     image
@@ -15,9 +17,12 @@ view attrs { img, size } =
          ]
             ++ attrs
         )
-        { src =  img.url , description = img.description }
+        { src = img.url, description = img.description }
 
-view_ : List (Attribute msg) -> { img : SquareImage, size : {width: Length, height: Length} } -> Element msg
+
+{-| TODO: remove
+-}
+view_ : List (Attribute msg) -> { img : SquareImage, size : { width : Length, height : Length } } -> Element msg
 view_ attrs { img, size } =
     image
         ([ Background.color img.placeholderColor
@@ -26,16 +31,26 @@ view_ attrs { img, size } =
          ]
             ++ attrs
         )
-        { src =  img.url , description = img.description }
+        { src = img.url, description = img.description }
+
+
+-- TODO: just image.
+view__ : LayoutState -> List (Attribute msg) -> { img : SquareImage, widthSteps : Int, heightSteps : Int } -> Element msg
+view__ layout attrs { img, widthSteps, heightSteps } =
+    image
+        (Background.color img.placeholderColor
+            :: attrs
+            ++ widthOfGridSteps layout widthSteps
+            ++ heightOfGridSteps layout heightSteps
+        )
+        { src = img.url, description = img.description }
 
 
 calculateImageSize2 : LayoutState -> Int -> { width : Length, height : Length }
 calculateImageSize2 layout spacing =
     let
-
         imageWidthFloat =
             (toFloat <| layout.grid.contentWidth - spacing) / 2
-
     in
     { width = fill, height = px (floor imageWidthFloat) }
 
@@ -43,8 +58,6 @@ calculateImageSize2 layout spacing =
 calculateImageSize4 : LayoutState -> Int -> { width : Length, height : Length }
 calculateImageSize4 layout spacing =
     let
-
-
         imageWidthFloat =
             (toFloat <| layout.grid.contentWidth - spacing * 3) / 4
     in

@@ -4,23 +4,24 @@ import Color
 import Components.Link as Link
 import Components.SquareImage as SquareImage exposing (calculateImageSize2)
 import Data.Contacts
-import Data.DesignExperience as DesignExperience exposing (DesignExperience)
+import Data.DesignExperience as DesignExperience exposing (DesignExperience, SquareImage)
 import Effect
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
+import GridLayout2 exposing (..)
 import Layouts
 import List.Extra
 import Page exposing (Page)
 import Route exposing (Route)
 import Route.Path as Path
 import Shared
+import Style
 import TextStyle
 import Typography exposing (preparedText)
 import View exposing (View)
-import GridLayout2 exposing (..)
-import Style
+
 
 type alias Model =
     ()
@@ -62,99 +63,94 @@ Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type
 """
 
 
+avatarImage : SquareImage
+avatarImage =
+    { url = "/images/avatar.jpg"
+    , description = Data.Contacts.myName
+    , placeholderColor = rgb255 0x55 0x55 0x55
+    }
+
+
 view : Shared.Model -> View msg
-view {layout} =
+view { layout } =
     { title = Data.Contacts.myName
     , attributes = [ Font.color Color.white, Background.color Color.grey1 ]
     , element =
         case layout.screenClass of
             MobileScreen ->
-                column [ spacing 28 ]
-                    [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-                    , SquareImage.view []
-                        { img =
-                            { url = "/images/avatar.jpg"
-                            , description = Data.Contacts.myName
-                            , placeholderColor = rgb255 0x55 0x55 0x55
-                            }
-                        , size = px layout.grid.contentWidth
-                        }
-                    , column [ spacing 8 ] <| List.map (Link.view [] layout) Data.Contacts.links
-                    , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
-                    , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
-                    , viewDesignExperiencesSection layout
-                    ]
+                viewMobile layout
 
             DesktopScreen ->
-                column [ spacing 42, width fill ]
-                    [ column [ spacing 32, width fill ]
-                        [ paragraph [] [ el TextStyle.headlineBigScreen <| text Data.Contacts.myName ]
-                        , row [ spacing 32 ]
-                            [ SquareImage.view []
-                                { img =
-                                    { url = "/images/avatar.jpg"
-                                    , description = Data.Contacts.myName
-                                    , placeholderColor = rgb255 0x55 0x55 0x55
-                                    }
-                                , size = px 340
-                                }
-                            , column [ spacing 12, alignTop ] <|
-                                List.map (Link.view [] layout) Data.Contacts.links
-                            ]
-                        , paragraph TextStyle.subheaderBigScreen <| [ preparedText bioText ]
-                        , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderBigScreen) <| [ preparedText skillText ]
-                        ]
-                    , viewDesignExperiencesSection layout
-                    ]
+                viewDesktop layout
     }
 
 
-viewDesignExperiencesSection : LayoutState -> Element msg
-viewDesignExperiencesSection layout =
-    case layout.screenClass of
-        MobileScreen ->
-            column [ spacing 32, width fill ] <| List.map (viewDesignExperienceSmallScreen layout) DesignExperience.data
-
-        DesktopScreen ->
-            let
-                groupedItems =
-                    List.Extra.greedyGroupsOf 2 DesignExperience.data
-
-                rowSpacing =
-                    32
-
-                viewRow r =
-                    case r of
-                        [ x ] ->
-                            row [ spacing rowSpacing, width fill ]
-                                [ viewDesignExperienceBigScreen layout rowSpacing x
-                                , column [ width (fillPortion 1) ] []
-                                ]
-
-                        xs ->
-                            row [ spacing rowSpacing, width fill ] <|
-                                List.map (viewDesignExperienceBigScreen layout rowSpacing) xs
-            in
-            column [ spacing 42, width fill ] <| List.map viewRow groupedItems
+viewMobile : LayoutState -> Element msg
+viewMobile layout =
+    column [ spacing 28 ]
+        [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+        , SquareImage.view__ layout [] { img = avatarImage, widthSteps = 12, heightSteps = 12 }
+        , column [ spacing 8 ] <| List.map (Link.view [] layout) Data.Contacts.links
+        , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
+        , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
+        , viewDesignExperienceListMobile layout
+        ]
 
 
-viewDesignExperienceSmallScreen : LayoutState -> DesignExperience -> Element msg
-viewDesignExperienceSmallScreen layout dx =
-    let
-        url =
-            Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
-    in
+viewDesignExperienceListMobile : LayoutState -> Element msg
+viewDesignExperienceListMobile layout =
+    column [ spacing 32, width fill ] <| List.map (viewDesignExperienceMobile layout) DesignExperience.data
+
+
+viewDesignExperienceMobile : LayoutState -> DesignExperience -> Element msg
+viewDesignExperienceMobile layout dx =
     link [ width fill ]
-        { url = url
+        { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
         , label =
             column [ width fill ]
                 [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
                 , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                , SquareImage.view [ Border.rounded 16, clip ]
-                    { img = dx.thumbnail, size = px layout.grid.contentWidth }
+                , SquareImage.view__ layout [ Border.rounded 16, clip ] { img = dx.thumbnail, widthSteps = 12, heightSteps = 12 }
                 ]
         }
+
+
+viewDesktop : LayoutState -> Element msg
+viewDesktop layout =
+    column [ spacing 42, width fill ]
+        [ column [ spacing layout.grid.gutter, width fill ]
+            [ paragraph TextStyle.headlineBigScreen [ text Data.Contacts.myName ]
+            , row [ spacing layout.grid.gutter ]
+                [ SquareImage.view__ layout [] { img = avatarImage, widthSteps = 3, heightSteps = 3 }
+                , column [ spacing 12, alignTop ] <| List.map (Link.view [] layout) Data.Contacts.links
+                ]
+            , paragraph TextStyle.subheaderBigScreen [ preparedText bioText ]
+            , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderBigScreen)  [ preparedText skillText ]
+            ]
+        , viewDesignExperienceListDesktop layout
+        ]
+
+
+viewDesignExperienceListDesktop : LayoutState -> Element msg
+viewDesignExperienceListDesktop layout =
+    let
+        groupedItems =
+            List.Extra.greedyGroupsOf 2 DesignExperience.data
+
+        viewRow r =
+            case r of
+                [ x ] ->
+                    row [ spacing layout.grid.gutter, width fill ]
+                        [ viewDesignExperienceBigScreen layout layout.grid.gutter x
+                        , column [ width (fillPortion 1) ] []
+                        ]
+
+                xs ->
+                    row [ spacing layout.grid.gutter, width fill ] <|
+                        List.map (viewDesignExperienceBigScreen layout layout.grid.gutter) xs
+    in
+    column [ spacing 42, width fill ] <| List.map viewRow groupedItems
 
 
 viewDesignExperienceBigScreen : LayoutState -> Int -> DesignExperience -> Element msg
