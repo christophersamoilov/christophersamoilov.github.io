@@ -2,7 +2,7 @@ module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
 import Components.Link as Link
-import Components.SquareImage as SquareImage exposing (calculateImageSize2)
+import Components.SquareImage as SquareImage
 import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience, SquareImage)
 import Effect
@@ -141,25 +141,18 @@ viewDesignExperienceListDesktop layout =
         viewRow r =
             case r of
                 [ x ] ->
-                    row [ spacing layout.grid.gutter, width fill ]
-                        [ viewDesignExperienceBigScreen layout layout.grid.gutter x
-                        , column [ width (fillPortion 1) ] []
-                        ]
+                    gridRow layout [ viewDesignExperienceDesktop layout x , gridColumn layout {widthSteps = 6} [] []]
 
                 xs ->
-                    row [ spacing layout.grid.gutter, width fill ] <|
-                        List.map (viewDesignExperienceBigScreen layout layout.grid.gutter) xs
+                    gridRow layout <|
+                        List.map (viewDesignExperienceDesktop layout) xs
     in
-    column [ spacing 42, width fill ] <| List.map viewRow groupedItems
+    column [ spacing 52, width fill ] <| List.map viewRow groupedItems
 
 
-viewDesignExperienceBigScreen : LayoutState -> Int -> DesignExperience -> Element msg
-viewDesignExperienceBigScreen layout rowSpacing dx =
-    let
-        url =
-            Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
-    in
-    column [ width (fillPortion 1), height fill ]
+viewDesignExperienceDesktop : LayoutState ->  DesignExperience -> Element msg
+viewDesignExperienceDesktop layout  dx =
+    gridColumn layout {widthSteps = 6} [ height fill] 
         [ link
             [ width fill
             , height fill
@@ -169,14 +162,13 @@ viewDesignExperienceBigScreen layout rowSpacing dx =
                 , Border.shadow { offset = ( 0, 0 ), size = 16, blur = 0, color = rgb255 0 0 0 }
                 ]
             ]
-            { url = url
+            { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
             , label =
                 column [ height fill, width fill, spacing 14 ]
                     [ paragraph (alignTop :: TextStyle.subheaderBigScreen) [ preparedText dx.title ]
                     , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                    , SquareImage.view_ [ Border.rounded 16, clip ]
-                        { img = dx.thumbnail, size = calculateImageSize2 layout rowSpacing }
+                    , SquareImage.view__ layout [ Border.rounded 16, clip ] { img = dx.thumbnail, widthSteps = 6, heightSteps = 6 }
                     ]
             }
         ]
