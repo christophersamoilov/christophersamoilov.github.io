@@ -102,14 +102,14 @@ viewMobile layout dx =
                 ]
                 [ link [ mouseOver [ alpha Style.hoverOpacity ] ]
                     { url = Path.toString <| Path.Home_
-                    , label = paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+                    , label = paragraph (Typography.paragraphAttrs TextStyle.headlineMobile) [ preparedText Data.Contacts.myName ]
                     }
                 ]
-            , paragraph TextStyle.headlineSmallScreen [ text dx.title ]
+            , paragraph (Typography.paragraphAttrs TextStyle.headlineMobile) [ text dx.title ]
             ]
-        , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
+        , paragraph [ alpha Style.dimmedTextOpacity, TextStyle.body.paragraphSpacing ] [ preparedText dx.skills ]
         , Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img1
-        , paragraph [] [ text dx.description ]
+        , paragraph [ TextStyle.body.paragraphSpacing ] [ text dx.description ]
         , case dx.restImages of
             -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
             _ :: _ ->
@@ -128,7 +128,7 @@ viewMobile layout dx =
 
             [] ->
                 none
-        , viewFooterMobile layout dx
+        , viewFooterMobile dx
         ]
 
 
@@ -147,8 +147,8 @@ viewImageRowMobile layout ir =
             viewAsColumn [ r.img1, r.img2, r.img3, r.img4 ]
 
 
-viewFooterMobile : LayoutState -> DesignExperience -> Element msg
-viewFooterMobile layout dx =
+viewFooterMobile : DesignExperience -> Element msg
+viewFooterMobile dx =
     column
         [ spacing 8
         , width fill
@@ -158,7 +158,7 @@ viewFooterMobile layout dx =
         ]
         (link [ mouseOver [ alpha Style.hoverOpacity ] ]
             { url = Path.toString <| Path.Home_
-            , label = paragraph [] [ preparedText Data.Contacts.myName ]
+            , label = paragraph [ TextStyle.body.paragraphSpacing ] [ preparedText Data.Contacts.myName ]
             }
             :: List.map (Link.view []) Data.Contacts.links
         )
@@ -178,16 +178,16 @@ viewDesktop layout dx =
                     [ mouseOver [ alpha Style.hoverOpacity ]
                     ]
                     { url = Path.toString <| Path.Home_
-                    , label = paragraph TextStyle.headlineBigScreen [ preparedText Data.Contacts.myName ]
+                    , label = paragraph (Typography.paragraphAttrs TextStyle.headlineDesktop) [ preparedText Data.Contacts.myName ]
                     }
                 ]
-            , paragraph TextStyle.headlineBigScreen [ text dx.title ]
+            , paragraph (Typography.paragraphAttrs TextStyle.headlineDesktop) [ text dx.title ]
             ]
-        , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
+        , paragraph [ alpha Style.dimmedTextOpacity, TextStyle.body.paragraphSpacing ] [ preparedText dx.skills ]
         , [ dx.firstImages.img1, dx.firstImages.img2 ]
             |> List.map (Image.view layout { widthSteps = 6, heightSteps = 6 } [])
             |> gridRow layout
-        , paragraph [] [ text dx.description ]
+        , paragraph [ TextStyle.body.paragraphSpacing ] [ text dx.description ]
 
         -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
         , case dx.restImages of
@@ -204,7 +204,7 @@ viewDesktop layout dx =
 
             [] ->
                 none
-        , viewFooterDesktop layout dx
+        , viewFooterDesktop dx
         ]
 
 
@@ -222,8 +222,8 @@ viewImageRowDesktop layout ir =
                 |> gridRow layout
 
 
-viewFooterDesktop : LayoutState -> DesignExperience -> Element msg
-viewFooterDesktop layout dx =
+viewFooterDesktop : DesignExperience -> Element msg
+viewFooterDesktop dx =
     column
         [ spacing 12
         , width fill
@@ -233,7 +233,7 @@ viewFooterDesktop layout dx =
         ]
         (link [ mouseOver [ alpha Style.hoverOpacity ] ]
             { url = Path.toString <| Path.Home_
-            , label = paragraph [] [ preparedText Data.Contacts.myName ]
+            , label = paragraph [ TextStyle.body.paragraphSpacing ] [ preparedText Data.Contacts.myName ]
             }
             :: List.map (Link.view []) Data.Contacts.links
         )

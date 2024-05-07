@@ -88,11 +88,11 @@ view { layout } =
 viewMobile : LayoutState -> Element msg
 viewMobile layout =
     column [ spacing 28 ]
-        [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
+        [ paragraph (Typography.paragraphAttrs TextStyle.headlineMobile) [ preparedText Data.Contacts.myName ]
         , Image.view layout { widthSteps = 12, heightSteps = 12 } [] avatarImage
         , column [ spacing 8 ] <| List.map (Link.view []) Data.Contacts.links
-        , paragraph [] [ preparedText bioText ]
-        , paragraph [ alpha Style.dimmedTextOpacity ] <| [ preparedText skillText ]
+        , paragraph [ TextStyle.body.paragraphSpacing ] [ preparedText bioText ]
+        , paragraph [ alpha Style.dimmedTextOpacity, TextStyle.body.paragraphSpacing ] <| [ preparedText skillText ]
         , viewDesignExperienceListMobile layout
         ]
 
@@ -108,8 +108,12 @@ viewDesignExperienceMobile layout dx =
         { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
         , label =
             column [ width fill ]
-                [ paragraph [] [ preparedText dx.title ]
-                , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
+                [ paragraph [ TextStyle.body.paragraphSpacing ] [ preparedText dx.title ]
+                , paragraph
+                    [ alpha Style.dimmedTextOpacity
+                    , paddingEach { top = 8, right = 0, bottom = 12, left = 0 }
+                    , TextStyle.body.paragraphSpacing
+                    ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                 , Image.view layout { widthSteps = 12, heightSteps = 12 } [ Border.rounded 16, clip ] dx.thumbnail
                 ]
@@ -120,13 +124,13 @@ viewDesktop : LayoutState -> Element msg
 viewDesktop layout =
     column [ spacing 42, width fill ]
         [ column [ spacing layout.grid.gutter, width fill ]
-            [ paragraph TextStyle.headlineBigScreen [ text Data.Contacts.myName ]
+            [ paragraph (Typography.paragraphAttrs TextStyle.headlineDesktop) [ text Data.Contacts.myName ]
             , row [ spacing layout.grid.gutter ]
                 [ Image.view layout { widthSteps = 3, heightSteps = 3 } [] avatarImage
                 , column [ spacing 12, alignTop ] <| List.map (Link.view []) Data.Contacts.links
                 ]
-            , paragraph [] [ preparedText bioText ]
-            , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText skillText ]
+            , paragraph [ TextStyle.body.paragraphSpacing ] [ preparedText bioText ]
+            , paragraph [ alpha Style.dimmedTextOpacity, TextStyle.body.paragraphSpacing ] [ preparedText skillText ]
             ]
         , viewDesignExperienceListDesktop layout
         ]
@@ -166,8 +170,8 @@ viewDesignExperienceDesktop layout dx =
             { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
             , label =
                 column [ height fill, width fill, spacing 14 ]
-                    [ paragraph [ alignTop ] [ preparedText dx.title ]
-                    , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
+                    [ paragraph [ alignTop, TextStyle.body.paragraphSpacing ] [ preparedText dx.title ]
+                    , paragraph [ alignTop, alpha Style.dimmedTextOpacity, TextStyle.body.paragraphSpacing ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
                     , Image.view layout { widthSteps = 6, heightSteps = 6 } [ Border.rounded 16, clip ] dx.thumbnail
                     ]

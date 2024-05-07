@@ -70,7 +70,7 @@ subscriptions _ =
 view : Shared.Model -> { toContentMsg : Msg -> contentMsg, content : View contentMsg, model : Model } -> View contentMsg
 view shared { content } =
     { title = content.title
-    , attributes = GridLayout2.bodyAttributes shared.layout ++ TextStyle.body ++ content.attributes
+    , attributes = GridLayout2.bodyAttributes shared.layout ++ TextStyle.body.attrs ++ content.attributes
     , element =
         let
             outerElementAttrs : List (Attribute msg)
@@ -91,6 +91,3 @@ view shared { content } =
         in
         outerElement [ innerElement [ content.element ] ]
     }
-
-
-

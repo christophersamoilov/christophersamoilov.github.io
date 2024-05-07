@@ -2,31 +2,37 @@ module TextStyle exposing (..)
 
 import Element exposing (..)
 import Element.Font as Font
-import InlineStyle
+import Typography exposing (TextStyle)
 
 
-headlineSmallScreen : List (Attribute msg)
-headlineSmallScreen =
-    [ Font.size 55
-    , Font.semiBold
-    , InlineStyle.render [ ( "line-height", "1px" ), ( "letter-spacing", "-1.8px" ) ]
-    , Font.family [ Font.typeface "Inter", Font.sansSerif ]
-    ]
+headlineMobile : TextStyle msg
+headlineMobile =
+    Typography.textStyleFromFigma
+        { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
+        , fontSizePx = 55
+        , fontWeight = Font.semiBold
+        , lineHeightPx = 56
+        , letterSpacingPercent = -2
+        }
 
 
-headlineBigScreen : List (Attribute msg)
-headlineBigScreen =
-    [ Font.size 89
-    , Font.semiBold
-    , InlineStyle.render [ ( "line-height", "1px" ), ( "letter-spacing", "-3.2px" ) ]
-    , Font.family [ Font.typeface "Inter", Font.sansSerif ]
-    ]
+headlineDesktop : TextStyle msg
+headlineDesktop =
+    Typography.textStyleFromFigma
+        { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
+        , fontSizePx = 89
+        , fontWeight = Font.semiBold
+        , lineHeightPx = 90
+        , letterSpacingPercent = -2
+        }
 
 
-body : List (Attribute msg)
+body : TextStyle msg
 body =
-    [ Font.size 34
-    , Font.medium
-    , InlineStyle.render [ ( "line-height", "1px" ), ( "letter-spacing", "-1.6px" ) ]
-    , Font.family [ Font.typeface "Inter", Font.sansSerif ]
-    ]
+    Typography.textStyleFromFigma
+        { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
+        , fontSizePx = 34
+        , fontWeight = Font.medium
+        , lineHeightPx = 35
+        , letterSpacingPercent = -4.7
+        }
