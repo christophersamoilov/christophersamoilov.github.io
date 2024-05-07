@@ -11,8 +11,8 @@ headlineMobile =
         { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
         , fontSizePx = 55
         , fontWeight = Font.semiBold
-        , lineHeightPx = 56
-        , letterSpacingPercent = -2
+        , lineHeightPx = 55
+        , letterSpacingPercent = -3
         }
 
 
@@ -22,8 +22,8 @@ headlineDesktop =
         { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
         , fontSizePx = 89
         , fontWeight = Font.semiBold
-        , lineHeightPx = 90
-        , letterSpacingPercent = -2
+        , lineHeightPx = 89
+        , letterSpacingPercent = -5
         }
 
 
@@ -33,6 +33,6 @@ body =
         { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
         , fontSizePx = 34
         , fontWeight = Font.medium
-        , lineHeightPx = 35
-        , letterSpacingPercent = -4.7
+        , lineHeightPx = 36
+        , letterSpacingPercent = -4.3
         }
