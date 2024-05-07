@@ -1,13 +1,10 @@
-module Components.Link exposing ( Link, view)
+module Components.Link exposing (Link, view)
 
 import Color
 import Element exposing (..)
 import Element.Font as Font
 import Style
-import TextStyle
 import Typography exposing (preparedText)
-import GridLayout2 exposing  (..)
-
 
 
 type alias Link =
@@ -16,19 +13,9 @@ type alias Link =
     }
 
 
-
-view : List (Attribute msg) -> LayoutState -> Link -> Element msg
-view attrs layout props =
-    let
-        textStyle =
-            case layout.screenClass of
-                MobileScreen ->
-                    TextStyle.subheaderSmallScreen
-
-                DesktopScreen ->
-                    TextStyle.subheaderBigScreen
-    in
+view : List (Attribute msg) -> Link -> Element msg
+view attrs props =
     newTabLink (mouseOver [ alpha Style.hoverOpacity ] :: attrs)
         { url = props.url
-        , label = paragraph (Font.color Color.blue1 :: textStyle) [ preparedText props.label ]
+        , label = paragraph [ Font.color Color.blue1 ] [ preparedText props.label ]
         }

@@ -1,8 +1,8 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
 import Color
-import Components.Link as Link
 import Components.Image as Image exposing (Image)
+import Components.Link as Link
 import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect
@@ -89,10 +89,10 @@ viewMobile : LayoutState -> Element msg
 viewMobile layout =
     column [ spacing 28 ]
         [ paragraph TextStyle.headlineSmallScreen [ preparedText Data.Contacts.myName ]
-        , Image.view layout {  widthSteps = 12, heightSteps = 12 } [] avatarImage
-        , column [ spacing 8 ] <| List.map (Link.view [] layout) Data.Contacts.links
-        , paragraph TextStyle.subheaderSmallScreen <| [ preparedText bioText ]
-        , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderSmallScreen) <| [ preparedText skillText ]
+        , Image.view layout { widthSteps = 12, heightSteps = 12 } [] avatarImage
+        , column [ spacing 8 ] <| List.map (Link.view []) Data.Contacts.links
+        , paragraph [] [ preparedText bioText ]
+        , paragraph [ alpha Style.dimmedTextOpacity ] <| [ preparedText skillText ]
         , viewDesignExperienceListMobile layout
         ]
 
@@ -108,10 +108,10 @@ viewDesignExperienceMobile layout dx =
         { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
         , label =
             column [ width fill ]
-                [ paragraph TextStyle.subheaderSmallScreen [ preparedText dx.title ]
+                [ paragraph [] [ preparedText dx.title ]
                 , paragraph [ alpha Style.dimmedTextOpacity, paddingEach { top = 8, right = 0, bottom = 12, left = 0 } ]
                     [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                , Image.view layout { widthSteps = 12, heightSteps = 12 }  [ Border.rounded 16, clip ] dx.thumbnail
+                , Image.view layout { widthSteps = 12, heightSteps = 12 } [ Border.rounded 16, clip ] dx.thumbnail
                 ]
         }
 
@@ -122,11 +122,11 @@ viewDesktop layout =
         [ column [ spacing layout.grid.gutter, width fill ]
             [ paragraph TextStyle.headlineBigScreen [ text Data.Contacts.myName ]
             , row [ spacing layout.grid.gutter ]
-                [ Image.view layout {  widthSteps = 3, heightSteps = 3 } [] avatarImage
-                , column [ spacing 12, alignTop ] <| List.map (Link.view [] layout) Data.Contacts.links
+                [ Image.view layout { widthSteps = 3, heightSteps = 3 } [] avatarImage
+                , column [ spacing 12, alignTop ] <| List.map (Link.view []) Data.Contacts.links
                 ]
-            , paragraph TextStyle.subheaderBigScreen [ preparedText bioText ]
-            , paragraph (alpha Style.dimmedTextOpacity :: TextStyle.subheaderBigScreen)  [ preparedText skillText ]
+            , paragraph [] [ preparedText bioText ]
+            , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText skillText ]
             ]
         , viewDesignExperienceListDesktop layout
         ]
@@ -141,7 +141,7 @@ viewDesignExperienceListDesktop layout =
         viewRow r =
             case r of
                 [ x ] ->
-                    gridRow layout [ viewDesignExperienceDesktop layout x , gridColumn layout {widthSteps = 6} [] []]
+                    gridRow layout [ viewDesignExperienceDesktop layout x, gridColumn layout { widthSteps = 6 } [] [] ]
 
                 xs ->
                     gridRow layout <| List.map (viewDesignExperienceDesktop layout) xs
@@ -149,9 +149,11 @@ viewDesignExperienceListDesktop layout =
     column [ spacing 52, width fill ] <| List.map viewRow groupedItems
 
 
-viewDesignExperienceDesktop : LayoutState ->  DesignExperience -> Element msg
-viewDesignExperienceDesktop layout  dx =
-    gridColumn layout {widthSteps = 6} [ height fill] 
+viewDesignExperienceDesktop : LayoutState -> DesignExperience -> Element msg
+viewDesignExperienceDesktop layout dx =
+    gridColumn layout
+        { widthSteps = 6 }
+        [ height fill ]
         [ link
             [ width fill
             , height fill
@@ -164,10 +166,10 @@ viewDesignExperienceDesktop layout  dx =
             { url = Path.toString <| Path.Design_DesignExperience_ { designExperience = dx.slug }
             , label =
                 column [ height fill, width fill, spacing 14 ]
-                    [ paragraph (alignTop :: TextStyle.subheaderBigScreen) [ preparedText dx.title ]
+                    [ paragraph [ alignTop ] [ preparedText dx.title ]
                     , paragraph [ alignTop, alpha Style.dimmedTextOpacity ]
                         [ preparedText <| DesignExperience.showDesignExperienceType dx.experienceType ]
-                    , Image.view layout { widthSteps = 6, heightSteps = 6 }  [ Border.rounded 16, clip ] dx.thumbnail
+                    , Image.view layout { widthSteps = 6, heightSteps = 6 } [ Border.rounded 16, clip ] dx.thumbnail
                     ]
             }
         ]

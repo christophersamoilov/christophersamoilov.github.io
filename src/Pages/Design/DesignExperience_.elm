@@ -1,7 +1,7 @@
 module Pages.Design.DesignExperience_ exposing (Model, Msg, page)
 
-import Components.Link as Link
 import Components.Image as Image exposing (ImageRow(..))
+import Components.Link as Link
 import Data.Contacts
 import Data.DesignExperience as DesignExperience exposing (DesignExperience)
 import Effect exposing (Effect)
@@ -109,23 +109,22 @@ viewMobile layout dx =
             ]
         , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
         , Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img1
-        , paragraph TextStyle.subheaderSmallScreen [ text dx.description ]
+        , paragraph [] [ text dx.description ]
         , case dx.restImages of
             -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
             _ :: _ ->
                 column [ spacing layout.grid.gutter, width fill ] <|
-                    (
-                        Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
+                    (Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
                         :: List.map (viewImageRowMobile layout) dx.restImages
                     )
 
-            [] -> Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
-            
+            [] ->
+                Image.view layout { widthSteps = 12, heightSteps = 12 } [] dx.firstImages.img2
 
         -- Note: We avoid empty space (caused by spacing) if the project contains no links
         , case dx.links of
             _ :: _ ->
-                column [ spacing layout.grid.gutter ] <| List.map (Link.view [] layout) dx.links
+                column [ spacing layout.grid.gutter ] <| List.map (Link.view []) dx.links
 
             [] ->
                 none
@@ -159,9 +158,9 @@ viewFooterMobile layout dx =
         ]
         (link [ mouseOver [ alpha Style.hoverOpacity ] ]
             { url = Path.toString <| Path.Home_
-            , label = paragraph TextStyle.subheaderSmallScreen [ preparedText Data.Contacts.myName ]
+            , label = paragraph [] [ preparedText Data.Contacts.myName ]
             }
-            :: List.map (Link.view [] layout) Data.Contacts.links
+            :: List.map (Link.view []) Data.Contacts.links
         )
 
 
@@ -185,11 +184,10 @@ viewDesktop layout dx =
             , paragraph TextStyle.headlineBigScreen [ text dx.title ]
             ]
         , paragraph [ alpha Style.dimmedTextOpacity ] [ preparedText dx.skills ]
-        , [dx.firstImages.img1, dx.firstImages.img2]
-                |> List.map (Image.view layout { widthSteps = 6, heightSteps = 6 } [])
-                |> gridRow layout
-                
-        , paragraph TextStyle.subheaderBigScreen  [ text dx.description ]
+        , [ dx.firstImages.img1, dx.firstImages.img2 ]
+            |> List.map (Image.view layout { widthSteps = 6, heightSteps = 6 } [])
+            |> gridRow layout
+        , paragraph [] [ text dx.description ]
 
         -- Note: We avoid empty space (caused by spacing) if the project contains no restImages
         , case dx.restImages of
@@ -202,7 +200,7 @@ viewDesktop layout dx =
         -- Note: We avoid empty space (caused by spacing) if the project contains no links
         , case dx.links of
             _ :: _ ->
-                column [ spacing 12 ] <| List.map (Link.view [] layout) dx.links
+                column [ spacing 12 ] <| List.map (Link.view []) dx.links
 
             [] ->
                 none
@@ -235,7 +233,7 @@ viewFooterDesktop layout dx =
         ]
         (link [ mouseOver [ alpha Style.hoverOpacity ] ]
             { url = Path.toString <| Path.Home_
-            , label = paragraph TextStyle.subheaderBigScreen [ preparedText Data.Contacts.myName ]
+            , label = paragraph [] [ preparedText Data.Contacts.myName ]
             }
-            :: List.map (Link.view [] layout) Data.Contacts.links
+            :: List.map (Link.view []) Data.Contacts.links
         )
