@@ -2,6 +2,7 @@ module TextStyle exposing (..)
 
 import Element exposing (..)
 import Element.Font as Font
+import Element.Region as Region
 import Typography exposing (TextStyle)
 
 
@@ -13,6 +14,7 @@ headlineMobile =
         , fontWeight = Font.semiBold
         , lineHeightPx = 55
         , letterSpacingPercent = -3
+        , region = Just <| Region.heading 1
         }
 
 
@@ -24,6 +26,7 @@ headlineDesktop =
         , fontWeight = Font.semiBold
         , lineHeightPx = 89
         , letterSpacingPercent = -5
+        , region = Just <| Region.heading 1
         }
 
 
@@ -35,4 +38,5 @@ body =
         , fontWeight = Font.medium
         , lineHeightPx = 36
         , letterSpacingPercent = -4.3
+        , region = Nothing
         }
