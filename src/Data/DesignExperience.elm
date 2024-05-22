@@ -325,7 +325,7 @@ data =
     , { slug = "2gis"
       , title = "2GIS"
       , experienceType = WorkExperience
-      , skills = "Graphic Design, Illustration, Motion Design, Type Design, Visual Identity"
+      , skills = "Graphic Design, Illustration, Motion Design, Visual Identity"
       , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
       , backgroundColor = rgb255 0x39 0xc7 0x01

@@ -35,7 +35,7 @@ body =
     Typography.textStyleFromFigma
         { fontFamily = [ Font.typeface "Inter", Font.sansSerif ]
         , fontSizePx = 34
-        , fontWeight = Font.medium
+        , fontWeight = Font.regular
         , lineHeightPx = 36
         , letterSpacingPercent = -4.3
         , region = Nothing

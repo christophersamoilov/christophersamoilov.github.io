@@ -59,7 +59,7 @@ I'm all about helping people communicate better & faster, making life a bit bett
 skillText : String
 skillText =
     """
-Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Type Design, UX & UI Design, Visual Identity, Web Design
+Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, UX & UI Design, Visual Identity, Web Design, 3D Design
 """
 
 
