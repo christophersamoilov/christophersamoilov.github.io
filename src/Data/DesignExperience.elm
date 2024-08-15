@@ -6,13 +6,10 @@ module Data.DesignExperience exposing
     , useTextColor
     )
 
-import Components.Image exposing (..)
 import Color
+import Components.Image exposing (Image, ImageRow(..), Images2)
 import Components.Link exposing (Link)
 import Element exposing (Color, rgb255)
-import GridLayout2 exposing  (..)
-
-
 
 
 type TextColor
@@ -43,8 +40,6 @@ showDesignExperienceType x =
 
         PersonalProject ->
             "Personal project"
-
-
 
 
 type alias DesignExperience =
@@ -207,7 +202,7 @@ data =
       , skills = "UX & UI Design, Web Design"
       , description = "As part of the startup, designed interfaces for projects for car service appointments & route search with cashback in the Lukoil mobile app in two different styles while finding new visual moves for design innovations in the app."
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", description = "", placeholderColor = rgb255 0xD2 0x23 0x3C }
-      , backgroundColor = rgb255 0xff 0xff 0xff
+      , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
             { img1 = { url = "/images/design-experience/lukoil/images/1.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
@@ -328,7 +323,7 @@ data =
       , skills = "Graphic Design, Illustration, Motion Design, Visual Identity"
       , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
-      , backgroundColor = rgb255 0x39 0xc7 0x01
+      , backgroundColor = rgb255 0x39 0xC7 0x01
       , textColor = WhiteText
       , firstImages =
             { img1 = { url = "/images/design-experience/2gis/images/1.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }

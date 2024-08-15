@@ -14,18 +14,19 @@ module Shared exposing
 
 import Browser.Events
 import Effect exposing (Effect)
+import GridLayout2
 import Json.Decode
 import Route exposing (Route)
 import Shared.Model
 import Shared.Msg
-import GridLayout2
+
 
 
 -- FLAGS
 
 
 type alias Flags =
-    {  windowSize : GridLayout2.WindowSize }
+    { windowSize : GridLayout2.WindowSize }
 
 
 decoder : Json.Decode.Decoder Flags
@@ -52,6 +53,7 @@ init flagsResult _ =
             ( meaninglessDefaultModel
             , Effect.none
             )
+
 
 layoutConfig : GridLayout2.LayoutConfig
 layoutConfig =
@@ -100,14 +102,16 @@ update _ msg model =
         Shared.Msg.GotNewWindowSize newWindowSize ->
             gotNewWindowSize model newWindowSize
 
+
 gotNewWindowSize : Model -> GridLayout2.WindowSize -> ( Model, Effect Msg )
 gotNewWindowSize model newWindowSize =
     ( { model | layout = GridLayout2.update model.layout newWindowSize }, Effect.none )
+
 
 
 -- SUBSCRIPTIONS
 
 
 subscriptions : Route () -> Model -> Sub Msg
-subscriptions route model =
+subscriptions _ _ =
     Browser.Events.onResize (\width height -> Shared.Msg.GotNewWindowSize { width = width, height = height })

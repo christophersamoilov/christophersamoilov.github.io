@@ -49,6 +49,7 @@ toLayout _ =
 init : { designExperience : String } -> () -> ( Model, Effect Msg )
 init params _ =
     let
+        lookupResults : Maybe DesignExperience
         lookupResults =
             List.Extra.find (\x -> x.slug == params.designExperience) DesignExperience.data
     in
@@ -135,6 +136,7 @@ viewMobile layout dx =
 viewImageRowMobile : LayoutState -> ImageRow -> Element msg
 viewImageRowMobile layout ir =
     let
+        viewAsColumn : List Image.Image -> Element msg
         viewAsColumn =
             List.map (Image.view layout { widthSteps = 12, heightSteps = 12 } [])
                 >> column [ spacing layout.grid.gutter ]

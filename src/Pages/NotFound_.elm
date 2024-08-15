@@ -3,10 +3,9 @@ module Pages.NotFound_ exposing (Model, Msg, page)
 import Effect
 import Page exposing (Page)
 import Route exposing (Route)
+import Route.Path
 import Shared
 import View
-import Route.Path
-
 
 
 page : Shared.Model -> Route () -> Page Model Msg

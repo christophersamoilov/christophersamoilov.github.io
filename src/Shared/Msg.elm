@@ -2,6 +2,7 @@ module Shared.Msg exposing (Msg(..))
 
 import GridLayout2
 
+
 {-| Normally, this value would live in "Shared.elm"
 but that would lead to a circular dependency import cycle.
 

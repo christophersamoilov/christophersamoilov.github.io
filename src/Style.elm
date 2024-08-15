@@ -1,8 +1,11 @@
-module Style exposing (..)
+module Style exposing (dimmedTextOpacity, hoverOpacity)
 
 
 hoverOpacity : Float
-hoverOpacity = 0.7
+hoverOpacity =
+    0.7
+
 
 dimmedTextOpacity : Float
-dimmedTextOpacity = 0.6
+dimmedTextOpacity =
+    0.6

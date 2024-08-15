@@ -1,6 +1,5 @@
-module TextStyle exposing (..)
+module TextStyle exposing (body, headlineDesktop, headlineMobile)
 
-import Element exposing (..)
 import Element.Font as Font
 import Element.Region as Region
 import Typography exposing (TextStyle)

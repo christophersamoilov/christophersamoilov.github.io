@@ -23,9 +23,9 @@ layout _ shared _ =
         { init = init
         , update = update
         , view = view shared
-        , subscriptions = subscriptions
+        , subscriptions = always Sub.none
         }
-        |> Layout.withOnUrlChanged UrlChanged
+        |> Layout.withOnUrlChanged (always UrlChanged)
 
 
 
@@ -48,19 +48,14 @@ init _ =
 
 
 type Msg
-    = UrlChanged { from : Route (), to : Route () }
+    = UrlChanged
 
 
 update : Msg -> Model -> ( Model, Effect Msg )
 update msg model =
     case msg of
-        UrlChanged _ ->
+        UrlChanged ->
             ( model, Effect.sendCmd <| urlChanged () )
-
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
 
 
 

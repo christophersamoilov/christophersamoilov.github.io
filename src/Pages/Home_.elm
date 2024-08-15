@@ -139,9 +139,11 @@ viewDesktop layout =
 viewDesignExperienceListDesktop : LayoutState -> Element msg
 viewDesignExperienceListDesktop layout =
     let
+        groupedItems : List (List DesignExperience)
         groupedItems =
             List.Extra.greedyGroupsOf 2 DesignExperience.data
 
+        viewRow : List DesignExperience -> Element msg
         viewRow r =
             case r of
                 [ x ] ->

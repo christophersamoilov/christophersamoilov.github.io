@@ -1,8 +1,9 @@
-module Components.Image exposing (Image,view, ImageRow(..), Images2, Images4)
+module Components.Image exposing (Image, ImageRow(..), Images2, Images4, view)
 
 import Element exposing (..)
 import Element.Background as Background
 import GridLayout2 exposing (..)
+
 
 {-| Note: This type doesn't conntain any source size information because all images will be square.
 However, when we need to use non-square images which should never be cropped,

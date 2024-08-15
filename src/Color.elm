@@ -1,4 +1,4 @@
-module Color exposing (..)
+module Color exposing (black, blue1, grey1, white)
 
 import Element exposing (..)
 
@@ -9,7 +9,7 @@ import Element exposing (..)
 
 black : Color
 black =
-    rgb255 0x1a 0x1a 0x1a
+    rgb255 0x1A 0x1A 0x1A
 
 
 white : Color
@@ -19,9 +19,9 @@ white =
 
 grey1 : Color
 grey1 =
-    rgb255 0x1a 0x1a 0x1a
+    rgb255 0x1A 0x1A 0x1A
 
 
 blue1 : Color
 blue1 =
-    rgb255 0x1b 0x61 0xe1
+    rgb255 0x1B 0x61 0xE1
