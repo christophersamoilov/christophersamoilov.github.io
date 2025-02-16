@@ -151,14 +151,14 @@ data =
                 , img4 = { url = "/images/design-experience/fitservice/images/6.jpg", description = "", placeholderColor = rgb255 0x29 0x1D 0x1D }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/fitservice/images/7.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img2 = { url = "/images/design-experience/fitservice/images/8.jpg", description = "", placeholderColor = rgb255 0x93 0xAE 0xCF }
+                { img1 = { url = "/images/design-experience/fitservice/images/7.jpg", description = "", placeholderColor = rgb255 0x93 0xAE 0xCF }
+                , img2 = { url = "/images/design-experience/fitservice/images/8.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             , ImageRow4
                 { img1 = { url = "/images/design-experience/fitservice/images/9.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/fitservice/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", description = "", placeholderColor = rgb255 0xF2 0xC3 0x6B }
-                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xC3 0x6B }
+                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             , ImageRow2
                 { img1 = { url = "/images/design-experience/fitservice/images/13.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
@@ -205,15 +205,15 @@ data =
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
-            { img1 = { url = "/images/design-experience/ts/images/1.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
-            , img2 = { url = "/images/design-experience/ts/images/2.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+            { img1 = { url = "/images/design-experience/ts/images/1.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            , img2 = { url = "/images/design-experience/ts/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
             }
       , restImages =
             [ ImageRow4
                 { img1 = { url = "/images/design-experience/ts/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img2 = { url = "/images/design-experience/ts/images/4.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+                , img2 = { url = "/images/design-experience/ts/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img3 = { url = "/images/design-experience/ts/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/ts/images/6.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+                , img4 = { url = "/images/design-experience/ts/images/6.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 }
             ]
       , links = []
