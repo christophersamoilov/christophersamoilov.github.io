@@ -200,20 +200,20 @@ data =
       , title = "Tyre Storage"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Visual Identity, Web Design"
-      , description = "As part of the startup, designed interfaces for tyre storage service. The main source of inspiration was the eclecticism of Swiss-style clarity & irony over stereotypical posters in car service stations."
+      , description = "As part of the startup, designed interfaces for tyre storage service. The main source of inspiration was the Swiss-style clarity & stereotypical posters in car service stations."
       , thumbnail = { url = "/images/design-experience/ts/thumbnail.jpg", description = "", placeholderColor = rgb255 0xFF 0xB9 0x1D }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
             { img1 = { url = "/images/design-experience/ts/images/1.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
-            , img2 = { url = "/images/design-experience/ts/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            , img2 = { url = "/images/design-experience/ts/images/2.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
             }
       , restImages =
             [ ImageRow4
-                { img1 = { url = "/images/design-experience/ts/images/3.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
-                , img2 = { url = "/images/design-experience/ts/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                { img1 = { url = "/images/design-experience/ts/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/ts/images/4.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
                 , img3 = { url = "/images/design-experience/ts/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
-                , img4 = { url = "/images/design-experience/ts/images/6.jpg", description = "", placeholderColor = rgb255 0xFB 0xE9 0x42 }
+                , img4 = { url = "/images/design-experience/ts/images/6.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
                 }
             ]
       , links = []
