@@ -63,7 +63,7 @@ data =
       , title = "Davai na Altai"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
-      , description = "Created visual concept and web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure typeface & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
+      , description = "Created visual concept & web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure typeface & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
       , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -89,7 +89,7 @@ data =
       , title = "SANSIB"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Created the SANSIB brand & developed the visual identity for the group of companies. Also designed interfaces of the online store for the sale of sanitary ware. To form the new style, the clean and universal Manrope typeface & the laconic circle shape were chosen to reflect the simplicity & conciseness of the best design practices, which was especially important for the client, who also provides interior design services for bathrooms."
+      , description = "Created the SANSIB brand & developed the visual identity for the group of companies. Also designed interfaces of the online store for the sale of sanitary ware. To form the new style, the clean & universal Manrope typeface & the laconic circle shape were chosen to reflect the simplicity & conciseness of the best design practices, which was especially important for the client, who also provides interior design services for bathrooms."
       , thumbnail = { url = "/images/design-experience/sansib/thumbnail.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -130,6 +130,93 @@ data =
               , label = "What Means Quality — Instagram Reels"
               }
             ]
+      }
+    , { slug = "fitservice"
+      , title = "FIT SERVICE"
+      , experienceType = WorkExperience
+      , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
+      , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
+      , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
+      , backgroundColor = rgb255 0xFF 0x81 0x32
+      , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/fitservice/images/1.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+            , img2 = { url = "/images/design-experience/fitservice/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/3.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                , img2 = { url = "/images/design-experience/fitservice/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/fitservice/images/6.jpg", description = "", placeholderColor = rgb255 0x29 0x1D 0x1D }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/fitservice/images/7.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/8.jpg", description = "", placeholderColor = rgb255 0x93 0xAE 0xCF }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/9.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/11.jpg", description = "", placeholderColor = rgb255 0xF2 0xC3 0x6B }
+                , img4 = { url = "/images/design-experience/fitservice/images/12.jpg", description = "", placeholderColor = rgb255 0xF2 0xC3 0x6B }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/fitservice/images/13.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/14.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/15.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/16.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/17.jpg", description = "", placeholderColor = rgb255 0x8A 0x43 0x25 }
+                , img4 = { url = "/images/design-experience/fitservice/images/18.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/fitservice/images/19.jpg", description = "", placeholderColor = rgb255 0x16 0x1B 0x1F }
+                , img2 = { url = "/images/design-experience/fitservice/images/20.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/fitservice/images/21.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/fitservice/images/22.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/fitservice/images/23.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/fitservice/images/24.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            ]
+      , links =
+            [ { url = "https://disk.yandex.ru/i/Nfznnq0AeEx3DA"
+              , label = "FIT App Presentation"
+              }
+            , { url = "https://disk.yandex.ru/i/5loH-JsCd-t4vA"
+              , label = "×2 Using CJM as an Example of Fitauto Presentation"
+              }
+            , { url = "https://vimeo.com/933674884/5ed6036896"
+              , label = "FIT SERVICE UI Kit Promo Video 2023"
+              }
+            , { url = "https://vimeo.com/933673725/8199b3ac81"
+              , label = "FIT App Video for App Store"
+              }
+            ]
+      }
+    , { slug = "ts"
+      , title = "Tyre Storage"
+      , experienceType = WorkExperience
+      , skills = "Art Direction, Graphic Design, Visual Identity, Web Design"
+      , description = "As part of the startup, designed interfaces for tyre storage service. The main source of inspiration was the eclecticism of Swiss-style clarity & irony over stereotypical posters in car service stations."
+      , thumbnail = { url = "/images/design-experience/ts/thumbnail.jpg", description = "", placeholderColor = rgb255 0xFF 0xB9 0x1D }
+      , backgroundColor = rgb255 0xFF 0xFF 0xFF
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/ts/images/1.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+            , img2 = { url = "/images/design-experience/ts/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/ts/images/3.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
+                , img2 = { url = "/images/design-experience/ts/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/ts/images/5.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/ts/images/6.jpg", description = "", placeholderColor = rgb255 0xFB 0xE9 0x42 }
+                }
+            ]
+      , links = []
       }
     , { slug = "lukoil"
       , title = "Lukoil"
@@ -256,7 +343,7 @@ data =
       , title = "2GIS"
       , experienceType = WorkExperience
       , skills = "Graphic Design, Illustration, Motion Design, Visual Identity"
-      , description = "Promoted the product and developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
+      , description = "Promoted the product & developed 2GIS's corporate identity in 2018—2019, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
       , backgroundColor = rgb255 0x39 0xC7 0x01
       , textColor = WhiteText
@@ -314,7 +401,7 @@ data =
       , title = "Selected elements of inconsistent periodic table"
       , experienceType = PersonalProject
       , skills = "Art Direction, Graphic Design, Illustration"
-      , description = "Experimental vision of names of selected chemical elements of Mendeleev's periodic table in Russian. There is no connection between the displaying of an element and its physical or chemical properties. Main sources of inspiration were the art of True Norwegian Black Metal bands & graphic design works of Böfüms studio."
+      , description = "Experimental vision of names of selected chemical elements of Mendeleev's periodic table in Russian. There is no connection between the displaying of an element & its physical or chemical properties. Main sources of inspiration were the art of True Norwegian Black Metal bands & graphic design works of Böfüms studio."
       , thumbnail = { url = "/images/design-experience/inconspt/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
