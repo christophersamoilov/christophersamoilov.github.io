@@ -135,7 +135,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Since 2020, as a Lead UI Designer I've been helping the company develop digital products & shape a new corporate web identity. My work includes designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
+      , description = "In 2020—2025 as a Lead UI Designer I've been helped the company develop digital products & shape a new corporate web identity. My work included designing interfaces for web & mobile apps, also landing pages & the company's new main website. Collaborated with the product manager & designers to create a new mobile app for the company, & contributed to developing other startup products. As a leading UI designer, formed a culture of communication & work in the design department, mentored new designers."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x81 0x32
       , textColor = WhiteText
