@@ -62,8 +62,8 @@ data =
     [ { slug = "thebroks"
       , title = "THEBROKS"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Since 2024, I've been a graphic and web designer at THEBROKS, an international real estate agency in Dubai & Moscow. After working with the marketing team for a few months, redesigned the corporate identity & established a new design system, which I continue to refine by now, including overhauling the corporate website & landing pages using Tilda. I also produce content for social media, design articles, edit videos, develop presentations, catalogues & communication materials for brokers & clients of the agency. Additionally, I designed the Moscow office's identity from scratch, including a brandbook & a new corporate website on Tilda, continuing to develop it at the moment."
+      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, UX & UI Design, Visual Identity, Web Design"
+      , description = "Since 2024, I've been a graphic & web designer at THEBROKS, an international real estate agency in Dubai & Moscow. After working with the marketing team for a few months, redesigned the corporate identity & established a new design system, which I continue to refine, including redesigning the corporate website & landing pages using Tilda. I also produce content for social media, design articles, edit videos, develop presentations, catalogues & communication materials for brokers & clients of the agency. Additionally, designed the Moscow office's identity from scratch, including a brandbook & a new corporate website on Tilda."
       , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
       , backgroundColor = rgb255 0x08 0x09 0x0C
       , textColor = WhiteText
@@ -130,7 +130,7 @@ data =
     , { slug = "thestudio"
       , title = "THESTUDIO"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
       , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO — a social marketing agency for real estate in Dubai. Develop & maintain content for the Instagram account, design & develop a corporate website using Tilda."
       , thumbnail = { url = "/images/design-experience/thestudio/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
@@ -169,7 +169,7 @@ data =
     , { slug = "da"
       , title = "Davai na Altai"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
       , description = "Created visual concept & web design of a landing page for a group of travelers carrying out group & individual tours to Altai. The key visual based on typography & was inspired by the plasticity of Le Murmure typeface & the spiritual world of Altai shamans. Piazzola typeface was chosen as the font pair for it."
       , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
@@ -398,7 +398,7 @@ data =
     , { slug = "rastsvetai"
       , title = "Rastsvetai Group"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, No-Code Development, Visual Identity, Web Design"
       , description = "In 2019—2020 I created & developed a design system for the promotion of residential & commercial real estate of the group of companies on the web & offline. Created a brandbook of a group of companies & concepts of the appearance of individual residential real estate & residential complexes. I also updated the design of the logo & visual identity of the group of companies & created the logo & visual identity of a new brand — the Acacia construction company.  Art directed & consulted in the creation of 3D visualizations of real estate objects & interior design of common areas. Actively participated in the development of planning solutions for residential real estate. Supervised the work of other designers & provided mentorship."
       , thumbnail = { url = "/images/design-experience/rastsvetai/thumbnail.jpg", description = "", placeholderColor = rgb255 0x57 0xCB 0x93 }
       , backgroundColor = rgb255 0x57 0xCB 0x93
@@ -485,7 +485,7 @@ data =
     , { slug = "sclux"
       , title = "SCLUX"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Graphic Design, Motion Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
       , description = "In 2016—2018 I assisted in establishment of SCLUX (pronounced like ascaleuxe) — a salon offering bathroom interior design, sanitary ware, & premium ceramic tiles. I also enhanced its brand identity online & offline via various tasks such as creation of a corporate website & longreads on Tilda, creation of materials for publications on social networks, video editing, creating animated graphics with YouTube channel & designing printed products layouts."
       , thumbnail = { url = "/images/design-experience/sclux/thumbnail.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
