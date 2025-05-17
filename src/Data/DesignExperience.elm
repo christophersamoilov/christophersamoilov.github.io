@@ -63,7 +63,7 @@ data =
       , title = "THEBROKS"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, UX & UI Design, Visual Identity, Web Design"
-      , description = "Since 2024, I've been a graphic & web designer at THEBROKS, an international real estate agency in Dubai & Moscow. After working with the marketing team for a few months, redesigned the corporate identity & established a new design system, which I continue to refine, including redesigning the corporate website & landing pages using Tilda. I also produce content for social media, design articles, edit videos, develop presentations, catalogues & communication materials for brokers & clients of the agency. Additionally, designed the Moscow office's identity from scratch, including a brandbook & a new corporate website on Tilda."
+      , description = "Since 2024, I've been a graphic & web designer at THEBROKS, an international boutique real estate agency in Dubai & Moscow. Working with the marketing team, redesigned the corporate identity & established a new design system, including redesigning the corporate website & landing pages using Tilda. Also producing content for social media, illustrating articles, editing videos, develop presentations, catalogues & communication materials for brokers & agency clients. Additionally, designed the Moscow office's identity from scratch, including a brandbook, SMM design & a new corporate website on Tilda."
       , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
       , backgroundColor = rgb255 0x08 0x09 0x0C
       , textColor = WhiteText
@@ -131,7 +131,7 @@ data =
       , title = "THESTUDIO"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO — a social marketing agency for real estate in Dubai. Develop & maintain content for the Instagram account, design & develop a corporate website using Tilda."
+      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO, a social marketing agency for real estate in Dubai. Develop & maintain content for the Instagram account, design & develop a corporate website using Tilda."
       , thumbnail = { url = "/images/design-experience/thestudio/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
