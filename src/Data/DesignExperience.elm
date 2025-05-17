@@ -59,7 +59,108 @@ type alias DesignExperience =
 
 data : List DesignExperience
 data =
-    [ { slug = "da"
+    [ { slug = "thebroks"
+      , title = "THEBROKS"
+      , experienceType = WorkExperience
+      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
+      , description = "Since 2024, I've been a graphic and web designer at THEBROKS, an international real estate agency in Dubai & Moscow. After working with the marketing team for a few months, redesigned the corporate identity & established a new design system, which I continue to refine by now, including overhauling the corporate website & landing pages using Tilda. I also produce content for social media, design articles, edit videos, develop presentations, catalogues & communication materials for brokers & clients of the agency. Additionally, I designed the Moscow office's identity from scratch, including a brandbook & a new corporate website on Tilda, continuing to develop it at the moment."
+      , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
+      , backgroundColor = rgb255 0x08 0x09 0x0C
+      , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/thebroks/images/1.jpg", description = "", placeholderColor = rgb255 0xD5 0xD4 0xCF }
+            , img2 = { url = "/images/design-experience/thebroks/images/2.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/thebroks/images/3.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/thebroks/images/4.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img3 = { url = "/images/design-experience/thebroks/images/5.jpg", description = "", placeholderColor = rgb255 0x1F 0x92 0x97 }
+                , img4 = { url = "/images/design-experience/thebroks/images/6.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/thebroks/images/7.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img2 = { url = "/images/design-experience/thebroks/images/8.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/thebroks/images/9.jpg", description = "", placeholderColor = rgb255 0xD3 0xEB 0xFE }
+                , img2 = { url = "/images/design-experience/thebroks/images/10.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/thebroks/images/11.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img4 = { url = "/images/design-experience/thebroks/images/12.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/thebroks/images/13.jpg", description = "", placeholderColor = rgb255 0xE0 0xE3 0xE2 }
+                , img2 = { url = "/images/design-experience/thebroks/images/14.jpg", description = "", placeholderColor = rgb255 0x05 0x02 0x01 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/thebroks/images/15.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img2 = { url = "/images/design-experience/thebroks/images/16.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img3 = { url = "/images/design-experience/thebroks/images/17.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/thebroks/images/18.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/thebroks/images/19.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                , img2 = { url = "/images/design-experience/thebroks/images/20.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
+                }
+            ]
+      , links =
+            [ { url = "https://thebroks.com"
+              , label = "THEBROKS Dubai Website"
+              }
+            , { url = "https://thebroks.moscow"
+              , label = "THEBROKS Moscow Website"
+              }
+            , { url = "https://disk.yandex.ru/i/KIvxkI6npOmdWQ"
+              , label = "THEBROKS Presentation"
+              }
+            , { url = "https://disk.yandex.ru/i/VXRRr0zBRS8sKQ"
+              , label = "THEBROKS & SAMANA Ivy Gardens 2 Special Offer"
+              }
+            , { url = "https://disk.yandex.ru/i/Ytge6vqdXbR33Q"
+              , label = "THEBROKS Property Finder Presentation"
+              }
+            , { url = "https://disk.yandex.ru/i/Nc8muchNNrdsAA"
+              , label = "THEBROKS Off-Plan Catalogue 2025.05"
+              }
+            , { url = "https://disk.yandex.ru/i/rQ0ubo-cWuaRAw"
+              , label = "THEBROKS Secondary Catalogue 2025.05"
+              }
+            ]
+      }
+    , { slug = "thestudio"
+      , title = "THESTUDIO"
+      , experienceType = WorkExperience
+      , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO — a social marketing agency for real estate in Dubai. Develop & maintain content for the Instagram account, design & develop a corporate website using Tilda."
+      , thumbnail = { url = "/images/design-experience/thestudio/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+      , backgroundColor = rgb255 0xFF 0xFF 0xFF
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/thestudio/images/1.jpg", description = "", placeholderColor = rgb255 0x21 0x1B 0x17 }
+            , img2 = { url = "/images/design-experience/thestudio/images/2.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/thestudio/images/3.jpg", description = "", placeholderColor = rgb255 0x99 0x98 0x67 }
+                , img2 = { url = "/images/design-experience/thestudio/images/4.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img3 = { url = "/images/design-experience/thestudio/images/5.jpg", description = "", placeholderColor = rgb255 0x2E 0x28 0x21 }
+                , img4 = { url = "/images/design-experience/thestudio/images/6.jpg", description = "", placeholderColor = rgb255 0x76 0x38 0x35 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/thestudio/images/7.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/thestudio/images/8.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            ]
+      , links =
+            [ { url = "https://thestudio.website"
+              , label = "THESTUDIO Website"
+              }
+            , { url = "https://disk.yandex.ru/i/j0HKkh3qyIv_DQ"
+              , label = "THESTUDIO Presentation"
+              }
+            ]
+      }
+    , { slug = "da"
       , title = "Davai na Altai"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
