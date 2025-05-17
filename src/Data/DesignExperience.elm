@@ -150,6 +150,12 @@ data =
                 { img1 = { url = "/images/design-experience/thestudio/images/7.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
                 , img2 = { url = "/images/design-experience/thestudio/images/8.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
                 }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/thestudio/images/9.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img2 = { url = "/images/design-experience/thestudio/images/10.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img3 = { url = "/images/design-experience/thestudio/images/11.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+                , img4 = { url = "/images/design-experience/thestudio/images/12.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
             ]
       , links =
             [ { url = "https://thestudio.website"
