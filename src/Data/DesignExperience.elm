@@ -64,7 +64,7 @@ data =
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, UX & UI Design, Visual Identity, Web Design"
       , description = "Working with the marketing team at THEBROKS, an international boutique real estate agency in Dubai & Moscow, redesigned the corporate identity & established a new design system, including redesigning the corporate website & landing pages using Tilda. Producing content for social media, illustrating articles, editing videos, developing presentations, catalogues & various communication materials for brokers & agency clients. Designed the Moscow office's identity, including a brand book, SMM design & corporate website on Tilda."
-      , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF6 0xEC 0x10 }
+      , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
       , backgroundColor = rgb255 0x08 0x09 0x0C
       , textColor = WhiteText
       , firstImages =
