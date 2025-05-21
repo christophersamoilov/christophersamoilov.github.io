@@ -167,7 +167,7 @@ data =
             [ { url = "https://thestudio.website"
               , label = "THESTUDIO Website"
               }
-            , { url = "https://disk.yandex.ru/i/j0HKkh3qyIv_DQ"
+            , { url = "https://disk.yandex.ru/i/JrDWjj4PGNQ0tg"
               , label = "THESTUDIO Presentation"
               }
             ]
