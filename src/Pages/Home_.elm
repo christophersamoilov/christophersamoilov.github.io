@@ -50,7 +50,8 @@ toLayout _ =
 bioText : String
 bioText =
     """
-I'm a graphic & web designer with experience working on projects for different companies. 
+8 years of graphic & web design experience, 3 years in real estate. 50+ brand identities & websites, 2 mobile apps. 
+
 My main goal — to make the world easier to understand by using clean & clear visuals. 
 I'm all about helping people communicate better & faster, making life a bit better along the way.
 """
