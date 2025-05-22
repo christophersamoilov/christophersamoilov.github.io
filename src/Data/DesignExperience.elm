@@ -137,7 +137,7 @@ data =
       , title = "THESTUDIO"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO, a social marketing agency for real estate in Dubai. Developing & maintaining content for the Instagram account, designing & developing a corporate website using Tilda."
+      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO, a marketing agency for real estate in Dubai. Developing & maintaining content for the Instagram account, designing & developing a corporate website using Tilda."
       , thumbnail = { url = "/images/design-experience/thestudio/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -167,8 +167,11 @@ data =
             [ { url = "https://thestudio.website"
               , label = "THESTUDIO Website"
               }
-            , { url = "https://disk.yandex.ru/i/JrDWjj4PGNQ0tg"
-              , label = "THESTUDIO Presentation"
+            , { url = "https://disk.yandex.ru/i/sxDyaqcfKtxEfQ"
+              , label = "THESTUDIO Presentation EN"
+              }
+            , { url = "https://disk.yandex.ru/i/IQYgEgGrJSQDIg"
+              , label = "THESTUDIO Presentation RU"
               }
             ]
       }
@@ -251,7 +254,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "As a Lead UI Designer, helped FIT SERVICE make digital products & create a new look \u{2028}for its website. Designed screens for websites \u{2028}& apps, including the main website & special pages for new customers. I worked with the managers in charge of new products & other designers to make a new mobile app for the company. Helped with other new products the company was making. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
+      , description = "As a Lead UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including the main website & special pages for new customers. I worked with the managers in charge of new products & other designers to make a new mobile app for the company. Helped with other new products the company was making. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x81 0x32
       , textColor = WhiteText
@@ -382,7 +385,7 @@ data =
       , title = "Pamir"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Helped come up with the marketing idea & brands for residential real estate. Created \u{2028}a set of design rules to advertise residential & commercial properties online & offline. Worked with the development team to design a real estate web portal Tayga City for search & sales property."
+      , description = "Helped come up with the marketing idea & brands for residential real estate. Created a set of design rules to advertise residential & commercial properties online & offline. Worked with the development team to design a real estate web portal Tayga City for search & sales property."
       , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x61 0xAC 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
