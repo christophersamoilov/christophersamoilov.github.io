@@ -254,7 +254,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "As a Lead UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including the main website & special pages for new customers. I worked with the managers in charge of new products & other designers to make a new mobile app for the company. Helped with other new products the company was making. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
+      , description = "As a Lead UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including the main website & special pages for new customers. Worked with the managers in charge of new products & other designers to make a new mobile app for the company. Helped with other new products the company was making. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x81 0x32
       , textColor = WhiteText
@@ -341,7 +341,7 @@ data =
       , title = "Lukoil"
       , experienceType = WorkExperience
       , skills = "UX & UI Design, Web Design"
-      , description = "As part of the startup, I designed user-friendly interfaces for car service booking & route search with cashback features in the Lukoil mobile app. I worked in two different styles & came up with new & creative visual ideas to improve the app's design."
+      , description = "As part of the startup, designed user-friendly interfaces for car service booking & route search with cashback features in the Lukoil mobile app. Worked in two different styles & came up with new visual ideas to improve the app's design."
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", description = "", placeholderColor = rgb255 0xD2 0x23 0x3C }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -498,7 +498,7 @@ data =
       , title = "SCLUX"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Created brand identity for SCLUX (pronounced like ascaleuxe), a salon specializing in bathroom interior design, product sales & high-quality ceramic tiles. I enhanced its online & offline visibility by creating a Tilda website, producing social media content, editing videos, animating for YouTube & designing printed materials."
+      , description = "Created brand identity for SCLUX (pronounced like ascaleuxe), a salon specializing in bathroom interior design, product sales & high-quality ceramic tiles. Enhanced its online & offline visibility by creating a Tilda website, producing social media content, editing videos, animating for YouTube & designing printed materials."
       , thumbnail = { url = "/images/design-experience/sclux/thumbnail.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
