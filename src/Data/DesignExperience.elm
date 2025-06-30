@@ -254,7 +254,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "As a Lead UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including the main website & special pages for new customers. Worked with the managers in charge of new products & other designers to make a new mobile app for the company. Helped with other new products the company was making. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
+      , description = "As a Lead UX/UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including car service appointment module. Worked with the managers in charge of new products & other designers to make a new mobile app for the company & redesigned the fitauto.ru portal, which led to a five-fold increase in conversion rates. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x81 0x32
       , textColor = WhiteText
