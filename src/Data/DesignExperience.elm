@@ -63,7 +63,7 @@ data =
       , title = "THEBROKS"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, UX & UI Design, Visual Identity, Web Design"
-      , description = "Working with the marketing team at THEBROKS, an international boutique real estate agency in Dubai & Moscow, redesigned the corporate identity & established a new design system, including redesigning the corporate website & landing pages using Tilda. Producing content for social media, illustrating articles, editing videos, developing presentations, catalogues & various communication materials for brokers & agency clients. Designed the Moscow office's identity, including a brand book, SMM design & corporate website on Tilda."
+      , description = "Redefined the corporate identity & built a cohesive design system. Crafted a new visual language across website, landing pages & social media. Designed the Moscow office identity & brand book, elevating the agency’s aesthetic presence."
       , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
       , backgroundColor = rgb255 0x08 0x09 0x0C
       , textColor = WhiteText
@@ -137,7 +137,7 @@ data =
       , title = "THESTUDIO"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Since 2024, working with the marketing team at a startup to create a brand identity for THESTUDIO, a marketing agency for real estate in Dubai. Developing & maintaining content for the Instagram account, designing & developing a corporate website using Tilda."
+      , description = "Created a distinctive brand identity & corporate website on Tilda. Curated the agency’s visual communication, including social media art direction."
       , thumbnail = { url = "/images/design-experience/thestudio/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -179,7 +179,7 @@ data =
       , title = "Davai na Altai"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Designed brand identity & a website for a group of travelers who offer tours to Altai. The main idea for the design came from the shape of Le Murmure typeface & the spiritual world of Altai shamans. "
+      , description = "Designed identity & website for a boutique travel group. Concept drew on avant-garde typography & the spiritual visual culture of Altai."
       , thumbnail = { url = "/images/design-experience/da/thumbnail.jpg", description = "", placeholderColor = rgb255 0xA5 0xCF 0xEB }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -205,7 +205,7 @@ data =
       , title = "SANSIB"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Created the SANSIB brand, designed visual identity & developed the online store interface for sanitary ware. The new style uses the clean Manrope typeface & laconic circle shapes to convey simplicity & conciseness, aligning with the client's interior design services for bathrooms."
+      , description = "Created a brand identity & e-commerce interface for a high-end sanitary ware store. Minimalist design with Manrope typography & geometric motifs emphasized clarity & sophistication, in harmony with the client’s interior aesthetics."
       , thumbnail = { url = "/images/design-experience/sansib/thumbnail.jpg", description = "", placeholderColor = rgb255 0x42 0xAF 0xF0 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -254,7 +254,7 @@ data =
       , title = "FIT SERVICE"
       , experienceType = WorkExperience
       , skills = "Brand Identity, Graphic Design, Motion Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "As a Lead UX/UI Designer, helped FIT SERVICE make digital products & create a new look for its website. Designed screens for websites & apps, including car service appointment module. Worked with the managers in charge of new products & other designers to make a new mobile app for the company & redesigned the fitauto.ru portal, which led to a five-fold increase in conversion rates. As the main designer, made sure that everyone in the design team could talk to each other well & helped new designers learn their job."
+      , description = "Lead UX/UI Designer. Transformed fitauto.ru with a design overhaul that increased conversion 5x. Directed the design of the mobile app & digital booking experiences. Guided the design team, ensuring quality & consistency in all outputs."
       , thumbnail = { url = "/images/design-experience/fitservice/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF4 0x7D 0x32 }
       , backgroundColor = rgb255 0xFF 0x81 0x32
       , textColor = WhiteText
@@ -319,7 +319,7 @@ data =
       , title = "Tyre Storage"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Visual Identity, Web Design"
-      , description = "As part of the startup, designed interfaces for tyre storage service. The main source of inspiration was the Swiss-style clarity & stereotypical posters in car service stations."
+      , description = "Developed bold, functional interfaces inspired by Swiss graphic design & utilitarian car service poster aesthetics."
       , thumbnail = { url = "/images/design-experience/ts/thumbnail.jpg", description = "", placeholderColor = rgb255 0xFF 0xB9 0x1D }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -341,7 +341,7 @@ data =
       , title = "Lukoil"
       , experienceType = WorkExperience
       , skills = "UX & UI Design, Web Design"
-      , description = "As part of the startup, designed user-friendly interfaces for car service booking & route search with cashback features in the Lukoil mobile app. Worked in two different styles & came up with new visual ideas to improve the app's design."
+      , description = "Designed sleek, intuitive interfaces for car service booking & cashback-enabled route search. Introduced fresh visual concepts that reshaped the mobile app’s look & feel."
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", description = "", placeholderColor = rgb255 0xD2 0x23 0x3C }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -365,7 +365,7 @@ data =
       , title = "Prospect"
       , experienceType = WorkExperience
       , skills = "Graphic Design, UX & UI Design, Visual Identity"
-      , description = "Updating the visual identity & creating a new website concept for a construction company based on analysis performed by the UX designer."
+      , description = "Developed a refined visual identity & forward-looking website concept based on UX research."
       , thumbnail = { url = "/images/design-experience/prospect/thumbnail.jpg", description = "", placeholderColor = rgb255 0x1B 0x61 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -385,7 +385,7 @@ data =
       , title = "Pamir"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, UX & UI Design, Visual Identity, Web Design"
-      , description = "Helped come up with the marketing idea & brands for residential real estate. Created a set of design rules to advertise residential & commercial properties online & offline. Worked with the development team to design a real estate web portal Tayga City for search & sales property."
+      , description = "Built the brand identity & digital platform for property search & sales. Created an integrated design system for both online & offline communication."
       , thumbnail = { url = "/images/design-experience/pamir/thumbnail.jpg", description = "", placeholderColor = rgb255 0x61 0xAC 0xE1 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
@@ -411,7 +411,7 @@ data =
       , title = "Rastsvetai Group"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Illustration, Motion Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Designed a system to promote residential & commercial real estate by a group of companies — made a brand book, updated the logo & visual identity. Created a logo for a real estate developer Acacia. Helped with creation of 3D renders of real estate & the design of common areas inside buildings. Supervised the work of other designers & provided mentorship."
+      , description = "Crafted brand book, logo & renewed identity. Contributed to 3D renders & architectural visualization of interiors & exteriors. Provided art direction & mentorship within the design team."
       , thumbnail = { url = "/images/design-experience/rastsvetai/thumbnail.jpg", description = "", placeholderColor = rgb255 0x57 0xCB 0x93 }
       , backgroundColor = rgb255 0x57 0xCB 0x93
       , textColor = BlackText
@@ -462,7 +462,7 @@ data =
       , title = "2GIS"
       , experienceType = WorkExperience
       , skills = "Graphic Design, Illustration, Motion Design, Visual Identity"
-      , description = "Promoted the product & developed 2GIS's corporate identity, working in the areas of creation of graphics on the web & offline, creation of short animated videos, designing presentations, branding of events."
+      , description = "Evolved the corporate identity with refined web graphics, motion design, presentations & event branding, strengthening the company’s visual culture."
       , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
       , backgroundColor = rgb255 0x39 0xC7 0x01
       , textColor = WhiteText
@@ -498,7 +498,7 @@ data =
       , title = "SCLUX"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
-      , description = "Created brand identity for SCLUX (pronounced like ascaleuxe), a salon specializing in bathroom interior design, product sales & high-quality ceramic tiles. Enhanced its online & offline visibility by creating a Tilda website, producing social media content, editing videos, animating for YouTube & designing printed materials."
+      , description = "Created a refined brand identity & cohesive visual system. Designed a Tilda website, social media assets, video content, YouTube animations & printed materials, elevating the salon’s digital & offline presence."
       , thumbnail = { url = "/images/design-experience/sclux/thumbnail.jpg", description = "", placeholderColor = rgb255 0x32 0x32 0x32 }
       , backgroundColor = rgb255 0x1A 0x1A 0x1A
       , textColor = WhiteText
