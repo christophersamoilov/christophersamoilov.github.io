@@ -50,7 +50,7 @@ toLayout _ =
 bioText : String
 bioText =
     """
-8 years of graphic & web design experience, 4 years of UX/UI design & real estate experience. 50+ brand identities & websites, 2 mobile apps. 
+8 years of graphic & web design experience, 5 years of experience in real estate & investments. 50+ brand identities & websites. 
 
 My main goal — to make the world easier to understand by using clean & clear visuals. 
 I'm all about helping people communicate better & faster, making life a bit better along the way.

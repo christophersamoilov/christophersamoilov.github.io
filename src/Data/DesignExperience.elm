@@ -62,7 +62,7 @@ data =
     [ { slug = "thebroks"
       , title = "THEBROKS"
       , experienceType = WorkExperience
-      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, UX & UI Design, Visual Identity, Web Design"
+      , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
       , description = "Redefined the corporate identity & built a cohesive design system. Crafted a new visual language across website, landing pages & social media. Designed the Moscow office identity & brand book, elevating the agency’s aesthetic presence."
       , thumbnail = { url = "/images/design-experience/thebroks/thumbnail.jpg", description = "", placeholderColor = rgb255 0x08 0x09 0x0C }
       , backgroundColor = rgb255 0x08 0x09 0x0C
@@ -340,7 +340,7 @@ data =
     , { slug = "lukoil"
       , title = "Lukoil"
       , experienceType = WorkExperience
-      , skills = "UX & UI Design, Web Design"
+      , skills = "Graphic Design, UX & UI Design, Web Design"
       , description = "Designed sleek, intuitive interfaces for car service booking & cashback-enabled route search. Introduced fresh visual concepts that reshaped the mobile app’s look & feel."
       , thumbnail = { url = "/images/design-experience/lukoil/thumbnail.jpg", description = "", placeholderColor = rgb255 0xD2 0x23 0x3C }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
