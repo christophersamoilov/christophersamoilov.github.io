@@ -115,7 +115,7 @@ data =
             ]
       , links =
             [ { url = "https://trigonum.ae/"
-              , label = "INVESTRIGONUM Website"
+              , label = "INVESTTRIGONUM Website"
               }
             , { url = "https://trigonumacademy.ru/meditations"
               , label = "TRIGONUM Meditations Website"
