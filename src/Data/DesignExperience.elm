@@ -59,7 +59,80 @@ type alias DesignExperience =
 
 data : List DesignExperience
 data =
-    [ { slug = "thebroks"
+    [ { slug = "domoy"
+      , title = "Domoy"
+      , experienceType = WorkExperience
+      , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , description = "Revised the identity for a veteran rehabilitation & reintegration project, creating a clear, trust-driven brand tailored to returning service members. Designed from scratch a user-focused platform for discovering & accessing medical, psychological, social, career & training services."
+      , thumbnail = { url = "/images/design-experience/domoy/thumbnail.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
+      , backgroundColor = rgb255 0xFF 0xFF 0xFF
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/domoy/images/1.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
+            , img2 = { url = "/images/design-experience/domoy/images/2.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
+            }
+      , restImages =
+            [ 
+            ImageRow2
+                { img1 = { url = "/images/design-experience/domoy/images/3.jpg", description = "", placeholderColor = rgb255 0xF3 0xF8 0xFC }
+                , img2 = { url = "/images/design-experience/domoy/images/4.jpg", description = "", placeholderColor = rgb255 0xF3 0xF8 0xFC }
+                }
+            ]
+      , links =
+            [ { url = "https://xn--d1ailhb.xn--90a1af.xn--p1ai/"
+              , label = "Domoy Website"
+              }
+            ]
+      }
+      ,{ slug = "trigonum"
+      , title = "TRIGONUM"
+      , experienceType = WorkExperience
+      , skills = "AI, Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
+      , description = "Reimagined the investment firm’s brand identity & design system. Built the UAE division’s brand from scratch, shaping its visual presence across web, social & learning materials to strengthen credibility & investor engagement."
+      , thumbnail = { url = "/images/design-experience/trigonum/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+      , backgroundColor = rgb255 0x0B 0x0B 0x11
+      , textColor = WhiteText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/trigonum/images/1.jpg", description = "", placeholderColor = rgb255 0x91 0x8d 0x89 }
+            , img2 = { url = "/images/design-experience/trigonum/images/2.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/trigonum/images/3.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
+                , img2 = { url = "/images/design-experience/trigonum/images/4.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
+                , img3 = { url = "/images/design-experience/trigonum/images/5.jpg", description = "", placeholderColor = rgb255 0xB7 0x92 0x78 }
+                , img4 = { url = "/images/design-experience/trigonum/images/6.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2a }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/trigonum/images/7.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2a }
+                , img2 = { url = "/images/design-experience/trigonum/images/8.jpg", description = "", placeholderColor = rgb255 0x0b 0x1f 0x1f }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/trigonum/images/9.jpg", description = "", placeholderColor = rgb255 0x18 0x18 0x45 }
+                , img2 = { url = "/images/design-experience/trigonum/images/10.jpg", description = "", placeholderColor = rgb255 0x18 0x18 0x45 }
+                , img3 = { url = "/images/design-experience/trigonum/images/11.jpg", description = "", placeholderColor = rgb255 0x17 0x05 0x89 }
+                , img4 = { url = "/images/design-experience/trigonum/images/12.jpg", description = "", placeholderColor = rgb255 0x29 0x2e 0x32 }
+                }
+            ]
+      , links =
+            [ { url = "https://trigonum.ae/"
+              , label = "INVESTRIGONUM Website"
+              }
+            , { url = "https://trigonumacademy.ru/meditations"
+              , label = "TRIGONUM Meditations Website"
+              }
+            , { url = "https://trigonumacademy.ru"
+              , label = "TRIGONUM Academy Website"
+              }
+              , { url = "https://disk.yandex.ru/i/7Lhu23yQ8rx1Ng"
+              , label = "TRIGONUM Mastery Course Presentation"
+              }
+              , { url = "https://disk.yandex.ru/i/aj_pnr2waI87jQ"
+              , label = "TRIGONUM DeFi Presentation"
+              }
+            ]
+      }
+      , { slug = "thebroks"
       , title = "THEBROKS"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"
