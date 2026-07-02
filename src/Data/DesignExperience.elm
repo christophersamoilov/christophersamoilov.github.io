@@ -64,7 +64,7 @@ data =
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
       , description = "Revised the identity for a veteran rehabilitation & reintegration project, creating a clear, trust-driven brand tailored to returning service members. Designed from scratch a user-focused platform for discovering & accessing medical, psychological, social, career & training services."
-      , thumbnail = { url = "/images/design-experience/domoy/thumbnail.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFF }
+      , thumbnail = { url = "/images/design-experience/domoy/thumbnail.jpg", description = "", placeholderColor = rgb255 0xC5 0xD8 0xE9 }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
