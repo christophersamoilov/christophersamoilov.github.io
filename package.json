@@ -2,8 +2,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "npm": ">=10.2.3 <11.0.0",
-    "node": ">=20.10.0 <21.0.0"
+    "node": ">=24.0.0 <25.0.0"
   },
   "scripts": {
     "start": "PORT=8080 elm-land server",
@@ -20,10 +19,10 @@
   },
   "devDependencies": {
     "elm": "^0.19.1-6",
-    "elm-format": "^0.8.7",
+    "elm-format": "^0.8.8",
     "elm-land": "^0.20.1",
-    "elm-review": "^2.12.0",
-    "elm-test": "^0.19.1-revision12"
+    "elm-review": "^2.13.5",
+    "elm-test": "^0.19.1-revision17"
   },
   "dependencies": {}
 }

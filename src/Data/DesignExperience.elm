@@ -64,16 +64,15 @@ data =
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
       , description = "Revised the identity for a veteran rehabilitation & reintegration project, creating a clear, trust-driven brand tailored to returning service members. Designed from scratch a user-focused platform for discovering & accessing medical, psychological, social, career & training services."
-      , thumbnail = { url = "/images/design-experience/domoy/thumbnail.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
+      , thumbnail = { url = "/images/design-experience/domoy/thumbnail.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFF }
       , backgroundColor = rgb255 0xFF 0xFF 0xFF
       , textColor = BlackText
       , firstImages =
-            { img1 = { url = "/images/design-experience/domoy/images/1.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
-            , img2 = { url = "/images/design-experience/domoy/images/2.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFf }
+            { img1 = { url = "/images/design-experience/domoy/images/1.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFF }
+            , img2 = { url = "/images/design-experience/domoy/images/2.jpg", description = "", placeholderColor = rgb255 0x00 0x92 0xFF }
             }
       , restImages =
-            [ 
-            ImageRow2
+            [ ImageRow2
                 { img1 = { url = "/images/design-experience/domoy/images/3.jpg", description = "", placeholderColor = rgb255 0xF3 0xF8 0xFC }
                 , img2 = { url = "/images/design-experience/domoy/images/4.jpg", description = "", placeholderColor = rgb255 0xF3 0xF8 0xFC }
                 }
@@ -84,7 +83,7 @@ data =
               }
             ]
       }
-      ,{ slug = "trigonum"
+    , { slug = "trigonum"
       , title = "TRIGONUM"
       , experienceType = WorkExperience
       , skills = "AI, Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
@@ -93,7 +92,7 @@ data =
       , backgroundColor = rgb255 0x0B 0x0B 0x11
       , textColor = WhiteText
       , firstImages =
-            { img1 = { url = "/images/design-experience/trigonum/images/1.jpg", description = "", placeholderColor = rgb255 0x91 0x8d 0x89 }
+            { img1 = { url = "/images/design-experience/trigonum/images/1.jpg", description = "", placeholderColor = rgb255 0x91 0x8D 0x89 }
             , img2 = { url = "/images/design-experience/trigonum/images/2.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
             }
       , restImages =
@@ -101,17 +100,17 @@ data =
                 { img1 = { url = "/images/design-experience/trigonum/images/3.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
                 , img2 = { url = "/images/design-experience/trigonum/images/4.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
                 , img3 = { url = "/images/design-experience/trigonum/images/5.jpg", description = "", placeholderColor = rgb255 0xB7 0x92 0x78 }
-                , img4 = { url = "/images/design-experience/trigonum/images/6.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2a }
+                , img4 = { url = "/images/design-experience/trigonum/images/6.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2A }
                 }
             , ImageRow2
-                { img1 = { url = "/images/design-experience/trigonum/images/7.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2a }
-                , img2 = { url = "/images/design-experience/trigonum/images/8.jpg", description = "", placeholderColor = rgb255 0x0b 0x1f 0x1f }
+                { img1 = { url = "/images/design-experience/trigonum/images/7.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x2A }
+                , img2 = { url = "/images/design-experience/trigonum/images/8.jpg", description = "", placeholderColor = rgb255 0x0B 0x1F 0x1F }
                 }
             , ImageRow4
                 { img1 = { url = "/images/design-experience/trigonum/images/9.jpg", description = "", placeholderColor = rgb255 0x18 0x18 0x45 }
                 , img2 = { url = "/images/design-experience/trigonum/images/10.jpg", description = "", placeholderColor = rgb255 0x18 0x18 0x45 }
                 , img3 = { url = "/images/design-experience/trigonum/images/11.jpg", description = "", placeholderColor = rgb255 0x17 0x05 0x89 }
-                , img4 = { url = "/images/design-experience/trigonum/images/12.jpg", description = "", placeholderColor = rgb255 0x29 0x2e 0x32 }
+                , img4 = { url = "/images/design-experience/trigonum/images/12.jpg", description = "", placeholderColor = rgb255 0x29 0x2E 0x32 }
                 }
             ]
       , links =
@@ -124,15 +123,15 @@ data =
             , { url = "https://trigonumacademy.ru"
               , label = "TRIGONUM Academy Website"
               }
-              , { url = "https://disk.yandex.ru/i/7Lhu23yQ8rx1Ng"
+            , { url = "https://disk.yandex.ru/i/7Lhu23yQ8rx1Ng"
               , label = "TRIGONUM Mastery Course Presentation"
               }
-              , { url = "https://disk.yandex.ru/i/aj_pnr2waI87jQ"
+            , { url = "https://disk.yandex.ru/i/aj_pnr2waI87jQ"
               , label = "TRIGONUM DeFi Presentation"
               }
             ]
       }
-      , { slug = "thebroks"
+    , { slug = "thebroks"
       , title = "THEBROKS"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Motion Design, No-Code Development, Visual Identity, Web Design"

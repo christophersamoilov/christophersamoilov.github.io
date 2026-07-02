@@ -1,0 +1,8 @@
+{
+  "include": ["src/interop.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "lib": ["ES6", "DOM"],
+    "types": []
+  }
+}
