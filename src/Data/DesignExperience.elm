@@ -88,11 +88,11 @@ data =
       , experienceType = WorkExperience
       , skills = "AI, Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
       , description = "Reimagined the investment firm’s brand identity & design system. Built the UAE division’s brand from scratch, shaping its visual presence across web, social & learning materials to strengthen credibility & investor engagement."
-      , thumbnail = { url = "/images/design-experience/trigonum/thumbnail.jpg", description = "", placeholderColor = rgb255 0xF2 0xF2 0xF2 }
+      , thumbnail = { url = "/images/design-experience/trigonum/thumbnail.jpg", description = "", placeholderColor = rgb255 0x2C 0x33 0x39 }
       , backgroundColor = rgb255 0x0B 0x0B 0x11
       , textColor = WhiteText
       , firstImages =
-            { img1 = { url = "/images/design-experience/trigonum/images/1.jpg", description = "", placeholderColor = rgb255 0x91 0x8D 0x89 }
+            { img1 = { url = "/images/design-experience/trigonum/images/1.jpg", description = "", placeholderColor = rgb255 0x2C 0x33 0x39 }
             , img2 = { url = "/images/design-experience/trigonum/images/2.jpg", description = "", placeholderColor = rgb255 0x10 0x10 0x10 }
             }
       , restImages =
@@ -535,7 +535,7 @@ data =
       , experienceType = WorkExperience
       , skills = "Graphic Design, Illustration, Motion Design, Visual Identity"
       , description = "Evolved the corporate identity with refined web graphics, motion design, presentations & event branding, strengthening the company’s visual culture."
-      , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x05 0xA8 0x2E }
+      , thumbnail = { url = "/images/design-experience/2gis/thumbnail.jpg", description = "", placeholderColor = rgb255 0x26 0x26 0x26 }
       , backgroundColor = rgb255 0x39 0xC7 0x01
       , textColor = WhiteText
       , firstImages =
