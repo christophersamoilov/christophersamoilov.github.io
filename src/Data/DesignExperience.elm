@@ -60,7 +60,7 @@ type alias DesignExperience =
 data : List DesignExperience
 data =
     [ { slug = "domoy"
-      , title = "Domoy"
+      , title = "Домой"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
       , description = "Revised the identity for a veteran rehabilitation & reintegration project, creating a clear, trust-driven brand tailored to returning service members. Designed from scratch a user-focused platform for discovering & accessing medical, psychological, social, career & training services."
@@ -79,7 +79,7 @@ data =
             ]
       , links =
             [ { url = "https://xn--d1ailhb.xn--90a1af.xn--p1ai/"
-              , label = "Domoy Website"
+              , label = "Домой Website"
               }
             ]
       }
@@ -248,7 +248,7 @@ data =
             ]
       }
     , { slug = "da"
-      , title = "Davai na Altai"
+      , title = "Давай на Алтай"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, No-Code Development, Visual Identity, Web Design"
       , description = "Designed identity & website for a boutique travel group. Concept drew on avant-garde typography & the spiritual visual culture of Altai."
@@ -388,7 +388,7 @@ data =
             ]
       }
     , { slug = "ts"
-      , title = "Tyre Storage"
+      , title = "TyreSafe"
       , experienceType = WorkExperience
       , skills = "Art Direction, Graphic Design, Visual Identity, Web Design"
       , description = "Developed bold, functional interfaces inspired by Swiss graphic design & utilitarian car service poster aesthetics."
