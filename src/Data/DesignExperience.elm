@@ -59,7 +59,109 @@ type alias DesignExperience =
 
 data : List DesignExperience
 data =
-    [ { slug = "domoy"
+    [ { slug = "spg"
+      , title = "SPG"
+      , experienceType = WorkExperience
+      , skills = "AI, Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
+      , description = "Defined & executed the visual identity for a Bali-based developer, including logo & brand system. Delivered high-end investment & marketing materials for an international audience. Contributed to digital presence & exhibition design."
+      , thumbnail = { url = "/images/design-experience/spg/thumbnail.jpg", description = "", placeholderColor = rgb255 0x17 0x28 0x1E }
+      , backgroundColor = rgb255 0xFF 0xFB 0xF3
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/spg/images/1.jpg", description = "", placeholderColor = rgb255 0x75 0xA9 0xEC }
+            , img2 = { url = "/images/design-experience/spg/images/2.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/spg/images/3.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img2 = { url = "/images/design-experience/spg/images/4.jpg", description = "", placeholderColor = rgb255 0x17 0x28 0x1E }
+                , img3 = { url = "/images/design-experience/spg/images/5.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img4 = { url = "/images/design-experience/spg/images/6.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/spg/images/7.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img2 = { url = "/images/design-experience/spg/images/8.jpg", description = "", placeholderColor = rgb255 0xF8 0xF5 0xF0 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/spg/images/9.jpg", description = "", placeholderColor = rgb255 0x4C 0x72 0x34 }
+                , img2 = { url = "/images/design-experience/spg/images/10.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img3 = { url = "/images/design-experience/spg/images/11.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img4 = { url = "/images/design-experience/spg/images/12.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/spg/images/13.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img2 = { url = "/images/design-experience/spg/images/14.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/spg/images/15.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img2 = { url = "/images/design-experience/spg/images/16.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img3 = { url = "/images/design-experience/spg/images/17.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img4 = { url = "/images/design-experience/spg/images/18.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/spg/images/19.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img2 = { url = "/images/design-experience/spg/images/20.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                }
+            , ImageRow4
+                { img1 = { url = "/images/design-experience/spg/images/21.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img2 = { url = "/images/design-experience/spg/images/22.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
+                , img3 = { url = "/images/design-experience/spg/images/23.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                , img4 = { url = "/images/design-experience/spg/images/24.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/spg/images/25.jpg", description = "", placeholderColor = rgb255 0x12 0x23 0x3D }
+                , img2 = { url = "/images/design-experience/spg/images/26.jpg", description = "", placeholderColor = rgb255 0xB6 0x97 0x80 }
+                }
+            ]
+      , links =
+            [ { url = "https://disk.yandex.ru/i/pVAQerAq05Xa6g"
+              , label = "SPG Visual Guidelines RU"
+              }
+            , { url = "https://disk.yandex.ru/i/rtXgWo3q8mMlXQ"
+              , label = "AURA Wellness Resort Presentation EN"
+              }
+            , { url = "https://disk.yandex.ru/i/0zMXGAgWu7Bx_A"
+              , label = "AURA Wellness Resort Presentation RU"
+              }
+            , { url = "https://www.instagram.com/aura_wellness_resort_ubud"
+              , label = "AURA Wellness Resort Instagram EN"
+              }
+            , { url = "https://www.instagram.com/aura_wellness_resort"
+              , label = "AURA Wellness Resort Instagram RU"
+              }
+            ]
+      }
+    , { slug = "yolo"
+      , title = "Hey, YOLO"
+      , experienceType = WorkExperience
+      , skills = "AI, Graphic Design"
+      , description = "Supported visual direction for a premium villa project in Ubud, delivering social media design & refined presentation materials for marketing & investor communications."
+      , thumbnail = { url = "/images/design-experience/yolo/thumbnail.jpg", description = "", placeholderColor = rgb255 0x20 0x1D 0x10 }
+      , backgroundColor = rgb255 0xE9 0xE2 0xD9
+      , textColor = BlackText
+      , firstImages =
+            { img1 = { url = "/images/design-experience/yolo/images/1.jpg", description = "", placeholderColor = rgb255 0x57 0x51 0x3C }
+            , img2 = { url = "/images/design-experience/yolo/images/2.jpg", description = "", placeholderColor = rgb255 0xE9 0xE2 0xD9 }
+            }
+      , restImages =
+            [ ImageRow4
+                { img1 = { url = "/images/design-experience/yolo/images/3.jpg", description = "", placeholderColor = rgb255 0xE9 0xE2 0xD9 }
+                , img2 = { url = "/images/design-experience/yolo/images/4.jpg", description = "", placeholderColor = rgb255 0x23 0x1F 0x20 }
+                , img3 = { url = "/images/design-experience/yolo/images/5.jpg", description = "", placeholderColor = rgb255 0x23 0x1F 0x20 }
+                , img4 = { url = "/images/design-experience/yolo/images/6.jpg", description = "", placeholderColor = rgb255 0xE9 0xE2 0xD9 }
+                }
+            , ImageRow2
+                { img1 = { url = "/images/design-experience/yolo/images/7.jpg", description = "", placeholderColor = rgb255 0xA3 0x85 0x6C }
+                , img2 = { url = "/images/design-experience/yolo/images/8.jpg", description = "", placeholderColor = rgb255 0x20 0x1D 0x10 }
+                }
+            ]
+      , links =
+            [ { url = "https://disk.yandex.ru/i/KpdJMPuCo8qzaw"
+              , label = "Hey, YOLO Presentation EN"
+              }
+            ]
+      }
+    , { slug = "domoy"
       , title = "Домой"
       , experienceType = WorkExperience
       , skills = "Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
