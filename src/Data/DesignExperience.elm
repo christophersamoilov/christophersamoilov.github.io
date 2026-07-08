@@ -80,7 +80,7 @@ data =
                 }
             , ImageRow2
                 { img1 = { url = "/images/design-experience/spg/images/7.jpg", description = "", placeholderColor = rgb255 0xFF 0xFB 0xF3 }
-                , img2 = { url = "/images/design-experience/spg/images/8.jpg", description = "", placeholderColor = rgb255 0xF8 0xF5 0xF0 }
+                , img2 = { url = "/images/design-experience/spg/images/8.jpg", description = "", placeholderColor = rgb255 0x00 0x00 0x00 }
                 }
             , ImageRow4
                 { img1 = { url = "/images/design-experience/spg/images/9.jpg", description = "", placeholderColor = rgb255 0x4C 0x72 0x34 }
@@ -145,7 +145,7 @@ data =
             }
       , restImages =
             [ ImageRow4
-                { img1 = { url = "/images/design-experience/yolo/images/3.jpg", description = "", placeholderColor = rgb255 0xE9 0xE2 0xD9 }
+                { img1 = { url = "/images/design-experience/yolo/images/3.jpg", description = "", placeholderColor = rgb255 0x23 0x1F 0x20 }
                 , img2 = { url = "/images/design-experience/yolo/images/4.jpg", description = "", placeholderColor = rgb255 0x23 0x1F 0x20 }
                 , img3 = { url = "/images/design-experience/yolo/images/5.jpg", description = "", placeholderColor = rgb255 0x23 0x1F 0x20 }
                 , img4 = { url = "/images/design-experience/yolo/images/6.jpg", description = "", placeholderColor = rgb255 0xE9 0xE2 0xD9 }
