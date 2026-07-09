@@ -132,6 +132,9 @@ data =
             , { url = "https://www.instagram.com/aura_wellness_resort"
               , label = "AURA Wellness Resort Instagram RU"
               }
+            , { url = "https://t.me/aura_wellness"
+              , label = "AURA Wellness Resort Telegram"
+              }
             ]
       }
     , { slug = "yolo"
