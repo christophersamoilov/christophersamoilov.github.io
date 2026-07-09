@@ -115,13 +115,16 @@ data =
             ]
       , links =
             [ { url = "https://disk.yandex.ru/i/pVAQerAq05Xa6g"
-              , label = "SPG Visual Guidelines RU"
+              , label = "SPG Visual Guidelines"
               }
             , { url = "https://disk.yandex.ru/i/rtXgWo3q8mMlXQ"
               , label = "AURA Wellness Resort Presentation EN"
               }
             , { url = "https://disk.yandex.ru/i/0zMXGAgWu7Bx_A"
               , label = "AURA Wellness Resort Presentation RU"
+              }
+            , { url = "https://disk.yandex.ru/i/NjtxW0Twr89sZA"
+              , label = "AURA Wellness Presentation"
               }
             , { url = "https://www.instagram.com/aura_wellness_resort_ubud"
               , label = "AURA Wellness Resort Instagram EN"
@@ -157,7 +160,7 @@ data =
             ]
       , links =
             [ { url = "https://disk.yandex.ru/i/KpdJMPuCo8qzaw"
-              , label = "Hey, YOLO Presentation EN"
+              , label = "Hey, YOLO Presentation"
               }
             ]
       }
