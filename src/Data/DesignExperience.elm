@@ -64,7 +64,7 @@ data =
       , experienceType = WorkExperience
       , skills = "AI, Art Direction, Brand Identity, Graphic Design, Visual Identity, Web Design"
       , description = "Defined & executed the visual identity for a Bali-based developer, including logo & brand system. Delivered high-end investment & marketing materials for an international audience. Contributed to digital presence & exhibition design."
-      , thumbnail = { url = "/images/design-experience/spg/thumbnail.jpg", description = "", placeholderColor = rgb255 0x17 0x28 0x1E }
+      , thumbnail = { url = "/images/design-experience/spg/thumbnail.jpg", description = "", placeholderColor = rgb255 0x08 0x18 0x17 }
       , backgroundColor = rgb255 0xFF 0xFB 0xF3
       , textColor = BlackText
       , firstImages =
