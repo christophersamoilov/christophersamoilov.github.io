@@ -284,11 +284,23 @@ data =
                 }
             ]
       , links =
-            [ { url = "https://thebroks.com"
-              , label = "THEBROKS Dubai Website"
+            [ { url = "https://disk.yandex.ru/i/-lxkl3n4igQYnA"
+              , label = "THEBROKS Website Property Desktop"
               }
-            , { url = "https://thebroks.moscow"
-              , label = "THEBROKS Moscow Website"
+            , { url = "https://disk.yandex.ru/i/GjpLe3xs3L9MDg"
+              , label = "THEBROKS Website Property Mobile"
+              }
+            , { url = "https://disk.yandex.ru/i/TncFits_bFAD5A"
+              , label = "THEBROKS & SAMANA Website Desktop"
+              }
+            , { url = "https://disk.yandex.ru/i/w8DME9Q_kasHaQ"
+              , label = "THEBROKS & SAMANA Website Mobile"
+              }
+            , { url = "https://disk.yandex.ru/i/5r3u_utDTmw5Rw"
+              , label = "THEBROKS Moscow Website Desktop"
+              }
+            , { url = "https://disk.yandex.ru/i/6Wn5uX9yok-dJg"
+              , label = "THEBROKS Moscow Website Mobile"
               }
             , { url = "https://disk.yandex.ru/i/CHr04TYhOmeBJQ"
               , label = "THEBROKS Moscow Brand Book"
@@ -309,7 +321,7 @@ data =
               , label = "THEBROKS Secondary Catalogue 2025.05"
               }
             , { url = "https://disk.yandex.ru/i/743PFS6MC6ShnQ"
-              , label = "Brokers Wanted Video"
+              , label = "THEBROKS Brokers Wanted Video"
               }
             ]
       }
@@ -344,8 +356,11 @@ data =
                 }
             ]
       , links =
-            [ { url = "https://thestudio.website"
-              , label = "THESTUDIO Website"
+            [ { url = "https://disk.yandex.ru/i/LvBzhzvbUnUMfA"
+              , label = "THESTUDIO Website Desktop"
+              }
+            , { url = "https://disk.yandex.ru/i/jhs1NtkkgM2rRw"
+              , label = "THESTUDIO Website Mobile"
               }
             , { url = "https://disk.yandex.ru/i/sxDyaqcfKtxEfQ"
               , label = "THESTUDIO Presentation EN"
